@@ -8,10 +8,10 @@
       allow_remote_control = "yes";
 
       # font setting
-      font_family = "Iosevka Term Nerd Font Complete";
-      bold_font = "Iosevka Term Bold Nerd Font Complete";
-      italic_font = "Iosevka Term Italic Nerd Font Complete";
-      bold_italic_font = "Iosevka Term Bold Italic Nerd Font Complete";
+      font_family = "Monoid Regular Nerd Font Complete";
+      bold_font = "Monoid Bold Nerd Font Complete";
+      italic_font = "Monoid Italic Nerd Font Complete";
+      bold_italic_font = "Monoid Italic Nerd Font Complete";
       font_size = "15.0";
 
       # tab bar
