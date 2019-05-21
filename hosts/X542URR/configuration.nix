@@ -14,6 +14,9 @@ in {
     inputs.home-manager.nixosModules."home-manager"
   ];
   config = {
+
+    networking.hostName = hostname;
+
     # Use the systemd-boot EFI boot loader.
     boot.loader = {
       systemd-boot.enable = true;
