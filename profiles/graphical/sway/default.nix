@@ -1,36 +1,10 @@
 { config, pkgs, lib, ... }: {
 
-  # Gnome default desktop
-  services = {
-    xserver = {
-      enable = true;
-      layout = "us"; # keyboard layout
-      desktopManager = {
-        gnome3.enable = true;
-        xterm.enable = false;
-      };
-      # Enable GDM
-      displayManager = {
-        lightdm.enable = false;
-        gdm.enable = true;
-        gdm.wayland = true;
-      };
-      # Enable TouchInputs
-      libinput.enable = true;
-    };
-    earlyoom.enable = true;
-    qemuGuest.enable = true;
-    tlp.enable = true;
-    gnome3.gnome-remote-desktop.enable = true;
-  };
-
-  # Also add sway
   programs.sway = {
     enable = true;
     extraPackages = with pkgs; [
       swaylock # lockscreen
       swayidle
-      jq # json parser
       xwayland # for legacy apps
       waybar # status bar
       mako # notification daemon
@@ -38,16 +12,12 @@
       wl-clipboard # clipboard
       autotiling # dynamic tiling in sway
       brightnessctl # brightness control
-      ulauncher # launcher
       nwg-launchers # launcher
       polkit_gnome
     ];
   };
 
   programs.waybar.enable = true;
-
-  # Not strictly required but pipewire will use rtkit if it is present
-  security.rtkit.enable = true;
 
   environment = {
     etc = {
@@ -74,45 +44,6 @@
             exec systemctl --user start sway.service
         '';
       })
-
-      # Browser
-      google-chrome
-      brave
-      firefox-wayland
-
-      # Music
-      lollypop
-
-      # Editors
-      vscode
-      umlet
-      gnvim-unwrapped # the default one comes with neovim-stable so avoid that
-
-      # gnome
-      gnome3.gnome-tweaks
-      gnome3.dconf-editor
-      gimp
-      drawing
-      shotwell
-      contrast
-
-      # launcher
-      ulauncher
-      waybar
-      wofi
-    ];
-
-    # Exclude some gnome packages
-    gnome3.excludePackages = with pkgs; [
-      gnome3.gnome-music
-      gnome3.gnome-contacts
-      gnome3.gnome-maps
-      gnome3.totem
-      gnome3.yelp
-      gnome3.epiphany
-      gnome3.eog
-      gnome3.gedit
-      gnome-photos
     ];
   };
 
@@ -168,52 +99,4 @@
     };
   };
 
-  systemd.user.services.ulauncher = {
-    description = "Linux Application Launcher";
-    documentation = [ "https://ulauncher.io/" ];
-    after = [ "graphical-session-pre.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = ''
-        ${pkgs.ulauncher}/bin/ulauncher --hide-window
-      '';
-      Restart = "always";
-      RestartSec = 1;
-    };
-    wantedBy = [ "graphical.target" ];
-  };
-
-  hardware = {
-    enableAllFirmware = true;
-    pulseaudio.enable = true;
-    opengl = {
-      enable = true;
-      extraPackages = with pkgs; [ intel-media-driver ];
-    };
-  };
-
-  # Fonts to install
-  fonts.fonts = with pkgs; [
-    corefonts
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    lato
-    source-han-sans
-    source-sans-pro
-    source-serif-pro
-    (nerdfonts.override {
-      fonts =
-        [ "FiraCode" "Iosevka" "JetBrainsMono" "Hasklig" "Monoid"];
-    })
-  ];
-
-  # Qt Stuff
-  programs.qt5ct.enable = true;
-
-  # Flatpak
-  services.flatpak.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  xdg.portal.gtkUsePortal = true;
 }
