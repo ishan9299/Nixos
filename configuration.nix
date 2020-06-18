@@ -10,40 +10,43 @@
       ./hardware-configuration.nix
     ];
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  # boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Define on which hard drive you want to install Grub.
- boot.loader.grub.device = "/dev/vda"; # or "nodev" for efi only
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.timeout = 2;
 
-networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.  networking.useDHCP = false;
-  networking.interfaces.enp1s0.useDHCP = true;
+  # replicates the default behaviour.
+  networking.useDHCP = false;
+  networking.interfaces.ens3.useDHCP = true;
+  networking.networkmanager.enable = true;
+  networking.interfaces.wlp2s0.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
- i18n.defaultLocale = "en_US.UTF-8";
- console = {
-   font = "Lat2-Terminus16";
-   keyMap = "us";
- };
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "ter-132n";
+    keyMap = "us";
+  };
 
   # Set your time zone.
-time.timeZone = "Asia/Kolkata";
+  time.timeZone = "Asia/Kolkata";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-   environment.systemPackages = with pkgs; [
-     wget vim git
-   ];
+  environment.systemPackages = with pkgs; [
+    wget git exa fish
+  ];
+
+  programs.fish.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -63,38 +66,44 @@ time.timeZone = "Asia/Kolkata";
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-networking.firewall.enable = false;
+  # networking.firewall.enable = false;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
   # Enable sound.
- sound.enable = true;
- hardware.pulseaudio.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   # Enable the X11 windowing system.
- services.xserver.enable = true;
- services.xserver.layout = "us";
-services.xserver.xkbOptions = "caps:swapescape";
+  services.xserver.enable = true;
+  services.xserver.layout = "us";
+  services.xserver.xkbOptions = "caps:swapescape";
 
   # Enable touchpad support.
-services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Enable the KDE Desktop Environment.
- services.xserver.displayManager.sddm.enable = true;
- services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome3.enable = true;
+
+  # NVIDIA stuff
+  # hardware.nvidiaOptimus.disable = true;
+  # services.xserver.displayManager.gdm.nvidiaWayland = true;
+  services.xserver.displayManager.gdm.wayland = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
- users.users.me = {
-   isNormalUser = true;
-   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
- };
+  users.users.me = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  };
 
- users.users.guest = {
-   isNormalUser = true;
-#   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
- };
-
+  users.users.guest = {
+    isNormalUser = true;
+  };
+  users.defaultUserShell = pkgs.fish;
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
