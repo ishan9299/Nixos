@@ -44,12 +44,14 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget git exa fish neovim flatpak
-    firefox
+    firefox htop alacritty tmux tilix
+    stow fzf ripgrep
   ];
 
   environment.gnome3.excludePackages = with pkgs; [
     gnome3.totem gnome3.epiphany gnome3.gnome-music
     gnome-photos gnome3.yelp gnome3.gnome-contacts
+    gnom3.gnome-maps
   ];
 
   programs.fish.enable = true;
