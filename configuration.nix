@@ -24,7 +24,7 @@
   networking.useDHCP = false;
   networking.interfaces.ens3.useDHCP = true;
   networking.networkmanager.enable = true;
-  networking.interfaces.wlp2s0.useDHCP = true;
+  # networking.interfaces.wlp2s0.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -43,14 +43,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
-    git
-    exa
-    fish
-    fzf
-    fd
-    ripgrep
-    htop
+    wget git exa fish neovim flatpak
+    firefox htop alacritty tmux tilix
+    stow fzf ripgrep
+  ];
+
+  environment.gnome3.excludePackages = with pkgs; [
+    gnome3.totem gnome3.epiphany gnome3.gnome-music
+    gnome-photos gnome3.yelp gnome3.gnome-contacts
+    gnome3.gnome-maps
   ];
 
   programs.fish.enable = true;
@@ -90,9 +91,13 @@
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
 
+  # Enable the KDE Desktop Environment.
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
   # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.displayManager.lightdm.greeter.enable = false;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome3.enable = true;
 
   # NVIDIA stuff
   # hardware.nvidiaOptimus.disable = true;
