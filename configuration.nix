@@ -43,7 +43,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget git exa fish
+    wget
+    git
+    exa
+    fish
+    fzf
+    fd
+    ripgrep
+    htop
   ];
 
   programs.fish.enable = true;
@@ -66,7 +73,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  # networking.firewall.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -83,16 +90,14 @@
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
 
-  # Enable the KDE Desktop Environment.
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
+  # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome3.enable = true;
 
   # NVIDIA stuff
   # hardware.nvidiaOptimus.disable = true;
   # services.xserver.displayManager.gdm.nvidiaWayland = true;
-  services.xserver.displayManager.gdm.wayland = true;
+  # services.xserver.displayManager.gdm.wayland = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.me = {
