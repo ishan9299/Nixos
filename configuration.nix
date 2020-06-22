@@ -43,9 +43,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget git exa fish neovim flatpak
-    firefox htop alacritty tmux tilix
-    stow fzf ripgrep
+    wget
+    git
+    fish
+    neovim
+    flatpak
+    firefox
+    alacritty
+    tilix
   ];
 
   environment.gnome3.excludePackages = with pkgs; [
@@ -94,6 +99,7 @@
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
+
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.lightdm.greeter.enable = false;
   services.xserver.displayManager.gdm.enable = true;
