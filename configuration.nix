@@ -12,8 +12,16 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.consoleMode = "max";
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.timeout = 2;
+  boot.loader.systemd-boot.editor = false;
+  boot.initrd.luks.devices = {
+    lvmcrypt = {
+	device = "/dev/sda2";
+    };
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -22,9 +30,9 @@
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.ens3.useDHCP = true;
-  networking.networkmanager.enable = true;
-  # networking.interfaces.wlp2s0.useDHCP = true;
+  networking.interfaces.enp0s20f0u4.useDHCP = true;
+  networking.interfaces.enp2s0.useDHCP = true;
+  networking.interfaces.wlp3s0.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -46,20 +54,33 @@
     wget
     git
     fish
-    neovim
+    ffmpeg
     flatpak
-    firefox
+    chromium
     alacritty
-    tilix
   ];
 
   environment.gnome3.excludePackages = with pkgs; [
-    gnome3.totem gnome3.epiphany gnome3.gnome-music
-    gnome-photos gnome3.yelp gnome3.gnome-contacts
+    gnome3.totem 
+    gnome3.epiphany 
+    gnome3.gnome-music
+    gnome-photos 
+    gnome3.yelp 
+    gnome3.gnome-contacts
     gnome3.gnome-maps
   ];
 
   programs.fish.enable = true;
+
+  fonts.fonts = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    source-code-pro
+    source-sans-pro
+    source-serif-pro
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -129,4 +150,3 @@
   system.stateVersion = "20.03"; # Did you read the comment?
 
 }
-
