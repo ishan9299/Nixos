@@ -7,25 +7,26 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./hardware-configuration.nix ./nvidia.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.consoleMode = "max";
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 3;
-  boot.loader.timeout = 2;
-  boot.loader.systemd-boot.editor = false;
+  boot.loader = {
+    systemd-boot.enable = true;
+    systemd-boot.consoleMode = "max";
+    efi.canTouchEfiVariables = true;
+    systemd-boot.configurationLimit = 3;
+    timeout = 2;
+    systemd-boot.editor = false;
+  };
+
   boot.initrd.luks.devices = {
     lvmcrypt = {
-	device = "/dev/sda2";
+      device = "/dev/disk/by-uuid/{encrypted luks partition uuid}";
     };
   };
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
@@ -41,6 +42,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
+    earlySetup = "true";
     font = "ter-132n";
     keyMap = "us";
   };
@@ -50,29 +52,33 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget
-    git
-    fish
-    ffmpeg
-    flatpak
-    chromium
-    alacritty
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      wget
+      git
+      fish
+      ffmpeg
+      flatpak
+      chromium
+      alacritty
+    ];
 
-  environment.gnome3.excludePackages = with pkgs; [
-    gnome3.totem 
-    gnome3.epiphany 
-    gnome3.gnome-music
-    gnome-photos 
-    gnome3.yelp 
-    gnome3.gnome-contacts
-    gnome3.gnome-maps
-  ];
+    gnome3.excludePackages = with pkgs; [
+      gnome3.gnome-music
+      gnome3.gnome-contacts
+      gnome3.gnome-maps
+      gnome3.gnome-terminal
+      gnome3.totem
+      gnome3.yelp
+      gnome3.epiphany
+      gnome-photos
+    ];
+  }
 
   programs.fish.enable = true;
 
   fonts.fonts = with pkgs; [
+    corefonts
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
@@ -109,22 +115,27 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.layout = "us";
-  services.xserver.xkbOptions = "caps:swapescape";
+  services = {
+    # Enable X11
+    xserver = {
+      enable = true;
+      layout = "us";
 
-  # Enable touchpad support.
-  services.xserver.libinput.enable = true;
+      # Swap caps and escape
+      xkbOptions = "caps:swapescape";
+      # Touchpad support
+      libinput.enable = true;
 
-  # Enable the KDE Desktop Environment.
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.lightdm.greeter.enable = false;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome3.enable = true;
+      # Desktop to use
+      displayManager = {
+        lightdm.greeter.enable = false;
+        gdm.enable = true;
+      }
+      desktopManager = {
+        gnome3.enable = true;
+      }
+    }
+  }
 
   # NVIDIA stuff
   # hardware.nvidiaOptimus.disable = true;
@@ -140,6 +151,7 @@
   users.users.guest = {
     isNormalUser = true;
   };
+
   users.defaultUserShell = pkgs.fish;
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -147,6 +159,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "20.03"; # Did you read the comment?
+  system.stateVersion = "20.09"; # Did you read the comment?
 
 }
