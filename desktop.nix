@@ -1,8 +1,26 @@
 {config, pkgs, ...}:
 
 {
+
+  programs.fish.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.me = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
+    shell = pkgs.fish;
+  };
+
+  users.users.guest = {
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" ];
+    shell = pkgs.fish;
+  };
+
+
   # Desktop Gnome3
   services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.desktopManager.xterm.enable = false;
   services.xserver.displayManager = {
     lightdm.enable = false;
     gdm.enable = true;
@@ -15,7 +33,9 @@
   environment.systemPackages = with pkgs; [
     chromium
     blender
+    lollypop
     ffmpeg
+    gnome3.gnome-tweaks
   ];
 
   #Excludepackages for gnome
@@ -33,13 +53,9 @@
   # Fonts to install 
   fonts.fonts = with pkgs; [
     corefonts
-    noto-fonts
-    noto-fonts-cjk
     noto-fonts-emoji
     liberation_ttf
-    source-code-pro
-    source-sans-pro
-    source-serif-pro
+    google-fonts
   ];
 
   # opengl for hardware acceleration for intel processors make chages accordingly for amd
@@ -51,7 +67,9 @@
       ];
     };
   };
+  
 
+  
   # You will have to enable the flathub repo
   services.flatpak.enable = true ;
 }

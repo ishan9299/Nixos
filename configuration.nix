@@ -46,14 +46,11 @@
   # $ nix search wget
   environment = {
     systemPackages = with pkgs; [
-      ksh
       wget
       git
       file
     ];
   };
-
-  programs.fish.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -89,18 +86,6 @@
     };
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.me = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
-  };
-
-  users.users.guest = {
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" ];
-  };
-
-  users.defaultUserShell = pkgs.ksh;
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
