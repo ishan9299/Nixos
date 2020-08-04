@@ -3,11 +3,12 @@
 {
 
   programs.fish.enable = true;
+  programs.dconf.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.me = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
   };
 
@@ -35,6 +36,9 @@
     blender
     lollypop
     ffmpeg
+    virt-manager
+    bridge-utils
+    gnomeExtensions.dash-to-panel
     gnome3.gnome-tweaks
   ];
 
@@ -68,8 +72,7 @@
     };
   };
   
-
-  
   # You will have to enable the flathub repo
   services.flatpak.enable = true ;
+  xdg.portal.gtkUsePortal = true ;
 }

@@ -29,7 +29,7 @@ in
   services.xserver.videoDrivers = ["nvidia"];
 
   # NVIDIA stuff
-  # hardware.nvidiaOptimus.disable = true;
-  # services.xserver.displayManager.gdm.nvidiaWayland = true;
-  # services.xserver.displayManager.gdm.wayland = true;
+  services.xserver.displayManager.gdm.nvidiaWayland = true;
+  services.xserver.displayManager.gdm.wayland = true;
+  hardware.nvidia.modesetting.enable = true; # To use wayland with nvidia
 }

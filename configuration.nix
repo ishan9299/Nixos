@@ -7,11 +7,14 @@
 
 {
   nixpkgs.config.allowUnfree = true;
-  
+
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix ./desktop.nix ./nvidia.nix ./overlays.nix
+      ./hardware-configuration.nix ./desktop.nix ./overlays.nix ./nvidia.nix
     ];
+
+  # Disable nvidia
+  # hardware.nvidiaOptimus.disable = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -23,10 +26,26 @@
     systemd-boot.editor = false;
   };
 
+  boot.blacklistedKernelModules = [ "iTCO_wdt" ];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelModules = [ "kvm-intel" ];
+
   boot.initrd.luks.devices = {
     lvmcrypt = {
       device = "/dev/disk/by-uuid/801e3f5c-af8a-4b0e-9594-458638d9b12a";
     };
+  };
+
+
+  # Virtualization
+  virtualisation.kvmgt.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemuOvmf = true;
+    qemuRunAsRoot = false;
+    onBoot = "ignore";
+    onShutdown = "shutdown";
   };
 
   # Network Manager
@@ -84,6 +103,8 @@
       enable = true;
       layout = "us";
     };
+    earlyoom.enable = true;
+    qemuGuest.enable = true;
   };
 
   # This value determines the NixOS release from which the default
@@ -92,5 +113,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "20.03"; # Did you read the comment?
+  system.stateVersion = "20.09"; # Did you read the comment?
 }
