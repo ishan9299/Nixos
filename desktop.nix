@@ -33,11 +33,11 @@
   # Some packages for desktop use
   environment.systemPackages = with pkgs; [
     chromium
+    firefox-beta-bin
     blender
     lollypop
     ffmpeg
     virt-manager
-    bridge-utils
     gnomeExtensions.dash-to-panel
     gnome3.gnome-tweaks
   ];
