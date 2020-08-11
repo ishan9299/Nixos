@@ -10,11 +10,14 @@
 
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix ./desktop.nix ./overlays.nix ./nvidia.nix
+      ./hardware-configuration.nix ./desktop.nix ./overlays.nix
     ];
 
   # Disable nvidia
-  # hardware.nvidiaOptimus.disable = true;
+  hardware.nvidiaOptimus.disable = true;
+
+  # Firmware
+  hardware.enableAllFirmware = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -37,6 +40,7 @@
     };
   };
 
+  boot.cleanTmpDir = true;
 
   # Virtualization
   virtualisation.kvmgt.enable = true;
@@ -101,10 +105,11 @@
   services = {
     xserver = {
       enable = true;
-      layout = "us";
+      layout = "us,in";
     };
     earlyoom.enable = true;
     qemuGuest.enable = true;
+    tlp.enable = true;
   };
 
   # This value determines the NixOS release from which the default
