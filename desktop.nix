@@ -26,7 +26,13 @@
     lightdm.enable = false;
     gdm.enable = true;
   };
-  
+
+  # Gnome settings deamon
+  services.udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
+
+  # dconf
+  services.dbus.packages = [ pkgs.dconf ];
+
   # Touchpad
   services.xserver.libinput.enable = true;
 
@@ -38,8 +44,11 @@
     lollypop
     ffmpeg
     virt-manager
+    flatpak-builder
+    tilix
     gnomeExtensions.dash-to-panel
     gnome3.gnome-tweaks
+    gnome3.dconf-editor
   ];
 
   #Excludepackages for gnome
@@ -71,7 +80,9 @@
       ];
     };
   };
-  
+
+  qt5.platformTheme = "gnome";
+
   # You will have to enable the flathub repo
   services.flatpak.enable = true ;
   xdg.portal.gtkUsePortal = true ;
