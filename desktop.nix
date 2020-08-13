@@ -2,6 +2,14 @@
 
 {
 
+  hardware.bluetooth.enable = true;
+
+  hardware.pulseaudio = {
+    enable = true;
+    extraModules = [ pkgs.pulseaudio-modules-bt ];
+    package = pkgs.pulseaudioFull;
+  };
+
   programs.fish.enable = true;
   programs.dconf.enable = true;
 
@@ -46,6 +54,9 @@
     virt-manager
     flatpak-builder
     tilix
+    gimp
+    inkscape
+    libreoffice-fresh
     gnomeExtensions.dash-to-panel
     gnome3.gnome-tweaks
     gnome3.dconf-editor
