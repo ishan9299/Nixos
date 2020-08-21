@@ -33,6 +33,7 @@
   services.xserver.displayManager = {
     lightdm.enable = false;
     gdm.enable = true;
+    gdm.wayland = true;
   };
 
   # Gnome settings deamon
@@ -47,15 +48,13 @@
   # Some packages for desktop use
   environment.systemPackages = with pkgs; [
     chromium
-    firefox-beta-bin
-    blender
     lollypop
     ffmpeg
     virt-manager
     flatpak-builder
     tilix
     gimp
-    inkscape
+    ansible
     libreoffice-fresh
     gnomeExtensions.dash-to-panel
     gnome3.gnome-tweaks
@@ -78,7 +77,6 @@
   fonts.fonts = with pkgs; [
     corefonts
     noto-fonts-emoji
-    liberation_ttf
     google-fonts
   ];
 
