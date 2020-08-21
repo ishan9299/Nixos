@@ -105,12 +105,22 @@
   services = {
     xserver = {
       enable = true;
-      layout = "us,in";
+      layout = "us";
     };
     earlyoom.enable = true;
     qemuGuest.enable = true;
     tlp.enable = true;
   };
+
+  # Diable some services for faster boot
+  systemd.services.systemd-udev-settle.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false;
+  # settings for journalctl as it can reduce the boot speed by alot upto 20secs in my case
+  services.journald.extraConfig = ''
+    Storage=volatile
+    SystemMaxFileSize=50M
+    SystemMaxFiles=5
+    ''
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
