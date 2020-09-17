@@ -23,11 +23,12 @@ lvmcrypt is the name `/dev/mapper/[name]`. Device is the uuid of disk that is en
 ## DESKTOP
 
   The default desktop in the configuration is Gnome. If you want to change it then you can :-  
-	services.xserver.desktopManager.gnome3.enable = false;
-	# For KDE
-	services.xserver.desktopManager.plasma5.enable = true;
-	services.xserver.displayManager.sddm.enable = true;
-  
+```
+services.xserver.desktopManager.gnome3.enable = false;
+# For KDE
+services.xserver.desktopManager.plasma5.enable = true;
+services.xserver.displayManager.sddm.enable = true;
+```
 You can also use the pantheon desktop but if you want pantheon use stable as it possible pantheon would break in unstable and it won't be fixed until next stable is released.
 
 ## Browser
@@ -42,22 +43,25 @@ You will still encounter a issue where virt-manager isn't able to connect to qem
 ## GPU
 By default I disable the Nvidia optimus you can add the `prime-offload` to have get the power-saving with the proprietary driver. For the people coming from ubuntu and fedora, Nix doesn't have the swithcheroo package so you will have to use the command line `nvidia-offload glxgears` to use an application with Nvidia.  
 To enable it :-
-	# ./configuration.nix
+```
+# ./configuration.nix
 	  imports =
 	    [ # Include the results of the hardware scan.
 	      ./hardware-configuration.nix ./desktop.nix ./overlays.nix ./nvidia-optimus.nix
 	    ];
 	hardware.nvidiaOptimus.disable = false;
+```
 You can also use Wayland with nvidia you will need the `modesetting` parameter to do so.
 #### Warning
 XWayland won't work so no gaming and X11 applications.
 To enable it :-
+```
 	./nvidia-optimus.nix
 	# For Gnome
 	services.xserver.displayManager.gdm.nvidiaWayland = true;
 	hardware.nvidia.modesetting.enable = true; # To use wayland with nvidia
 	services.xserver.displayManager.gdm.wayland = true;
-
+```
 # Important Links
 - [Nvidia](https://nixos.wiki/wiki/Nvidia)
 - [Hardware Acceleration](https://nixos.wiki/wiki/Accelerated_Video_Playback)
