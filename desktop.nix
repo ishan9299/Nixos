@@ -73,7 +73,7 @@
     gnome-photos
   ];
 
-  # Fonts to install 
+  # Fonts to install
   fonts.fonts = with pkgs; [
     corefonts
     noto-fonts-emoji
