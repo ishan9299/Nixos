@@ -16,7 +16,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.me = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "kvm" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
   };
 
@@ -47,16 +47,9 @@
 
   # Some packages for desktop use
   environment.systemPackages = with pkgs; [
-    chromium
+    google-chrome-dev
     lollypop
-    ffmpeg
-    virt-manager
-    flatpak-builder
     tilix
-    gimp
-    ansible
-    libreoffice-fresh
-    gnomeExtensions.dash-to-panel
     gnome3.gnome-tweaks
     gnome3.dconf-editor
   ];
