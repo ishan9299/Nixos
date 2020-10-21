@@ -8,9 +8,16 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  nix = {
+   package = pkgs.nixUnstable;
+   extraOptions = ''
+     experimental-features = nix-command flakes
+   '';
+  };
+
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix ./desktop.nix ./overlays.nix
+      ./hardware-configuration.nix ./desktop.nix ./nvidia-optimus.nix
     ];
 
   # Disable nvidia
@@ -33,13 +40,6 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
-
-  boot.initrd.luks.devices = {
-    lvmcrypt = {
-      device = "/dev/disk/by-uuid/801e3f5c-af8a-4b0e-9594-458638d9b12a";
-    };
-  };
-
   boot.cleanTmpDir = true;
 
   # Virtualization
