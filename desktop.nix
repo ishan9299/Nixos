@@ -36,12 +36,6 @@
     gdm.wayland = true;
   };
 
-  # Gnome settings deamon
-  services.udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
-
-  # dconf
-  services.dbus.packages = [ pkgs.dconf ];
-
   # Touchpad
   services.xserver.libinput.enable = true;
 
@@ -50,6 +44,7 @@
     google-chrome-dev
     lollypop
     tilix
+    virt-manager
     gnome3.gnome-tweaks
     gnome3.dconf-editor
   ];
