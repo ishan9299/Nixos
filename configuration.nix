@@ -37,7 +37,7 @@
   };
 
   boot.blacklistedKernelModules = [ "iTCO_wdt" ];
-
+  boot.supportedFilesystems = [ "btrfs" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
   boot.cleanTmpDir = true;
