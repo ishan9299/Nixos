@@ -12,12 +12,12 @@
 
   outputs = { self, unstable, ... }@inputs: {
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      nixos = inputs.unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/x542ur/configuration.nix
-          inputs.unstable.lib.home-manager.nixosModules.home-manager
-          (import ./hosts/x542ur/home/home.nix)
+          inputs.home-manager.nixosModules.home-manager
+          (import ./hosts/x542ur/home.nix)
         ];
       };
     };

@@ -1,13 +1,14 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
 # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
   home.packages = [
 
 # Applications
-      pkgs.hexchat
+    pkgs.hexchat
       pkgs.qbittorrent
 
 #CLI
@@ -40,7 +41,7 @@
 
       ];
 
-  /* home.username = "me"; */
+  home.username = "me";
   home.homeDirectory = "/home/me";
 
   home.sessionVariables = {
@@ -146,15 +147,15 @@
 #--- nix
       if test -e /home/me/.nix-profile/etc/profile.d/nix.sh
         bass source /home/me/.nix-profile/etc/profile.d/nix.sh
-      end
-      export NIX_PATH=$HOME/.nix-defexpr/channels:$NIX_PATH
+          end
+          export NIX_PATH=$HOME/.nix-defexpr/channels:$NIX_PATH
 #---- For nixpkgs make sure glibcLocales is installed with the nixpkgs or home manager (for non Nixos)
-      export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
+          export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
 #---- NNN settings
-      export NNN_OPTS="eRHdF"
-      export NNN_TRASH=1
-      export NNN_FIFO=/tmp/nnn.fifo
-      export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)"
+          export NNN_OPTS="eRHdF"
+          export NNN_TRASH=1
+          export NNN_FIFO=/tmp/nnn.fifo
+          export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)"
           '';
 
     functions = {
@@ -167,18 +168,18 @@
             if [ (expr $NNNLVL + 0) -ge 1 ]
               echo "nnn is already running"
                 return
-            end
-          end
-          if test -n "$XDG_CONFIG_HOME"
-            set -x NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
-          else
-            set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
-          end
-          nnn $argv
-          if test -e $NNN_TMPFILE
-            source $NNN_TMPFILE
-            rm $NNN_TMPFILE
-          end
+                end
+                end
+                if test -n "$XDG_CONFIG_HOME"
+                  set -x NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
+                else
+                  set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
+                    end
+                    nnn $argv
+                    if test -e $NNN_TMPFILE
+                      source $NNN_TMPFILE
+                        rm $NNN_TMPFILE
+                        end
                         '';
       };
 
