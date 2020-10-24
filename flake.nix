@@ -15,7 +15,7 @@
     nixosConfigurations.nixos = unstable.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./hosts/x542ur/configuration.nix
       ];
     };
   };
