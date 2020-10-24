@@ -5,6 +5,9 @@
     unstable = {
       url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+    };
   };
 
   outputs = { self, unstable, ... }@inputs: {
@@ -13,7 +16,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/x542ur/configuration.nix
-          inputs.home-manager.nixosModules.home-manager
+          inputs.unstable.lib.home-manager.nixosModules.home-manager
           (import ./hosts/x542ur/home/home.nix)
         ];
       };
