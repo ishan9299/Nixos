@@ -7,7 +7,7 @@
     };
   };
 
-  outputs = { self, unstable }@inputs: {
+  outputs = { self, unstable, ... }@inputs: {
     nixosConfigurations.nixos = unstable.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [ ./configuration.nix ];
