@@ -1,22 +1,25 @@
 {
-  description = "NixOS Configuration";
+  description = "NixOS configuration";
 
   inputs = {
-    unstable = {
-      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "unstable";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager";
   };
 
-  outputs = { self, unstable, home-manager, ... }@inputs: {
-    nixosConfigurations.nixos = unstable.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/x542ur/configuration.nix
-      ];
+  outputs = { home-manager, nixpkgs, ... }: {
+    nixosConfigurations = {
+      hostname = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/x542ur/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.user = import ./hosts/x542ur/home/home.nix;
+          }
+        ];
+      };
     };
   };
 }
