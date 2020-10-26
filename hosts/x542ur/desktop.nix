@@ -45,6 +45,7 @@
     lollypop
     tilix
     virt-manager
+    vscode
     gnome3.gnome-tweaks
     gnome3.dconf-editor
   ];
