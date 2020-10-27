@@ -30,17 +30,16 @@
       pkgs.gitAndTools.gitui
 
 #Music
-      pkgs.puddletag
       pkgs.musikcube
       pkgs.cava
       pkgs.youtube-dl
 
 #Packages for Non-Nixos
-      pkgs.glibcLocales
+      # pkgs.glibcLocales
 
       ];
 
-  /* home.username = "me"; */
+  home.username = "me";
   home.homeDirectory = "/home/me";
 
   home.sessionVariables = {
@@ -108,21 +107,26 @@
       set-option -sa terminal-overrides ',xterm-256color*:Tc'
       set -g status-left ""
       set -g status-right ""
+
 #+------- Split Windows -------+
       bind-key | split-window -h -c '#{pane_current_path}' # normally prefix-%
       bind-key '\' split-window -h -c '#{pane_current_path}' # normally prefix-%
       bind-key - split-window -v -c '#{pane_current_path}' # normally prefix-"
+
 #+------- Automatically set window title ---------+
       set-window-option -g automatic-rename on
       set-option -g set-titles on
       set-option -g renumber-windows on
+
 #+------- Setting a quick way to reload config ---------+
       bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
+
 #+------- Vim keys for navigating panes ----------+
       bind h select-pane -L
       bind j select-pane -D
       bind k select-pane -U
       bind l select-pane -R
+
 #+---------- Alignment ----------+
       set -g status-style bg=default
       set -g status-style fg=white
@@ -143,13 +147,17 @@
     shellInit = ''
       set PATH $HOME/.local/bin $HOME/.local/npm/bin $HOME/.local/Goneovim $HOME/.cargo/bin $PATH
       set PATH /var/lib/flatpak/exports/bin $PATH
+
 #--- nix
-      if test -e /home/me/.nix-profile/etc/profile.d/nix.sh
-        bass source /home/me/.nix-profile/etc/profile.d/nix.sh
-      end
-      export NIX_PATH=$HOME/.nix-defexpr/channels:$NIX_PATH
+      #if test -e /home/me/.nix-profile/etc/profile.d/nix.sh
+      #  bass source /home/me/.nix-profile/etc/profile.d/nix.sh
+      #end
+
+      #export NIX_PATH=$HOME/.nix-defexpr/channels:$NIX_PATH
+
 #---- For nixpkgs make sure glibcLocales is installed with the nixpkgs or home manager (for non Nixos)
-      export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
+      # export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
+
 #---- NNN settings
       export NNN_OPTS="eRHdF"
       export NNN_TRASH=1
@@ -169,12 +177,16 @@
                 return
             end
           end
+
           if test -n "$XDG_CONFIG_HOME"
             set -x NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
           else
             set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
           end
+
+
           nnn $argv
+
           if test -e $NNN_TMPFILE
             source $NNN_TMPFILE
             rm $NNN_TMPFILE
@@ -204,10 +216,10 @@
     enableFishIntegration = true;
   };
 
-  services.lorri.enable = true;
+  # services.lorri.enable = true;
 
 # Non-Nixos
-  targets.genericLinux.enable = true;
+  # targets.genericLinux.enable = true;
 
 # This value determines the Home Manager release that your
 # configuration is compatible with. This helps avoid breakage
