@@ -34,9 +34,6 @@
       pkgs.cava
       pkgs.youtube-dl
 
-#Packages for Non-Nixos
-      # pkgs.glibcLocales
-
       ];
 
   home.username = "me";
@@ -215,11 +212,6 @@
     enable = true;
     enableFishIntegration = true;
   };
-
-  # services.lorri.enable = true;
-
-# Non-Nixos
-  # targets.genericLinux.enable = true;
 
 # This value determines the Home Manager release that your
 # configuration is compatible with. This helps avoid breakage
