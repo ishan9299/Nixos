@@ -145,16 +145,6 @@
       set PATH $HOME/.local/bin $HOME/.local/npm/bin $HOME/.local/Goneovim $HOME/.cargo/bin $PATH
       set PATH /var/lib/flatpak/exports/bin $PATH
 
-#--- nix
-      #if test -e /home/me/.nix-profile/etc/profile.d/nix.sh
-      #  bass source /home/me/.nix-profile/etc/profile.d/nix.sh
-      #end
-
-      #export NIX_PATH=$HOME/.nix-defexpr/channels:$NIX_PATH
-
-#---- For nixpkgs make sure glibcLocales is installed with the nixpkgs or home manager (for non Nixos)
-      # export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
-
 #---- NNN settings
       export NNN_OPTS="eRHdF"
       export NNN_TRASH=1

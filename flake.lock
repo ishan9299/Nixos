@@ -20,9 +20,26 @@
         "type": "github"
       }
     },
+    "neovim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1603752139,
+        "narHash": "sha256-J6RNZY68jFC9ctxdOWWm5Hs9ijs7UgWedUKdQHZgbMU=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "b6897ebc0c623d0a74c221c3030c7eaf17b7e151",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neovim",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "neovim": "neovim",
         "unstable": "unstable"
       }
     },
