@@ -9,13 +9,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "unstable";
     };
-    neovim = {
+    neovim-overlay = {
       url = "github:neovim/neovim";
       flake = false;
     };
   };
 
-  outputs = { self, unstable, home-manager, neovim, ... }@inputs:
+  outputs = { self, unstable, home-manager, neovim-overlay, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;

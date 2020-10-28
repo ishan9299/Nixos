@@ -20,7 +20,7 @@
         "type": "github"
       }
     },
-    "neovim": {
+    "neovim-overlay": {
       "flake": false,
       "locked": {
         "lastModified": 1603752139,
@@ -39,7 +39,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "neovim": "neovim",
+        "neovim-overlay": "neovim-overlay",
         "unstable": "unstable"
       }
     },
