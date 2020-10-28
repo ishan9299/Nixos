@@ -48,22 +48,23 @@
     # Not Sure why is this required but the
     # template for nrdxp seems to do this
     # https://github.com/nrdxp/nixflk/blob/template/flake.nix#L57
-    packages."${system}" =
-      let
-        overlays = lib.filterAttrs (n: v: n != "pkgs") self.overlays;
-	overlayPkgs =
-	  lib.genAttrs
-	    (attrNames overlays)
-	    (name: (overlays."${name}" pkgs pkgs)."${name}");
-      in
-      overlayPkgs;
 
+    # packages."${system}" =
+    #   let
+    #     overlays = lib.filterAttrs (n: v: n != "pkgs") self.overlays;
+    #     overlayPkgs =
+    #       lib.genAttrs
+    #         (attrNames overlays)
+    #         (name: (overlays."${name}" pkgs pkgs)."${name}");
+    #   in
+    #   overlayPkgs;
 
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/x542ur/configuration.nix
+          (import ./hosts/x542ur/configuration.nix)
+	  (import ./home/profiles/neovim.nix)
 
 	  # Home Manager
 	  home-manager.nixosModules.home-manager
@@ -75,15 +76,8 @@
 
 	  # Overlays
 	  {
-            nixpkgs.overlays =
-              let
-                overlays = map
-                  (name: import (./overlays + "/${name}"))
-                  (attrNames (readDir ./overlays));
-              in
-              overlays;
+	    nixpkgs.overlays = lib.attrValues self.overlays;
 	  }
-	  unstable.nixosModules.notDetected
         ];
       };
     };

@@ -1,15 +1,16 @@
 let
   lock = builtins.fromJSON (builtins.readFile ../flake.lock);
+  inherit (lock.nodes.neovim-overlay.locked) owner repo rev narHash;
 in
 final: prev: {
-  neovim-unwrapped = prev.neovim-unwrapped.overrideAttrs(old: {
+  neovim-nightly = prev.neovim-unwrapped.overrideAttrs(old: {
     pname = "neovim-nightly";
     version = "nightly";
     src = prev.fetchFromGitHub {
-      owner = lock.nodes.neovim.locked.owner;
-      repo = lock.nodes.neovim.locked.repo;
-      rev = lock.nodes.neovim.locked.rev;
-      sha256 = lock.nodes.neovim.locked.narHash;
+      owner = owner;
+      repo = repo;
+      rev = rev;
+      sha256 = narHash;
     };
   });
 }
