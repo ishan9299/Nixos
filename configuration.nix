@@ -8,23 +8,10 @@
 {
   nixpkgs.config.allowUnfree = true;
 
-  nix = {
-   package = pkgs.nixUnstable;
-   extraOptions = ''
-     experimental-features = nix-command flakes ca-references
-   '';
-  };
-
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix ./desktop.nix ./nvidia-optimus.nix
+      ./hardware-configuration.nix
     ];
-
-  # Disable nvidia
-  hardware.nvidiaOptimus.disable = true;
-
-  # Firmware
-  hardware.enableAllFirmware = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -42,16 +29,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.cleanTmpDir = true;
 
-  # Virtualization
-  virtualisation.kvmgt.enable = true;
-  virtualisation.libvirtd = {
-    enable = true;
-    qemuOvmf = true;
-    qemuRunAsRoot = false;
-    onBoot = "ignore";
-    onShutdown = "shutdown";
-  };
-
   # Network Manager
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -65,52 +42,9 @@
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment = {
-    systemPackages = with pkgs; [
-      wget
-      git
-      file
-    ];
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  #   pinentryFlavor = "gnome3";
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = true;
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-
-  services = {
-    xserver = {
-      enable = true;
-      layout = "us";
-    };
-    earlyoom.enable = true;
-    qemuGuest.enable = true;
-    tlp.enable = true;
-  };
 
   # Diable some services for faster boot
   systemd.services.systemd-udev-settle.enable = false;
