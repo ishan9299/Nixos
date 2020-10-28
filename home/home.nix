@@ -6,20 +6,17 @@
 
   home.packages = [
 
-# Applications
+#---- Applications
       pkgs.hexchat
       pkgs.qbittorrent
 
-#CLI
+#---- CLI
       pkgs.neofetch
       pkgs.nnn
-      pkgs.imagemagick
-      pkgs.optipng
       pkgs.trash-cli
-      pkgs.poppler_utils
       pkgs.atool
 
-# Rust Programs
+#---- Rust Programs
       pkgs.ripgrep
       pkgs.fd
       pkgs.exa
@@ -29,29 +26,12 @@
       pkgs.tealdeer # tldr
       pkgs.gitAndTools.gitui
 
-#Music
+#---- Music
       pkgs.musikcube
       pkgs.cava
       pkgs.youtube-dl
 
       ];
-
-  home.username = "me";
-  home.homeDirectory = "/home/me";
-
-  home.sessionVariables = {
-    EDITOR="nvim";
-    MOZ_ENABLE_WAYLAND=1;
-  };
-
-  home.sessionVariables = {
-    LANG = "en_US.UTF-8";
-  };
-
-# Programs and their configurations
-  programs.mpv = {
-    enable = false;
-  };
 
   programs.bat = {
     enable = true;
@@ -78,11 +58,11 @@
     enableBashIntegration = true;
     defaultCommand = "fd --type file --hidden --follow --no-ignore-vcs";
     defaultOptions = [ "--layout=reverse" "--info=inline" ];
-# ALT-C
+#-- ALT-C
     changeDirWidgetCommand = "fd --type d -H ";
-# CTRL-T
+#-- CTRL-T
     fileWidgetCommand = "fd . --type f";
-# CTRL-R
+#-- CTRL-R
     historyWidgetOptions = [ "--sort" "--exact" ];
   };
 
@@ -145,6 +125,11 @@
       set PATH $HOME/.local/bin $HOME/.local/npm/bin $HOME/.local/Goneovim $HOME/.cargo/bin $PATH
       set PATH /var/lib/flatpak/exports/bin $PATH
 
+#---- XDG
+      set XDG_CONFIG_HOME $HOME/.config
+      set XDG_CONFIG_DIRS $XDG_CONFIG_DIRS
+
+
 #---- NNN settings
       export NNN_OPTS="eRHdF"
       export NNN_TRASH=1
@@ -195,8 +180,6 @@
     }
     ];
   };
-
-  programs.bash.enable = true;
 
   programs.zoxide = {
     enable = true;

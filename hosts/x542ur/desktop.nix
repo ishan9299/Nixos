@@ -48,6 +48,7 @@
     vscode
     gnome3.gnome-tweaks
     gnome3.dconf-editor
+    neovim-nightly
   ];
 
   #Excludepackages for gnome
@@ -83,5 +84,8 @@
 
   # You will have to enable the flathub repo
   services.flatpak.enable = true ;
-  xdg.portal.gtkUsePortal = true ;
+  xdg.portal = {
+    enable = true;
+    gtkUsePortal = true;
+  };
 }

@@ -64,7 +64,7 @@
         system = "x86_64-linux";
         modules = [
           (import ./hosts/x542ur/configuration.nix)
-	  (import ./home/profiles/neovim.nix)
+	  # (import ./home/profiles/neovim.nix)
 
 	  # Home Manager
 	  home-manager.nixosModules.home-manager
