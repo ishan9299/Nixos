@@ -75,15 +75,9 @@
             home-manager.useUserPackages = true;
             home-manager.users."me" =
             {
-              imports = [
-              ./user/programs/alacritty
-              ./user/programs/bat
-              ./user/programs/direnv
-              ./user/programs/fzf
-              ./user/programs/git
-              ./user/programs/mpv
-              ./user/programs/zoxide
-              ];
+              # This automatically sources all the files in ./user/programs
+              imports =
+                (map (name: ./user/programs + "/${name}"))(attrNames (readDir ./user/programs));
             };
           }
 
