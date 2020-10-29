@@ -49,6 +49,10 @@
         musikcube
         cava
         youtube-dl
+
+  #---- Programming
+        clang_10
+        clang-tools
      ];
    };
 

@@ -64,6 +64,7 @@
           (import ./nixpkgs/core.nix)
           (import ./nixpkgs/fish)
           (import ./nixpkgs/graphical)
+          (import ./nixpkgs/npm)
           (import ./nixpkgs/nvidia)
           (import ./nixpkgs/tmux)
           (import ./nixpkgs/virtualization)
