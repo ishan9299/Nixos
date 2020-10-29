@@ -23,11 +23,11 @@
     "neovim-overlay": {
       "flake": false,
       "locked": {
-        "lastModified": 1603752139,
-        "narHash": "sha256-J6RNZY68jFC9ctxdOWWm5Hs9ijs7UgWedUKdQHZgbMU=",
+        "lastModified": 1603898136,
+        "narHash": "sha256-Pjkq1WMlkub2i6W9on6Ep08O62w3pWV4+nPOkFV6PaE=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "b6897ebc0c623d0a74c221c3030c7eaf17b7e151",
+        "rev": "c6ccdda26ae0b8a9bf4d0779d398cb7c9864aedf",
         "type": "github"
       },
       "original": {
