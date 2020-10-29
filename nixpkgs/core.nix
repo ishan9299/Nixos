@@ -9,6 +9,8 @@
      shellAliases = {
        "ls" = "exa -GB1 --icons";
        "ll" = "exa -abghHliS --icons";
+       "cat" = "bat";
+       "grep" = "rg";
      };
 
      shellInit = ''

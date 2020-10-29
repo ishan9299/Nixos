@@ -77,10 +77,11 @@
             {
               imports = [
               ./user/programs/alacritty
-              ./user/programs/git
+              ./user/programs/bat
               ./user/programs/direnv
               ./user/programs/fzf
-              ./user/programs/bat
+              ./user/programs/git
+              ./user/programs/mpv
               ./user/programs/zoxide
               ];
             };
