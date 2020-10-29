@@ -1,13 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-        experimental-features = nix-command flakes ca-references
-    '';
-  };
-
   # Network Manager
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -19,8 +12,9 @@
      };
 
      shellInit = ''
-       export PATH=$HOME/.local/bin:$HOME/.local/npm/bin:$HOME/.cargo/bin:/var/
- lib/flatpak/exports/bin:$PATH
+       export PATH=$HOME/.local/bin:$HOME/.local/npm/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:$PATH
+
+       export EDITOR=nvim
 
   #---- NNN settings
        export NNN_OPTS="eRHdF"
@@ -55,9 +49,6 @@
         youtube-dl
      ];
    };
-
-
-
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

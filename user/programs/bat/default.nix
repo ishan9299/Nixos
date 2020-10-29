@@ -1,7 +1,8 @@
-programs.bat = {
-  enable = true;
-  config = {
-    theme = "Solarized (light)";
+{
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "Solarized (light)";
+    };
   };
-};
-
+}

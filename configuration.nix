@@ -8,10 +8,17 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+         experimental-features = nix-command flakes ca-references
+    '';
+  };
+
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -33,28 +40,21 @@
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    keyMap = "us";
-  };
-
-  # Set your time zone.
-  time.timeZone = "Asia/Kolkata";
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
   # Diable some services for faster boot
   systemd.services.systemd-udev-settle.enable = false;
   systemd.services.NetworkManager-wait-online.enable = false;
   # settings for journalctl as it can reduce the boot speed by alot upto 20secs in my case
   services.journald.extraConfig = ''
-    Storage=volatile
-    SystemMaxFileSize=50M
-    SystemMaxFiles=5
-    '';
+  Storage=volatile
+  SystemMaxFileSize=50M
+  SystemMaxFiles=5
+  '';
+
+  users.users.me = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "kvm" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.fish;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

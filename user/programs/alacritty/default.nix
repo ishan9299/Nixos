@@ -4,8 +4,8 @@
     settings = {
       env.TERM = "xterm-256color";
       window.decorations = "full";
-      font.size = 9.0;
-      cursor.style = "Beam";
+      font.size = 13.0;
+      cursor.style = "Underline";
 
       # modus vivendi theme
       colors = {
