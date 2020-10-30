@@ -53,6 +53,7 @@
   #---- Programming
         clang_10
         clang-tools
+        nixfmt
      ];
    };
 
