@@ -1,5 +1,4 @@
-{ config, pkgs, lib, ... }:
-{
+{ config, pkgs, lib, ... }: {
   # Gnome default desktop
   services = {
     xserver = {
@@ -40,8 +39,10 @@
       vscode
       gnvim-unwrapped # the default one comes with neovim-stable so avoid that
 
+      # gnome
       gnome3.gnome-tweaks
       gnome3.dconf-editor
+      shotwell
     ];
 
     # Exclude some gnome packages
@@ -62,18 +63,12 @@
     pulseaudio.enable = true;
     opengl = {
       enable = true;
-      extraPackages = with pkgs; [
-        intel-media-driver
-      ];
+      extraPackages = with pkgs; [ intel-media-driver ];
     };
   };
 
   # Fonts to install
-  fonts.fonts = with pkgs; [
-    corefonts
-    noto-fonts-emoji
-    google-fonts
-  ];
+  fonts.fonts = with pkgs; [ corefonts noto-fonts-emoji google-fonts ];
 
   # Flatpak
   services.flatpak.enable = true;

@@ -4,19 +4,17 @@
 
 { config, pkgs, ... }:
 
-
 {
   nixpkgs.config.allowUnfree = true;
 
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = ''
-         experimental-features = nix-command flakes ca-references
+      experimental-features = nix-command flakes ca-references
     '';
   };
 
-  imports =
-    [ # Include the results of the hardware scan.
+  imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
@@ -45,14 +43,19 @@
   systemd.services.NetworkManager-wait-online.enable = false;
   # settings for journalctl as it can reduce the boot speed by alot upto 20secs in my case
   services.journald.extraConfig = ''
-  Storage=volatile
-  SystemMaxFileSize=50M
-  SystemMaxFiles=5
+    Storage=volatile
+    SystemMaxFileSize=50M
+    SystemMaxFiles=5
   '';
 
   users.users.me = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" "kvm" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "libvirtd"
+      "kvm"
+    ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
   };
 

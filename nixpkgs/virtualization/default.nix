@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   # Virtualization
   virtualisation.kvmgt.enable = true;
   virtualisation.libvirtd = {
@@ -10,5 +9,5 @@
     onShutdown = "shutdown";
   };
 
-  environment.systemPackages = with pkgs; [virt-manager];
+  environment.systemPackages = with pkgs; [ virt-manager ];
 }

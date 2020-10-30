@@ -1,6 +1,1 @@
-{ lib, pkgs, ... }:
-{
-  programs.npm = {
-    enable = true;
-  };
-}
+{ lib, pkgs, ... }: { programs.npm = { enable = true; }; }

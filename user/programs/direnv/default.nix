@@ -1,7 +1,7 @@
 {
   programs.direnv = {
-  enable = true;
-  enableFishIntegration = true;
-  enableBashIntegration = true;
+    enable = true;
+    enableFishIntegration = true;
+    enableBashIntegration = true;
   };
 }

@@ -1,6 +1,1 @@
-[
-  ./core.nix
-  ./fish
-  ./laptop
-  ./tmux
-]
+[ ./core.nix ./fish ./laptop ./tmux ]
