@@ -26,10 +26,20 @@
   environment = {
     # Extra gui packages
     systemPackages = with pkgs; [
+
+      # Browser
       google-chrome-dev
+
+      # Music
       lollypop
+
+      # Terminal
       tilix
+
+      # Editors
       vscode
+      gnvim-unwrapped # the default one comes with neovim-stable so avoid that
+
       gnome3.gnome-tweaks
       gnome3.dconf-editor
     ];
