@@ -16,22 +16,24 @@
       },
       "original": {
         "owner": "nix-community",
+        "ref": "master",
         "repo": "home-manager",
         "type": "github"
       }
     },
-    "neovim-overlay": {
+    "neovim": {
       "flake": false,
       "locked": {
-        "lastModified": 1604069892,
-        "narHash": "sha256-MOCvIwzbQGVvzjaBzSuWoeSb7B/cIOGPcWUymu4UHTY=",
+        "lastModified": 1604190702,
+        "narHash": "sha256-sDjlbDLLztraIcqPCGn3UJ8L+UZQydLMgvCB9qJOkGo=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "98024853f4755f51e82526b45484bae0ec6042ba",
+        "rev": "bc68653a869645e45f52edbf296106be5deabf2f",
         "type": "github"
       },
       "original": {
         "owner": "neovim",
+        "ref": "master",
         "repo": "neovim",
         "type": "github"
       }
@@ -39,7 +41,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "neovim-overlay": "neovim-overlay",
+        "neovim": "neovim",
         "unstable": "unstable"
       }
     },

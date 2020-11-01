@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { self, unstable, home-manager, neovim-overlay, ... }@inputs:
+  outputs = { self, unstable, home-manager, neovim, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;
