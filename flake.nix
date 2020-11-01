@@ -4,11 +4,11 @@
   inputs = {
     unstable = { url = "github:NixOS/nixpkgs/nixpkgs-unstable"; };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "unstable";
     };
-    neovim-overlay = {
-      url = "github:neovim/neovim";
+    neovim = {
+      url = "github:neovim/neovim/master";
       flake = false;
     };
   };
