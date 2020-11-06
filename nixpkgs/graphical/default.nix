@@ -68,7 +68,7 @@
   };
 
   # Fonts to install
-  fonts.fonts = with pkgs; [ corefonts noto-fonts-emoji google-fonts ];
+  fonts.fonts = with pkgs; [ corefonts noto-fonts-emoji google-fonts inter ];
 
   # Flatpak
   services.flatpak.enable = true;
