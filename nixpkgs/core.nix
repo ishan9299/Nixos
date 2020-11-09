@@ -33,6 +33,7 @@
       nnn
       trash-cli
       atool
+      freerdp
       neovim-nightly
 
       #---- Rust Programs
