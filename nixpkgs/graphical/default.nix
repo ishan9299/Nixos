@@ -70,6 +70,8 @@
   # Fonts to install
   fonts.fonts = with pkgs; [
     corefonts
+    noto-fonts
+    noto-fonts-cjk
     noto-fonts-emoji
     lato
     source-han-sans
