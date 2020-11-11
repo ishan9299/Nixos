@@ -68,7 +68,14 @@
   };
 
   # Fonts to install
-  fonts.fonts = with pkgs; [ corefonts noto-fonts-emoji google-fonts inter ];
+  fonts.fonts = with pkgs; [
+    corefonts
+    noto-fonts-emoji
+    google-fonts
+    (nerdfonts.override {
+      fonts = [ "CascadiaCode" "CodeNewRoman" "FantasqueSansMono" "FiraCode" "Terminus" "Overpass" "Iosevka" "JetBrainsMono" ];
+    })
+  ];
 
   # Flatpak
   services.flatpak.enable = true;
