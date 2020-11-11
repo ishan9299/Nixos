@@ -31,6 +31,7 @@
       wget
       file
       nnn
+      bpytop
       trash-cli
       atool
       freerdp
