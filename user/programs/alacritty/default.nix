@@ -4,7 +4,21 @@
     settings = {
       env.TERM = "xterm-256color";
       window.decorations = "full";
-      font.size = 13.0;
+      font = {
+        size = 15.0;
+        normal = {
+          family = "Iosevka Nerd Font Mono";
+          style = "Regular";
+        };
+        bold = {
+          family = "Iosevka Nerd Font Mono";
+          style = "Bold";
+        };
+        italic = {
+          family = "Iosevka Nerd Font Mono";
+          style = "Medium";
+        };
+      };
       cursor.style = "Underline";
 
       # modus vivendi theme
