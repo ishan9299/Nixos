@@ -71,7 +71,10 @@
   fonts.fonts = with pkgs; [
     corefonts
     noto-fonts-emoji
-    google-fonts
+    lato
+    source-han-sans
+    source-sans-pro
+    source-serif-pro
     (nerdfonts.override {
       fonts = [ "CascadiaCode" "CodeNewRoman" "FantasqueSansMono" "FiraCode" "Terminus" "Overpass" "Iosevka" "JetBrainsMono" ];
     })
