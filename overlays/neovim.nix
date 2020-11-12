@@ -11,5 +11,6 @@ in final: prev: {
       rev = rev;
       sha256 = narHash;
     };
+    buildInputs = old.buildInputs ++ [ prev.tree-sitter ];
   });
 }
