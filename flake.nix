@@ -2,10 +2,11 @@
   description = "NixOS Configuration";
 
   inputs = {
-    unstable = { url = "github:NixOS/nixpkgs/nixpkgs-unstable"; };
+    master = { url = "github:NixOS/nixpkgs/master"; };
+    stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "unstable";
+      inputs.nixpkgs.follows = "master";
     };
     neovim = {
       url = "github:neovim/neovim/master";
@@ -13,23 +14,12 @@
     };
   };
 
-  outputs = { self, unstable, home-manager, neovim, ... }@inputs:
+  outputs = { self, master, stable, home-manager, neovim, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
-      inherit (unstable) lib;
+      inherit (master) lib;
       inherit (lib) removeSuffix recursiveUpdate genAttrs filterAttrs;
-
-      pkgImport = pkgs:
-        import pkgs {
-          inherit system;
-          overlays = attrValues self.overlays;
-          config = { allowUnfree = true; };
-        };
-
-      pkgset = { pkgs = pkgImport unstable; };
-
-      system = "x86_64-linux";
-    in with pkgset; {
+    in {
       nixos = self.nixosConfigurations.nixos.config.system.build.toplevel;
 
       # Automatically source the overlays directory
@@ -39,17 +29,6 @@
         value = import (./overlays + "/${name}");
       }) (filter (file: lib.hasSuffix ".nix" file)
         (attrNames (readDir ./overlays))));
-
-      # nixosModules =
-      # let
-      # nixpkgsAttrs = {
-      # core = import ./nixpkgs/core.nix;
-      # fish = import ./nixpkgs/fish;
-      # laptop = import ./nixpkgs/laptop;
-      # tmux = import ./nixpkgs/tmux;
-      # };
-      # in
-      # nixpkgsAttrs;
 
       nixosConfigurations = {
         nixos = lib.nixosSystem {
