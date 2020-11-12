@@ -33,7 +33,7 @@
       lollypop
 
       # Terminal
-      tilix
+      # tilix
 
       # Editors
       vscode
