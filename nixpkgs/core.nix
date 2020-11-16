@@ -48,7 +48,6 @@
       gitAndTools.gitui
 
       #---- Music
-      musikcube
       cava
       youtube-dl
 
