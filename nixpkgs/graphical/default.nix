@@ -42,6 +42,7 @@
       # gnome
       gnome3.gnome-tweaks
       gnome3.dconf-editor
+      gimp
       shotwell
     ];
 
