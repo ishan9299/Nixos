@@ -30,6 +30,7 @@
       neofetch
       wget
       file
+      unzip
       nnn
       bpytop
       trash-cli
@@ -55,6 +56,7 @@
       clang_10
       clang-tools
       nixfmt
+      nodejs
     ];
   };
 
