@@ -44,6 +44,7 @@
       gnome3.dconf-editor
       gimp
       shotwell
+      contrast
     ];
 
     # Exclude some gnome packages
