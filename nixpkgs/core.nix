@@ -30,6 +30,7 @@
       neofetch
       wget
       file
+      tree
       unzip
       nnn
       bpytop
