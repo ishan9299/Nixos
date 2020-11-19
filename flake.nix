@@ -2,7 +2,7 @@
   description = "NixOS Configuration";
 
   inputs = {
-    master = { url = "github:NixOS/nixpkgs/master"; };
+    master = { url = "github:NixOS/nixpkgs/nixpkgs-unstable"; };
     stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
