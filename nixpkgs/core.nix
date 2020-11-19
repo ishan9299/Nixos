@@ -32,6 +32,7 @@
       wget
       file
       tree
+      catimg
       unzip
       nnn
       bpytop
