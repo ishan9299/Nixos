@@ -28,12 +28,10 @@
 
       # Browser
       google-chrome-dev
+      brave
 
       # Music
       lollypop
-
-      # Terminal
-      # tilix
 
       # Editors
       vscode
