@@ -48,6 +48,13 @@
     SystemMaxFiles=5
   '';
 
+  # Using Zram will switch to zswap when I reinstall the system
+  zramSwap = {
+    enable = true;
+    memoryPercent = 25;
+  };
+
+
   users.users.me = {
     isNormalUser = true;
     extraGroups = [
