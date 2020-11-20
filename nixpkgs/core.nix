@@ -39,7 +39,6 @@
       trash-cli
       atool
       freerdp
-      neovim-nightly
 
       #---- Rust Programs
       ripgrep
@@ -49,7 +48,6 @@
       du-dust # dust
       procs # procs
       tealdeer # tldr
-      gitAndTools.gitui
 
       #---- Music
       cava
@@ -59,6 +57,7 @@
       clang_10
       clang-tools
       nixfmt
+      neovim-nightly
       nodejs
     ];
   };

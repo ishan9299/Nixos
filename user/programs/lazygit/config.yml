@@ -1,0 +1,13 @@
+gui:
+  theme:
+    lightTheme: true
+    activeBorderColor:
+      - black
+      - bold
+    inactiveBorderColor:
+      - black
+    selectedLineBgColor:
+      - default
+
+git:
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
