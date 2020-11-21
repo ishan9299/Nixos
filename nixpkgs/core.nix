@@ -17,6 +17,8 @@
            export PATH=$HOME/.local/bin:$HOME/.local/npm/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:$PATH
 
            export EDITOR=nvim
+           export VISUAL=nvim
+           export PAGER=nvim
 
       #---- NNN settings
            export NNN_OPTS="eRHdF"
