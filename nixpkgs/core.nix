@@ -60,6 +60,7 @@
       clang-tools
       nixfmt
       neovim-nightly
+      gitAndTools.gitui # I still kinda need it for the root folder
       nodejs
     ];
   };
