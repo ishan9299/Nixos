@@ -12,6 +12,16 @@ in {
 
       #------------ cd on quit for nnn -------------+
       ${readFile ./functions/n.fish}
+
+      #------------ neovim-remote configuration ----+
+      if test -n "$NVIM_LISTEN_ADDRESS"
+        alias nvim "nvr -cc split --remote-wait +'set bufhidden=wipe'"
+        export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+        export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+      else
+        export VISUAL="nvim"
+        export EDITOR="nvim"
+      end
     '';
   };
 }

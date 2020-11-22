@@ -16,9 +16,8 @@
     shellInit = ''
            export PATH=$HOME/.local/bin:$HOME/.local/npm/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:$PATH
 
-           export EDITOR=nvim
-           export VISUAL=nvim
-           export PAGER=nvim
+           export EDITOR="nvim"
+           export VISUAL="nvim"
 
       #---- NNN settings
            export NNN_OPTS="eRHdF"
@@ -60,6 +59,7 @@
       clang-tools
       nixfmt
       neovim-nightly
+      neovim-remote
       gitAndTools.gitui # I still kinda need it for the root folder
       nodejs
     ];
