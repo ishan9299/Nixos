@@ -38,7 +38,10 @@
       bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d";
     };
 
-    extraConfig = { core = { editor = "nvim"; }; };
+    extraConfig = {
+      core = { editor = "nvim"; };
+      diff = { ignoreSubmodules = "dirty"; };
+    };
 
     userName = "ishan";
     userEmail = "ishan365.ia@gmail.com";
