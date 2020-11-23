@@ -43,6 +43,9 @@
       gimp
       shotwell
       contrast
+
+      # launcher
+      ulauncher
     ];
 
     # Exclude some gnome packages
