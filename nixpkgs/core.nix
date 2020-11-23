@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
+let inherit (lib) fileContents;
 
-{
+in {
   # Network Manager
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -28,8 +29,7 @@
 
       #+---- Starship Config ------+#
       export STARSHIP_CONFIG=${
-        pkgs.writeText "starship.toml"
-        (fileContents ./starship.toml)
+        pkgs.writeText "starship.toml" (fileContents ./starship.toml)
       }
     '';
 
