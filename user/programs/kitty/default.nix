@@ -14,9 +14,15 @@ programs.kitty = {
 
     # tab bar
     tab_bar_edge = "bottom";
-    tab_bar_style = "powerline";
+    tab_bar_style = "fade";
     tab_bar_min_tabs = "2";
     tab_switch_stratergy = "previous";
+    active_tab_foreground   = "#30169e";
+    active_tab_background   = "#f6f6f6";
+    active_tab_font_style   = "bold-italic";
+    inactive_tab_foreground = "#282828";
+    inactive_tab_background = "#bdbdbd";
+    inactive_tab_font_style = "normal";
 
     # colorscheme (used the dull and bright colors from alacritty.yml)
     foreground = "#000000";
@@ -25,6 +31,7 @@ programs.kitty = {
     ## cursor
     cursor = "#000000";
     cursor_shape = "underline";
+    cursor_text_color = "background";
 
     ## black
     color0 = "#555555";
