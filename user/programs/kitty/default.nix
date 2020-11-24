@@ -1,4 +1,7 @@
+{ config, libs, pkgs, ... }:
 {
+  xdg.configFile."kitty/themes/modus-operandi.conf".source = ./themes/modus-operandi.conf;
+  xdg.configFile."kitty/themes/modus-vivendi.conf".source = ./themes/modus-vivendi.conf;
   programs.kitty = {
     enable = true;
     settings = {
@@ -21,9 +24,7 @@
       inactive_tab_font_style = "normal";
 
       # colorscheme
-      include = "./themes/modus-operandi.conf";
-
-      # mapping
+      include = "themes/modus-operandi.conf";
     };
   };
 }
