@@ -35,7 +35,6 @@ in {
 
     systemPackages = with pkgs; [
       #---- CLI
-      neofetch
       wget
       file
       tree
