@@ -2,11 +2,11 @@
   description = "NixOS Configuration";
 
   inputs = {
-    master = { url = "github:NixOS/nixpkgs/nixpkgs-unstable"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "master";
+      inputs.nixpkgs.follows = "unstable";
     };
     neovim = {
       url = "github:neovim/neovim/master";
@@ -14,10 +14,10 @@
     };
   };
 
-  outputs = { self, master, stable, home-manager, neovim, ... }@inputs:
+  outputs = { self, unstable, stable, home-manager, neovim, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
-      inherit (master) lib;
+      inherit (unstable) lib;
       inherit (lib) removeSuffix recursiveUpdate genAttrs filterAttrs;
     in {
       nixos = self.nixosConfigurations.nixos.config.system.build.toplevel;
