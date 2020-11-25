@@ -57,6 +57,7 @@
       gnome3.yelp
       gnome3.epiphany
       gnome3.eog
+      gnome3.gedit
       gnome-photos
     ];
   };
@@ -81,7 +82,7 @@
     source-sans-pro
     source-serif-pro
     (nerdfonts.override {
-      fonts = [ "CascadiaCode" "CodeNewRoman" "FantasqueSansMono" "FiraCode" "Terminus" "Overpass" "Iosevka" "JetBrainsMono" ];
+      fonts = [ "CascadiaCode" "FiraCode" "Overpass" "Iosevka" "JetBrainsMono" ];
     })
   ];
 
