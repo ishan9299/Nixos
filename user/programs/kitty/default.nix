@@ -24,7 +24,7 @@
       inactive_tab_font_style = "normal";
 
       # colorscheme
-      include = "themes/modus-operandi.conf";
+      include = "themes/modus-vivendi.conf";
 
       # transperency
       background_opacity = "0.55";

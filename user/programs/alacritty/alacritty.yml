@@ -115,7 +115,7 @@ modus-operandi: &light
     cyan:    '#205b93'
     white:   '#dddddd'
 
-colors: *light
+colors: *dark
 
 background_opacity: 0.55
 
