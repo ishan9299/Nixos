@@ -29,6 +29,7 @@
       # Browser
       google-chrome-dev
       brave
+      firefox
 
       # Music
       lollypop
