@@ -27,7 +27,7 @@
       include = "themes/modus-vivendi.conf";
 
       # transperency
-      background_opacity = "0.55";
+      background_opacity = "0.65";
     };
   };
 }
