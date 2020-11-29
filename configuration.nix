@@ -48,6 +48,9 @@
     SystemMaxFiles=5
   '';
 
+  # microcode
+  hardware.cpu.intel.updateMicrocode = true;
+
   # Using Zram will switch to zswap when I reinstall the system
   zramSwap = {
     enable = true;
