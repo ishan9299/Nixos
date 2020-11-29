@@ -117,6 +117,7 @@ modus-operandi: &light
 
 colors: *light
 
+background_opacity: 0.4
 
 selection:
   # This string contains all characters that are used as separators for "semantic words" in Alacritty.
