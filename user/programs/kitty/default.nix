@@ -27,7 +27,7 @@
       include = "themes/modus-operandi.conf";
 
       # transperency
-      background_opacity = "0.4";
+      background_opacity = "0.55";
     };
   };
 }
