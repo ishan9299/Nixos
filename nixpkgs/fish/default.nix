@@ -25,6 +25,8 @@ in {
         export VISUAL="nvim"
         export EDITOR="nvim"
       end
+
+      neofetch
     '';
   };
 }
