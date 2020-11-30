@@ -5,7 +5,6 @@
   programs.kitty = {
     enable = true;
     settings = {
-      term = "xterm-kitty";
       allow_remote_control = "yes";
 
       # font setting
@@ -27,7 +26,8 @@
       include = "themes/modus-vivendi.conf";
 
       # transperency
-      # background_opacity = "0.75";
+      background_opacity = "0.8";
+      dynamic_background_opacity = "yes";
     };
   };
 }
