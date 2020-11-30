@@ -10,6 +10,9 @@ in {
     '';
     interactiveShellInit = ''
 
+      #------------ Disable the greeting -----------+
+      set fish_greeting
+
       #------------ cd on quit for nnn -------------+
       ${readFile ./functions/n.fish}
 
