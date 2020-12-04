@@ -12,6 +12,11 @@
     extraOptions = ''
       experimental-features = nix-command flakes ca-references
     '';
+    autoOptimiseStore = true;
+    gc.automatic = true;
+    optimise.automatic = true;
+    allowedUsers = [ "@wheel" ];
+    trustedUsers = [ "root" "@wheel" ];
   };
 
   imports = [ # Include the results of the hardware scan.
