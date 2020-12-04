@@ -20,7 +20,11 @@
     earlyoom.enable = true;
     qemuGuest.enable = true;
     tlp.enable = true;
-  };
+
+    gnome3.gnome-remote-desktop.enable = true;
+   };
+  # Not strictly required but pipewire will use rtkit if it is present
+  security.rtkit.enable = true;
 
   environment = {
     # Extra gui packages
