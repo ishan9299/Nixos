@@ -39,7 +39,7 @@
           system = "x86_64-linux";
           modules = [
             (import ./configuration.nix)
-            (import ./nixpkgs/core.nix)
+            (import ./nixpkgs/core)
             (import ./nixpkgs/fish)
             (import ./nixpkgs/graphical)
             (import ./nixpkgs/nvidia)
