@@ -23,6 +23,13 @@
 
     gnome3.gnome-remote-desktop.enable = true;
    };
+
+  # Also add sway
+  programs.sway = {
+    enable = true;
+    extraPackages = [  ];
+  };
+
   # Not strictly required but pipewire will use rtkit if it is present
   security.rtkit.enable = true;
 
@@ -54,6 +61,7 @@
       ulauncher
 
       wayfire
+      capitaine-cursors
     ];
 
     # Exclude some gnome packages
