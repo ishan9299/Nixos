@@ -12,9 +12,13 @@
       url = "github:neovim/neovim/master";
       flake = false;
     };
+    nixpkgs-wayland = {
+      url = "github:colemickens/nixpkgs-wayland";
+      inputs.nixpkgs.follows = "unstable";
+    };
   };
 
-  outputs = { self, unstable, stable, home-manager, neovim, ... }@inputs:
+  outputs = { self, unstable, stable, home-manager, neovim, nixpkgs-wayland, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;
@@ -31,7 +35,7 @@
         (attrNames (readDir ./overlays))));
 
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
+        nixos = unstable.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             (import ./configuration.nix)
@@ -55,7 +59,8 @@
             }
 
             # Overlays
-            { nixpkgs.overlays = lib.attrValues self.overlays; }
+            { nixpkgs.overlays = lib.attrValues self.overlays ++ [ inputs.nixpkgs-wayland.overlay ]; }
+
           ];
         };
       };
