@@ -33,7 +33,7 @@
       # Browser
       google-chrome-dev
       brave
-      firefox
+      firefox-wayland
 
       # Music
       lollypop
