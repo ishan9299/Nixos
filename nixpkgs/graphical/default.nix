@@ -46,11 +46,14 @@
       gnome3.gnome-tweaks
       gnome3.dconf-editor
       gimp
+      drawing
       shotwell
       contrast
 
       # launcher
       ulauncher
+
+      wayfire
     ];
 
     # Exclude some gnome packages
@@ -94,5 +97,6 @@
   # Flatpak
   services.flatpak.enable = true;
   xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   xdg.portal.gtkUsePortal = true;
 }
