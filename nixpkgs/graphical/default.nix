@@ -61,6 +61,9 @@
       ulauncher
 
       wayfire
+      wf-shell
+      wf-config
+      wcm
       capitaine-cursors
     ];
 
