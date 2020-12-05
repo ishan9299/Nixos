@@ -38,7 +38,7 @@
     systemPackages = with pkgs; [
 
       # Browser
-      google-chrome-dev
+      google-chrome
       brave
       firefox-wayland
 
