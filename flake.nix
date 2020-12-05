@@ -13,7 +13,7 @@
       flake = false;
     };
     nixpkgs-wayland = {
-      url = "github:colemickens/nixpkgs-wayland";
+      url = "github:ishan9299/nixpkgs-wayland";
       inputs.nixpkgs.follows = "unstable";
     };
   };
