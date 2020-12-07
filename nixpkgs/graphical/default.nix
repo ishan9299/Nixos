@@ -1,4 +1,5 @@
 { config, pkgs, lib, ... }: {
+
   # Gnome default desktop
   services = {
     xserver = {
@@ -20,15 +21,33 @@
     earlyoom.enable = true;
     qemuGuest.enable = true;
     tlp.enable = true;
-
     gnome3.gnome-remote-desktop.enable = false;
    };
 
   # Also add sway
   programs.sway = {
     enable = true;
-    extraPackages = [  ];
+    extraPackages = with pkgs; [
+      swaylock # lockscreen
+      swayidle
+      xwayland # for legacy apps
+      waybar # status bar
+      mako # notification daemon
+      kanshi # autorandr
+      autotiling
+    ];
   };
+
+  environment = {
+    etc = {
+      # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
+      "sway/config".source = ./sway/config;
+      "xdg/waybar/config".source = ./waybar/config;
+      "xdg/waybar/style.css".source = ./waybar/style.css;
+    };
+  };
+
+
 
   # Not strictly required but pipewire will use rtkit if it is present
   security.rtkit.enable = true;
