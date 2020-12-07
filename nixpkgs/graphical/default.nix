@@ -2,17 +2,17 @@
   # Gnome default desktop
   services = {
     xserver = {
-      enable = true;
+      enable = false;
       layout = "us"; # keyboard layout
       desktopManager = {
-        gnome3.enable = true;
+        gnome3.enable = false;
         xterm.enable = false;
       };
       # Enable GDM
       displayManager = {
         lightdm.enable = false;
-        gdm.enable = true;
-        gdm.wayland = true;
+        gdm.enable = false;
+        gdm.wayland = false;
       };
       # Enable TouchInputs
       libinput.enable = true;
@@ -21,7 +21,7 @@
     qemuGuest.enable = true;
     tlp.enable = true;
 
-    gnome3.gnome-remote-desktop.enable = true;
+    gnome3.gnome-remote-desktop.enable = false;
    };
 
   # Also add sway
@@ -59,12 +59,8 @@
 
       # launcher
       ulauncher
-
-      wayfire
-      wf-shell
-      wf-config
-      wcm
-      capitaine-cursors
+      waybar
+      wofi
     ];
 
     # Exclude some gnome packages
