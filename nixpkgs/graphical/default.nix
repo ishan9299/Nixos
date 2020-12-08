@@ -30,6 +30,7 @@
     extraPackages = with pkgs; [
       swaylock # lockscreen
       swayidle
+      jq # json parser
       xwayland # for legacy apps
       waybar # status bar
       mako # notification daemon
@@ -51,6 +52,7 @@
     etc = {
       # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
       "sway/config".source = ./sway/config;
+      "sway/scripts/swayworkspace".source = ./sway/scripts/swayworkspace;
       "xdg/waybar/config".source = ./waybar/config;
       "xdg/waybar/style.css".source = ./waybar/style.css;
     };

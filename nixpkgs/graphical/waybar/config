@@ -1,16 +1,28 @@
 {
-    "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["battery", "clock"],
-    "sway/window": {
-        "max-length": 50
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
-    }
+        "layer": "top",
+        "modules-left": ["sway/workspaces", "sway/mode"],
+        "modules-center": ["sway/window"],
+        "modules-right": ["battery", "clock"],
+        "sway/window": {
+                "max-length": 50
+        },
+        "battery": {
+                "format": "{capacity}% {icon}",
+                "format-icons": ["", "", "", "", ""]
+        },
+        "clock": {
+                "format-alt": "{:%a, %d. %b  %H:%M}"
+        },
+        "sway/workspaces": {
+                "all-outputs": true,
+                "disable-scroll": true,
+                "format": "{name}",
+                "persistent_workspaces": {
+                        "1:": [],
+                        "2:": [],
+                        "3:": [],
+                        "4:": [],
+                        "5:": []
+                }
+        }
 }
