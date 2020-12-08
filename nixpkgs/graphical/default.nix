@@ -38,6 +38,7 @@
       wl-clipboard # clipboard
       autotiling # dynamic tiling in sway
       brightnessctl # brightness control
+      ulauncher # launcher
       nwg-launchers # launcher
       polkit_gnome
     ];
@@ -164,6 +165,21 @@
       RestartSec = 5;
       Restart = "always";
     };
+  };
+
+  systemd.user.services.ulauncher = {
+    description = "Linux Application Launcher";
+    documentation = [ "https://ulauncher.io/" ];
+    after = [ "graphical-session-pre.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = ''
+        ${pkgs.ulauncher}/bin/ulauncher --hide-window
+      '';
+      Restart = "always";
+      RestartSec = 1;
+    };
+    wantedBy = [ "graphical.target" ];
   };
 
   hardware = {
