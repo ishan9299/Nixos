@@ -18,7 +18,6 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -68,9 +67,9 @@ output * bg /etc/nixos/user/wallpapers/744900.png fill
     # Kill focused window
     bindsym $mod+Shift+q kill
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
-
+    # Launcher
+    bindsym $mod+slash exec alacritty --name=launcher -e "bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse | xargs -r swaymsg -t command exec'"
+    for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -97,16 +96,37 @@ output * bg /etc/nixos/user/wallpapers/744900.png fill
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+mode "management" {
+    bindsym $left resize grow width 10px
+    bindsym $down resize shrink height 10px
+    bindsym $up resize grow height 10px
+    bindsym $right resize shrink width 10px
+
     # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+    bindsym Left resize grow width 10px
+    bindsym Down resize shrink height 10px
+    bindsym Up resize grow height 10px
+    bindsym Right resize shrink width 10px
+
+    # Move the focused window with the same, but add Shift
+    bindsym Ctrl+Shift+$left move left
+    bindsym Ctrl+Shift+$down move down
+    bindsym Ctrl+Shift+$up move up
+    bindsym Ctrl+Shift+$right move right
+
+    # Ditto, with arrow keys
+    bindsym Ctrl+Shift+Left move left
+    bindsym Ctrl+Shift+Down move down
+    bindsym Ctrl+Shift+Up move up
+    bindsym Ctrl+Shift+Right move right
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Return mode "management"
+
+
 #
 # Workspaces:
 #
@@ -157,23 +177,6 @@ output * bg /etc/nixos/user/wallpapers/744900.png fill
 #
 # Resizing containers:
 #
-mode "resize" {
-    bindsym $left resize grow width 10px
-    bindsym $down resize shrink height 10px
-    bindsym $up resize grow height 10px
-    bindsym $right resize shrink width 10px
-
-    # Ditto, with arrow keys
-    bindsym Left resize grow width 10px
-    bindsym Down resize shrink height 10px
-    bindsym Up resize grow height 10px
-    bindsym Right resize shrink width 10px
-
-    # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize
 
 exec autotiling
 
