@@ -63,7 +63,7 @@ output * bg /etc/nixos/user/wallpapers/744900.png fill
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+t exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -112,11 +112,11 @@ output * bg /etc/nixos/user/wallpapers/744900.png fill
 #
 
 # super + PgUp and super + PgDn
-    bindsym $mod+Prior exec "/etc/sway/scripts/swayworkspace next"
-    bindsym $mod+Next exec "/etc/sway/scripts/swayworkspace prev"
+    bindsym $mod+Next exec "/etc/sway/scripts/swayworkspace navigate next"
+    bindsym $mod+Prior exec "/etc/sway/scripts/swayworkspace navigate prev"
 
-    bindsym $mod+Shift+Prior move container to workspace next
-    bindsym $mod+Shift+Next move container to workspace prev
+    bindsym $mod+Shift+Next exec "/etc/sway/scripts/swayworkspace move next"
+    bindsym $mod+Shift+Prior exec "/etc/sway/scripts/swayworkspace move prev"
 #
 # Layout stuff:
 #
