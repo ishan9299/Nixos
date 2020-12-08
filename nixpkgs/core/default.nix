@@ -61,6 +61,7 @@ in {
 
       #---- Programming
       clang_10
+      gcc10
       clang-tools
       nixfmt
       neovim-nightly
