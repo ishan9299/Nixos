@@ -28,7 +28,7 @@
     systemd-boot.enable = true;
     systemd-boot.consoleMode = "max";
     efi.canTouchEfiVariables = true;
-    systemd-boot.configurationLimit = 3;
+    systemd-boot.configurationLimit = 5;
     timeout = 2;
     systemd-boot.editor = false;
   };
