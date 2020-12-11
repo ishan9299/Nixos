@@ -2,12 +2,11 @@
   description = "NixOS Configuration";
 
   inputs = {
-    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
-    stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "unstable";
     };
+    master = { url = "github:NixOS/nixpkgs/master"; };
     neovim = {
       url = "github:neovim/neovim/master";
       flake = false;
@@ -16,9 +15,11 @@
       url = "github:colemickens/nixpkgs-wayland";
       inputs.nixpkgs.follows = "unstable";
     };
+    stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
   };
 
-  outputs = { self, unstable, stable, home-manager, neovim, nixpkgs-wayland, ... }@inputs:
+  outputs = { self, home-manager, master, neovim, nixpkgs-wayland, stable, unstable, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;
