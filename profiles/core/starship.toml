@@ -1,0 +1,50 @@
+[cmd_duration]
+disabled = true
+
+[directory]
+style = "cyan"
+
+[git_branch]
+symbol = " "
+style = "bold dimmed purple"
+
+[git_status]
+conflicted = "䷅"
+ahead.value = "⟫"
+ahead.style = "green"
+behind.value = "⟪"
+behind.style = "red"
+diverged = "🔀"
+untracked.value = " ❓‍"
+untracked.style = "purple"
+stashed = "↪"
+modified.value = "➕"
+modified.style = "yellow"
+staged.value = "𝚫 "
+staged.style = "green"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+renamed = "⇆"
+deleted.value = "✘ "
+deleted.style = "red"
+style = "bold red"
+
+[memory_usage]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[time]
+disable = false
