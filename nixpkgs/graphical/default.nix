@@ -3,17 +3,17 @@
   # Gnome default desktop
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       layout = "us"; # keyboard layout
       desktopManager = {
-        gnome3.enable = false;
+        gnome3.enable = true;
         xterm.enable = false;
       };
       # Enable GDM
       displayManager = {
         lightdm.enable = false;
-        gdm.enable = false;
-        gdm.wayland = false;
+        gdm.enable = true;
+        gdm.wayland = true;
       };
       # Enable TouchInputs
       libinput.enable = true;
@@ -21,7 +21,7 @@
     earlyoom.enable = true;
     qemuGuest.enable = true;
     tlp.enable = true;
-    gnome3.gnome-remote-desktop.enable = false;
+    gnome3.gnome-remote-desktop.enable = true;
   };
 
   # Also add sway
