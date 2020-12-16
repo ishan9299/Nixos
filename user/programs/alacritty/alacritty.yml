@@ -37,7 +37,7 @@ modus-vivendi: &dark
 
   cursor:
     text: '#000000'
-    background: '#ffffff'
+    background: '#777777'
 
   # Normal colors (except green it is from intense colors)
   normal:
@@ -80,7 +80,7 @@ modus-operandi: &light
 
   cursor:
     text: '#ffffff'
-    background: '#000000'
+    background: '#777777'
 
   # Normal colors (except green it is from intense colors)
   normal:
