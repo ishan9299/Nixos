@@ -85,6 +85,7 @@
 
       # Editors
       vscode
+      dia
       gnvim-unwrapped # the default one comes with neovim-stable so avoid that
 
       # gnome
