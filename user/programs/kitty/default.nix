@@ -8,10 +8,10 @@
       allow_remote_control = "yes";
 
       # font setting
-      font_family = "Fira Code Regular Nerd Font Complete";
-      bold_font = "Fira Code Bold Nerd Font Complete";
-      italic_font = "Fira Code Retina Nerd Font Complete";
-      bold_italic_font = "Fira Code Medium Nerd Font Complete";
+      font_family = "Monoid Regular Nerd Font Complete";
+      bold_font = "Monoid Bold Nerd Font Complete";
+      italic_font = "Monoid Italic Nerd Font Complete";
+      bold_italic_font = "Monoid Italic Nerd Font Complete";
       font_size = "15.0";
 
       # tab bar

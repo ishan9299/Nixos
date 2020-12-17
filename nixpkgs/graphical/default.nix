@@ -204,7 +204,7 @@
     source-serif-pro
     (nerdfonts.override {
       fonts =
-        [ "CascadiaCode" "FiraCode" "Overpass" "Iosevka" "JetBrainsMono" ];
+        [ "FiraCode" "Iosevka" "JetBrainsMono" "Hasklig" "Monoid"];
     })
   ];
 
