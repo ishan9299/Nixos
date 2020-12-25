@@ -24,8 +24,15 @@
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;
       inherit (lib) removeSuffix recursiveUpdate genAttrs filterAttrs;
+
+      mkSystem = sys: pkgs_: hostname:
+        pkgs_.lib.nixosSystem {
+          system = sys;
+          modules = [(./. + "/hosts/${hostname}/configuration.nix")];
+          specialArgs = { inherit inputs; };
+        };
     in {
-      nixos = self.nixosConfigurations.nixos.config.system.build.toplevel;
+      X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
 
       # Automatically source the overlays directory
       # got this from https://github.com/bqv/nixrc/blob/live/flake.nix#L538
@@ -36,33 +43,7 @@
         (attrNames (readDir ./overlays))));
 
       nixosConfigurations = {
-        nixos = unstable.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            (import ./configuration.nix)
-            (import ./nixpkgs/core)
-            (import ./nixpkgs/fish)
-            (import ./nixpkgs/graphical)
-            (import ./nixpkgs/nvidia)
-            (import ./nixpkgs/tmux)
-            (import ./nixpkgs/virtualization)
-
-            # Home Manager
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users."me" = {
-                # This automatically sources all the files in ./user/programs
-                imports = (map (name: ./user/programs + "/${name}"))
-                  (attrNames (readDir ./user/programs));
-              };
-            }
-
-            # Overlays
-            { nixpkgs.overlays = lib.attrValues self.overlays ++ [ inputs.nixpkgs-wayland.overlay ]; }
-
-          ];
+        X542URR = mkSystem "x86_64-linux" unstable "X542URR";
         };
       };
     };
