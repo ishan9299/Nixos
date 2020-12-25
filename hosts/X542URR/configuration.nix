@@ -1,7 +1,7 @@
 { pkgs, inputs, config, lib, ... }:
 let
   hostname = "X542URR";
-  inherit (builtins) attrNames readDir;
+  inherit (builtins) attrValues attrNames readDir;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -35,11 +35,8 @@ in {
 
     nixpkgs.config.allowUnfree = true;
 
-    nixpkgs.overlays =
-      [
-        inputs.nixpkgs-wayland.overlay
-        inputs.neovim.overlay
-      ];
+    nixpkgs.overlays = attrValues inputs.self.overlays
+      ++ [ inputs.nixpkgs-wayland.overlay inputs.neovim.overlay ];
 
     # Diable some services for faster boot
     systemd.services.systemd-udev-settle.enable = false;
