@@ -4,51 +4,49 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules =
-    [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/1382e911-5222-4afa-a59e-0705555906e9";
-    fsType = "btrfs";
-    options = [ "subvol=root" "compress=zstd" "noatime" "space_cache" ];
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/5233f05d-3a02-4d80-9270-e2535a6a102f";
+      fsType = "btrfs";
+      options = [ "subvol=@" ];
+    };
 
-  boot.initrd.luks.devices."btrfscrypt".device =
-    "/dev/disk/by-uuid/1898f4d4-b357-490d-8596-29adcde30e34";
+  boot.initrd.luks.devices."nixenc".device = "/dev/disk/by-uuid/88911077-7e3f-4c80-a2b7-f9b52a089028";
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/1382e911-5222-4afa-a59e-0705555906e9";
-    fsType = "btrfs";
-    options = [ "subvol=home" "compress=zstd" "noatime" "space_cache" ];
-  };
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/5233f05d-3a02-4d80-9270-e2535a6a102f";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" ];
+    };
 
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/1382e911-5222-4afa-a59e-0705555906e9";
-    fsType = "btrfs";
-    options = [ "subvol=nix" "compress=zstd" "noatime" "space_cache" ];
-  };
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/5233f05d-3a02-4d80-9270-e2535a6a102f";
+      fsType = "btrfs";
+      options = [ "subvol=@home" ];
+    };
 
-  fileSystems."/var/log" = {
-    device = "/dev/disk/by-uuid/1382e911-5222-4afa-a59e-0705555906e9";
-    fsType = "btrfs";
-    options = [ "subvol=log" "compress=zstd" "noatime" "space_cache" ];
-    neededForBoot = true;
-  };
+  fileSystems."/var/log" =
+    { device = "/dev/disk/by-uuid/5233f05d-3a02-4d80-9270-e2535a6a102f";
+      fsType = "btrfs";
+      options = [ "subvol=@log" ];
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/3404-F280";
-    fsType = "vfat";
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/E2E3-D9DD";
+      fsType = "vfat";
+    };
 
-  swapDevices = [ ];
-  nix.maxJobs = lib.mkDefault 8;
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/912ff038-8ab0-4853-8fc0-d23986e127e5"; }
+    ];
+
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  # High-DPI console
-  console.font =
-    lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
 }
