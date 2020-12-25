@@ -60,6 +60,21 @@ in {
       memoryPercent = 25;
     };
 
+    environment = {
+      systemPackages = with pkgs; [
+        tree
+        catimg
+        unzip
+        nnn
+        bpytop
+        trash-cli
+        ripgrep
+        exa
+        cava
+        youtube-dl
+      ];
+    };
+
     users.users.me = {
       isNormalUser = true;
       extraGroups = [
