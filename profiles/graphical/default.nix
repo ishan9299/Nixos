@@ -38,5 +38,6 @@ in {
     source-serif-pro
   ];
 
-
+  services.flatpak.enable = true;
+  xdg.portal.gtkUsePortal = true;
 }
