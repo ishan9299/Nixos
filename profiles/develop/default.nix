@@ -27,7 +27,7 @@
   fonts.fonts = with pkgs; [
     (nerdfonts.override {
       fonts =
-        [ "FiraCode" "Iosevka" "JetBrainsMono" ];
+        [ "FiraCode" "Iosevka" "JetBrainsMono" "Hasklig" "Monoid" ];
     })
   ];
 }
