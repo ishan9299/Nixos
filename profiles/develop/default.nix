@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  import = [ ./fish ./tmux ];
+  imports = [ ./fish ./tmux ];
 
   environment.systemPackages = with pkgs; [
     # CLI

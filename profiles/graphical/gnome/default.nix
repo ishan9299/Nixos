@@ -12,8 +12,8 @@
       # Enable GDM
       displayManager = {
         lightdm.enable = false;
-        gdm.enable = false;
-        # gdm.wayland = true;
+        gdm.enable = true;
+        gdm.wayland = true;
       };
       # Enable TouchInputs
       libinput.enable = true;

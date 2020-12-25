@@ -8,7 +8,7 @@ let
     exec -a "$0" "$@"
   '';
 in {
-  import = [ ./gnome ./sway ];
+  imports = [ ./gnome ./sway ];
   services.xserver.displayManager.gdm.nvidiaWayland = true;
   services.xserver.videoDrivers = [ "nvidia" ];
 
