@@ -14,6 +14,8 @@
         lightdm.enable = false;
         gdm.enable = true;
         gdm.wayland = true;
+        autoLogin.enable = true;
+        autoLogin.user = "me";
       };
       # Enable TouchInputs
       libinput.enable = true;
