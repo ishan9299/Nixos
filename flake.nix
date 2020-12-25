@@ -7,10 +7,7 @@
       inputs.nixpkgs.follows = "unstable";
     };
     master = { url = "github:NixOS/nixpkgs/master"; };
-    neovim = {
-      url = "github:neovim/neovim/master";
-      flake = false;
-    };
+    neovim = { url = "github:mjlbach/neovim-nightly-overlay"; };
     nixpkgs-wayland = {
       url = "github:colemickens/nixpkgs-wayland";
       inputs.nixpkgs.follows = "unstable";
