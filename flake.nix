@@ -16,7 +16,8 @@
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
   };
 
-  outputs = { self, home-manager, master, neovim, nixpkgs-wayland, stable, unstable, ... }@inputs:
+  outputs = { self, home-manager, master, neovim, nixpkgs-wayland, stable
+    , unstable, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;
@@ -25,7 +26,7 @@
       mkSystem = sys: pkgs_: hostname:
         pkgs_.lib.nixosSystem {
           system = sys;
-          modules = [(./. + "/hosts/${hostname}/configuration.nix")];
+          modules = [ (./. + "/hosts/${hostname}/configuration.nix") ];
           specialArgs = { inherit inputs; };
         };
     in {
@@ -41,7 +42,6 @@
 
       nixosConfigurations = {
         X542URR = mkSystem "x86_64-linux" unstable "X542URR";
-        };
       };
     };
 }

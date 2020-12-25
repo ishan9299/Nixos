@@ -12,6 +12,11 @@ in {
     inputs.home-manager.nixosModules."home-manager"
   ];
   config = {
+    nixpkgs.overlays = [
+      inputs.nixpkgs-wayland.overlay
+      inputs.neovim-nightly.overlay
+  ];
+
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users."me" = {
