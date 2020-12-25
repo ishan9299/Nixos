@@ -9,9 +9,6 @@
 
   hardware.bluetooth.enable = true;
 
-  # better timesync for unstable internet connections
-  services.timesyncd.enable = true;
-
   # power management features
   services.tlp.enable = true;
   services.tlp.settings = {
