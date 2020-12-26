@@ -201,5 +201,8 @@ bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
 bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
 exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
-
+# Take a screenshot with all output and save it into screenshots
+bindsym Print exec grim -t jpeg ~/screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
+# Take a Screenshot with the region select
+bindsym $mod+Print exec grim -t jpeg -g "$(slurp)" ~/screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
 bindsym $mod+a exec 'nwggrid'

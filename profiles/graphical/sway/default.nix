@@ -13,6 +13,8 @@
       autotiling # dynamic tiling in sway
       brightnessctl # brightness control
       nwg-launchers # launcher
+      grim
+      slurp
       polkit_gnome
     ];
   };
