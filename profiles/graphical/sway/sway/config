@@ -22,7 +22,7 @@ set $term kitty
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg /etc/nixos/user/wallpapers/744900.png fill
+output * bg /etc/nixos/wallpapers/1105163.jpg fill
 #
 # Example configuration:
 #
