@@ -8,6 +8,7 @@
     };
     master = { url = "github:NixOS/nixpkgs/master"; };
     neovim = { url = "github:mjlbach/neovim-nightly-overlay"; };
+    nix = { url = "github:nixos/nix/master"; }
     nixpkgs-wayland = {
       url = "github:colemickens/nixpkgs-wayland";
       inputs.nixpkgs.follows = "unstable";
