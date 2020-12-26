@@ -6,7 +6,6 @@
       swaylock # lockscreen
       swayidle
       xwayland # for legacy apps
-      waybar # status bar
       mako # notification daemon
       kanshi # autorandr
       wl-clipboard # clipboard
@@ -24,8 +23,6 @@
       # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
       "sway/config".source = ./sway/config;
       "sway/scripts/swayworkspace".source = ./sway/scripts/swayworkspace;
-      "xdg/waybar/config".source = ./waybar/config;
-      "xdg/waybar/style.css".source = ./waybar/style.css;
     };
 
     # Extra gui packages
@@ -80,7 +77,6 @@
 
   services.redshift = {
     enable = true;
-    # Redshift with wayland support isn't present in nixos-19.09 atm. You have to cherry-pick the commit from https://github.com/NixOS/nixpkgs/pull/68285 to do that.
     package = pkgs.redshift-wlr;
   };
 
