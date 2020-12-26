@@ -18,7 +18,7 @@
       # Enable TouchInputs
       libinput.enable = true;
     };
-    gnome3.gnome-remote-desktop.enable = false;
+    gnome3.gnome-remote-desktop.enable = true;
   };
 
   environment = {

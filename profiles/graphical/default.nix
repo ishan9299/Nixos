@@ -7,7 +7,7 @@
 #     export __VK_LAYER_NV_optimus=NVIDIA_only
 #     exec -a "$0" "$@"
 #   '';
-# in 
+# in
 {
   imports = [ ./gnome ./sway ];
 #  services.xserver.displayManager.gdm.nvidiaWayland = true;
