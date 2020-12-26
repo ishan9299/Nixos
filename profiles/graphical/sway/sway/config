@@ -181,7 +181,7 @@ bindsym $mod+Return mode "management"
 exec autotiling
 
 bar {
-  swaybar_command waybar
+  swaybar_command waybar -c /etc/xdg/waybar/config -s /etc/xdg/waybar/style.css
 }
 
 default_border pixel 4
