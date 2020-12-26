@@ -10,9 +10,9 @@
     ncdu
     tokei
     wget
-    clang_10
+    # clang_10
     gcc10
-    clang-tools
+    # clang-tools
     nixfmt
     neovim-nightly
     neovim-remote
