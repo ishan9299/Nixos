@@ -10,6 +10,7 @@
     ncdu
     tokei
     wget
+    dash
     # clang_10
     gcc10
     # clang-tools
