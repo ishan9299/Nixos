@@ -16,5 +16,14 @@
     CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
     CPU_HWP_ON_AC = "performance";
   };
+
+  security.rtkit.enable = true;
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   jack.enable = true;
+  #   pulse.enable = true;
+  # };
   # services.logind.lidSwitch = "suspend";
 }
