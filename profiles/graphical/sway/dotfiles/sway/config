@@ -180,10 +180,6 @@ bindsym $mod+Return mode "management"
 
 exec autotiling
 
-bar {
-  swaybar_command waybar
-}
-
 default_border pixel 4
 
 smart_gaps on
