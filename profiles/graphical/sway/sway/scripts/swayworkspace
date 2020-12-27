@@ -1,37 +1,32 @@
-#!/usr/bin/env sh
-
+#!/usr/bin/env dash
 
 # This script allows to use ctrl+PgUp/PgDn for switching workspaces
 
-function navigate(){
-        nameOfWorkspaces=""
+navigate(){
         currentWorkspace=$(swaymsg -t get_workspaces |jq ".[] | select(.focused).num")
-        echo $1
         case $1 in
                 "next")
                         num=$((currentWorkspace+1))
                         [ $num -ge 6 ] && num=1
-                        swaymsg workspace number $num $nameOfWorkspaces;;
+                        swaymsg workspace number $num;;
                 "prev")
                         num=$((currentWorkspace-1))
                         [ $num -le 0 ] && num=5
-                        swaymsg workspace number $num $nameOfWorkspaces;;
+                        swaymsg workspace number $num;;
         esac
 }
 
-function move(){
-        nameOfWorkspaces=""
+move(){
         currentWorkspace=$(swaymsg -t get_workspaces |jq ".[] | select(.focused).num")
-        echo $1
         case $1 in
                 "next")
                         num=$((currentWorkspace+1))
                         [ $num -ge 6 ] && num=1
-                        swaymsg move container to workspace number $num $nameOfWorkspaces;;
+                        swaymsg move container to workspace number $num;;
                 "prev")
                         num=$((currentWorkspace-1))
                         [ $num -le 0 ] && num=5
-                        swaymsg move container to workspace number $num $nameOfWorkspaces;;
+                        swaymsg move container to workspace number $num;;
         esac
 }
 
