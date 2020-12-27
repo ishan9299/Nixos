@@ -6,14 +6,27 @@
       layer = "top";
       position = "top";
       height = 30;
-      output = [ "eDP-1" "HDMI-A-1" ];
-      modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
-      modules-center = [ "sway/window" ];
-      modules-right = [ "temperature" ];
+
+      modules-left = [
+        "sway/mode"
+        "sway/workspaces"
+      ];
+
+      modules-center = [
+      ];
+
+      modules-right = [
+      ];
+
       modules = {
+        "sway/mode" = { tooltip = false; };
         "sway/workspaces" = {
-          disable-scroll = true;
-          all-outputs = true;
+          "persistent_workspaces" = {
+            "1" = [];
+            "2" = [];
+            "3" = [];
+            "4" = [];
+          };
         };
       };
     }];
