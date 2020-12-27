@@ -3,7 +3,7 @@
   # Gnome default desktop
   services = {
     xserver = {
-      enable = true;
+      enable = false;
       layout = "us"; # keyboard layout
       desktopManager = {
         gnome3.enable = true;
