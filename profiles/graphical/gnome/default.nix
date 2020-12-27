@@ -23,24 +23,6 @@
   };
 
   environment = {
-    systemPackages = with pkgs; [
-      # Browser
-      google-chrome
-      brave
-      firefox-wayland
-
-      # gnome
-      gnome3.gnome-tweaks
-      gnome3.dconf-editor
-      gimp
-      drawing
-      shotwell
-      contrast
-
-      # Launcher
-      ulauncher
-    ];
-
     # Exclude some gnome packages
     gnome3.excludePackages = with pkgs; [
       gnome3.gnome-music
