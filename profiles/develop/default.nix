@@ -20,9 +20,6 @@
     gitAndTools.gitui # I still kinda need it for the root folder
     nodejs
 
-    #Editors
-    vscode
-    gnvim-unwrapped # the default one comes with neovim-stable so avoid that
   ];
 
   fonts.fonts = with pkgs; [
