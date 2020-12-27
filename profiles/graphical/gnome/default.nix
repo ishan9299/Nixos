@@ -14,6 +14,7 @@
         lightdm.enable = false;
         gdm.enable = true;
         gdm.wayland = true;
+        gdm.nvidiaWayland = true;
       };
       # Enable TouchInputs
       libinput.enable = true;
