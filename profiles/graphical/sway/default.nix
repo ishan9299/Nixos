@@ -20,11 +20,15 @@
     ];
   };
 
+  programs.waybar.enable = true;
+
   environment = {
     etc = {
       # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
-      "sway/config".source = ./sway/config;
-      "sway/scripts/swayworkspace".source = ./sway/scripts/swayworkspace;
+      "sway/config".source = ./dotfiles/sway/config;
+      "sway/scripts/swayworkspace".source = ./dotfiles/sway/scripts/swayworkspace;
+      "xdg/waybar/config".source = ./dotfiles/waybar/config;
+      "xdg/waybar/style.css".source = ./dotfiles/waybar/style.css;
     };
 
     # Extra gui packages
@@ -39,6 +43,7 @@
 
           # first import environment variables from the login manager
             systemctl --user import-environment
+            systemctl --user start sway-session.target
           # then start the service
             exec systemctl --user start sway.service
         '';
@@ -65,6 +70,7 @@
     after = [ "graphical-session-pre.target" ];
     # We explicitly unset PATH here, as we want it to be set by
     # systemctl --user import-environment in startsway
+    # environment.PATH = lib.mkForce null;
     environment.PATH = lib.mkForce null;
     serviceConfig = {
       Type = "simple";
