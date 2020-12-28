@@ -13,7 +13,8 @@
     dash
     # clang_10
     gcc10
-    # clang-tools
+    gdbgui
+    clang-tools
     nixfmt
     neovim-nightly
     neovim-remote
