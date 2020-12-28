@@ -23,6 +23,9 @@
   };
 
   environment = {
+    systemPackages = with pkgs; [
+      gnome3.gnome-tweaks
+    ];
     # Exclude some gnome packages
     gnome3.excludePackages = with pkgs; [
       gnome3.gnome-music
