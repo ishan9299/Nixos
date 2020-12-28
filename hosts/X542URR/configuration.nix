@@ -31,6 +31,7 @@ in {
     boot.supportedFilesystems = [ "btrfs" ];
     boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.kernelModules = [ "kvm-intel" ];
+    boot.kernelParams = [ "intel_pstate=active" ];
     boot.cleanTmpDir = true;
 
     nixpkgs.config.allowUnfree = true;
