@@ -17,6 +17,13 @@
     CPU_HWP_ON_AC = "performance";
   };
 
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+    ];
+  };
+
   security.rtkit.enable = true;
   # services.pipewire = {
   #   enable = true;
