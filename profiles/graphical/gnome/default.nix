@@ -36,6 +36,7 @@
       gnome3.epiphany
       gnome3.eog
       gnome3.gedit
+      gnome3.gnome-software
       gnome-photos
     ];
   };
