@@ -49,6 +49,7 @@
 
       #Editors
       vscode
+      qtcreator
       gnvim-unwrapped # the default one comes with neovim-stable so avoid that
     ];
   };
