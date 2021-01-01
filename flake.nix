@@ -8,7 +8,6 @@
     };
     master = { url = "github:NixOS/nixpkgs/master"; };
     neovim = { url = "github:mjlbach/neovim-nightly-overlay"; };
-    nix = { url = "github:nixos/nix/master"; };
     nixpkgs-wayland = {
       url = "github:colemickens/nixpkgs-wayland";
       inputs.nixpkgs.follows = "unstable";
@@ -17,7 +16,7 @@
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
   };
 
-  outputs = { self, home-manager, master, neovim, nix, nixpkgs-wayland, stable
+  outputs = { self, home-manager, master, neovim, nixpkgs-wayland, stable
     , unstable, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;

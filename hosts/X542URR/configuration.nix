@@ -37,7 +37,7 @@ in {
     nixpkgs.config.allowUnfree = true;
 
     nixpkgs.overlays = attrValues inputs.self.overlays
-      ++ [ inputs.nixpkgs-wayland.overlay inputs.neovim.overlay inputs.nix.overlay ];
+      ++ [ inputs.nixpkgs-wayland.overlay inputs.neovim.overlay ];
 
     # Diable some services for faster boot
     systemd.services.systemd-udev-settle.enable = false;
