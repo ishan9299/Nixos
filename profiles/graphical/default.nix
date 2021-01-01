@@ -65,6 +65,7 @@
     source-serif-pro
   ];
 
+  qt5.platformTheme = "gnome";
   services.flatpak.enable = true;
   xdg.portal.enable = true;
   xdg.portal.gtkUsePortal = true;
