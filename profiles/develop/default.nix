@@ -2,7 +2,6 @@
   imports = [ ./fish ./tmux ];
 
   environment.systemPackages = with pkgs; [
-    # CLI
     file
     git-crypt
     gnupg
@@ -11,16 +10,18 @@
     tokei
     wget
     dash
-    # clang_10
+
+    # C/C++
     gcc10
     gdbgui
-    clang-tools
     nixfmt
+
+    # neovim
     neovim-nightly
     neovim-remote
-    gitAndTools.gitui # I still kinda need it for the root folder
-    nodejs
 
+    # git
+    gitAndTools.gitui # I still kinda need it for the root folder
   ];
 
   fonts.fonts = with pkgs; [
