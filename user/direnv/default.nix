@@ -2,6 +2,7 @@
   programs.direnv = {
     enable = true;
     enableFishIntegration = true;
+    enableBashIntegration = true;
     enableNixDirenvIntegration = true;
     stdlib = "
     use_flake() {
