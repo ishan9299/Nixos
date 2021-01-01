@@ -46,6 +46,9 @@
       drawing
       shotwell
       contrast
+
+      # Editor
+      geany-with-vte
     ];
   };
 
