@@ -17,10 +17,9 @@
       grim
       slurp
       polkit_gnome
+      waybar
     ];
   };
-
-  programs.waybar.enable = true;
 
   environment = {
     etc = {
@@ -86,6 +85,13 @@
   services.redshift = {
     enable = true;
     package = pkgs.redshift-wlr;
+  };
+
+  systemd.user.services.waybar = {
+    description = "Waybar as systemd service";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    script = "${pkgs.waybar}/bin/waybar";
   };
 
   systemd.user.services.kanshi = {
