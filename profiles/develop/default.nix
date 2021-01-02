@@ -13,6 +13,7 @@
 
     # C/C++
     gcc10
+    ccls
     gdbgui
     nixfmt
 
