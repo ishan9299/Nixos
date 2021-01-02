@@ -1,13 +1,12 @@
 # Default config for sway
 #
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
-#
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -67,9 +66,6 @@ output * bg /etc/nixos/wallpapers/1105163.jpg fill
     # Kill focused window
     bindsym $mod+Shift+q kill
 
-    # Launcher
-    bindsym $mod+slash exec alacritty --name=launcher -e "bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse | xargs -r swaymsg -t command exec'"
-    for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -178,10 +174,7 @@ bindsym $mod+Return mode "management"
 # Resizing containers:
 #
 
-exec autotiling
-
 default_border pixel 4
-
 smart_gaps on
 smart_borders on
 gaps inner 6
@@ -196,9 +189,8 @@ bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
 bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
 bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
-exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
-# Take a screenshot with all output and save it into screenshots
-bindsym Print exec grim -t jpeg ~/screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
-# Take a Screenshot with the region select
-bindsym $mod+Print exec grim -t jpeg -g "$(slurp)" ~/screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
+
+exec autotiling
 bindsym $mod+a exec 'nwggrid'
+exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
+exec "systemctl --user import-environment; systemctl --user start sway-session.target"
