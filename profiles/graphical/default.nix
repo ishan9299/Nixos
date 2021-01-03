@@ -30,9 +30,15 @@
   imports = [
     # ./gnome
     ./sway
+    ./plasma
   ];
 
   hardware.nvidiaOptimus.disable = true;
+  hardware.pulseaudio = {
+    enable = true;
+    support32Bit = true;
+    package = pkgs.pulseaudioFull;
+  };
 
   environment = {
     systemPackages = with pkgs; [
@@ -49,6 +55,11 @@
 
       # Editor
       geany-with-vte
+
+      # Theme
+      plasma5.breeze-qt5
+      paper-icon-theme
+      gnome3.adwaita-icon-theme
     ];
   };
 
@@ -63,12 +74,13 @@
     source-serif-pro
   ];
 
-  qt5.platformTheme = "gnome";
+  # qt5.platformTheme = "gnome";
   services.flatpak.enable = true;
   xdg.portal.enable = true;
   xdg.portal.gtkUsePortal = true;
   xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-kde
     # xdg-desktop-portal-wlr
-    xdg-desktop-portal-gtk
+    # xdg-desktop-portal-gtk
   ];
 }
