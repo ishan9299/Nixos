@@ -27,6 +27,7 @@
       slurp
       polkit_gnome
       waybar
+      wlogout
     ];
   };
 
@@ -35,6 +36,7 @@
     libinput.enable = true;
     displayManager.sddm = {
       enable = true;
+      theme = "breeze";
     };
   };
 
@@ -45,6 +47,16 @@
       "sway/scripts/swayworkspace".source = ./dotfiles/sway/scripts/swayworkspace;
       "xdg/waybar/config".source = ./dotfiles/waybar/config;
       "xdg/waybar/style.css".source = ./dotfiles/waybar/style.css;
+
+      "xdg/gtk-3.0/settings.ini" = {
+        text = ''
+          [Settings]
+          gtk-icon-theme-name=Adwaita
+          gtk-theme-name=Adwaita
+          gtk-cursor-theme-name=Adwaita
+        '';
+        mode = "444";
+      };
     };
   };
 
@@ -52,11 +64,13 @@
   location.provider = "geoclue2";
 
   systemd.user.targets.sway-session = {
-    description = "Sway compositor session";
+    enable = true;
+    description = "sway compositor session";
     documentation = [ "man:systemd.special(7)" ];
     bindsTo = [ "graphical-session.target" ];
     wants = [ "graphical-session-pre.target" ];
     after = [ "graphical-session-pre.target" ];
+    requiredBy = [ "graphical-session.target" "graphical-session-pre.target" ];
   };
 
   services.redshift = {
