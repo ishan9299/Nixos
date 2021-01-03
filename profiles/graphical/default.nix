@@ -28,9 +28,8 @@
   #  environment.systemPackages = with pkgs; [ nvidia-offload ];
 
   imports = [
-    # ./gnome
-    ./sway
-    ./plasma
+    ./gnome
+    # ./sway
   ];
 
   hardware.nvidiaOptimus.disable = true;
@@ -56,10 +55,6 @@
       # Editor
       geany-with-vte
 
-      # Theme
-      plasma5.breeze-qt5
-      paper-icon-theme
-      gnome3.adwaita-icon-theme
     ];
   };
 
@@ -75,12 +70,11 @@
   ];
 
   # qt5.platformTheme = "gnome";
+  programs.dconf.enable = true;
   services.flatpak.enable = true;
   xdg.portal.enable = true;
   xdg.portal.gtkUsePortal = true;
   xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-kde
-    # xdg-desktop-portal-wlr
-    # xdg-desktop-portal-gtk
+    xdg-desktop-portal-gtk
   ];
 }
