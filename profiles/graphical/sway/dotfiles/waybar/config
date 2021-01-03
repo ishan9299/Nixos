@@ -1,12 +1,7 @@
 {
-  // "layer": "top", // Waybar at top layer
-  // "position": "bottom", // Waybar position (top|bottom|left|right)
-  // "height": 30, // Waybar height (to be removed for auto height)
-  // "width": 2560, // Waybar width
-  // Choose the order of the modules
-  "modules-left": [ "sway/workspaces" ],
-  "modules-right": ["pulseaudio", "disk", "memory", "cpu", "temperature", "network", "battery", "clock", "custom/power" ],
-  // Modules configuration
+  "modules-left": [ "custom/menu", "sway/workspaces" ],
+  "modules-right": ["pulseaudio", "memory", "cpu", "temperature", "network", "battery", "clock", "custom/power" ],
+
   "sway/workspaces": {
     "disable-scroll": false,
     "all-outputs": true,
@@ -18,18 +13,20 @@
       "4": [],
       "5": [],
     },
+
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
+      "1": "१",
+      "2": "२",
+      "3": "३",
+      "4": "४",
+      "5": "५",
       "focused": "",
       "urgent": "",
       "default": ""
     },
     "icon-size": 15
   },
+
   "clock": {
     // "timezone": "America/New_York",
     "format": "{:%I:%M %p}",
@@ -37,14 +34,17 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     // "format-alt": "{:%Y-%m-%d}"
   },
+
   "cpu": {
     "format": "{usage}  ",
     "on-click": "foot ytop",
     "tooltip": false
   },
+
   "memory": {
     "format": "{}  "
   },
+
   "temperature": {
     "thermal-zone": 2,
     "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
@@ -54,9 +54,10 @@
     "interval": 60,
     "format-icons": ["", "", ""]
   },
+
   "battery": {
     "states": {
-      // "good": 95,
+      "good": 95,
       "warning": 30,
       "critical": 15
     },
@@ -68,9 +69,7 @@
     // "format-full": "",
     "format-icons": ["", "", "", "", ""]
   },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
+
   "network": {
     "interface": "wlan0", // (Optional) To force the use of this interface
     "format-wifi": "   connected",
@@ -81,35 +80,16 @@
     "interval": 60,
     "on-click-middle": "exec foot nmtui"
   },
-  "pulseaudio": {
-    "scroll-step": 1, // %, can be a float
-    "format": "{icon}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["","   -","   --","   ---","   ----","   -----","   ------","   -------","   --------","   ---------","   ----------","   -----------","   ------------","   -------------","   --------------"]
-    },
-    "on-click": "pavucontrol",
-    "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
-    "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob",
-  },
-  "disk": {
-    "interval": 30,
-    "format": "{free}",
-    "path": "/run/media/bryan/",
-  },
+
   "custom/power": {
     "format": "⏻",
     "on-click": "wlogout -p layer-shell",
+    "tooltip": false
+  },
+
+  "custom/menu": {
+    "format": "聆 Applications",
+    "on-click": "nwggrid",
     "tooltip": false
   },
 }

@@ -3,14 +3,14 @@
     border: none;
     font-size: 13px;
     margin: 2.5px;
-    font-family: Product Sans ,Arial, Helvetica, sans-serif;
+    font-family: Source Sans Pro;
 }
 window#waybar {
     background-color: #353b49;
     color: #d8dee9;
     border-bottom: 2px solid rgba(46,52,64,0.7);
 }
-#workspaces, #tags {
+#workspaces, #tags, #custom-menu {
     background-color: #2e3440;
     padding: 1px 5px 1px 5px;
     font-size: 15px;
