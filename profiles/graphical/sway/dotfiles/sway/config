@@ -171,8 +171,14 @@ bindsym $mod+Return mode "management"
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 #
-# Resizing containers:
-#
+# Brightness
+    bindsym XF86MonBrightnessDown exec "brightnessctl set 2%-"
+    bindsym XF86MonBrightnessUp exec "brightnessctl set +2%"
+
+# Volume
+    bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
+    bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
+    bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
 default_border pixel 4
 smart_gaps on
@@ -180,17 +186,11 @@ smart_borders on
 gaps inner 6
 gaps outer 12
 
-# Brightness
-bindsym XF86MonBrightnessDown exec "brightnessctl set 2%-"
-bindsym XF86MonBrightnessUp exec "brightnessctl set +2%"
-
-# Volume
-bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
-bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
-bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
-
-
-exec autotiling
 bindsym $mod+a exec 'nwggrid'
+bar {
+    swaybar_command waybar
+}
+
 exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
+exec autotiling
