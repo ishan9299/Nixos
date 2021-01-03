@@ -2,7 +2,7 @@
 
   programs.sway = {
     enable = true;
-    wrapperFeatures.gtk = true;
+    wrapperFeatures = { gtk = true; };
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
       # needs qt5.qtwayland in systemPackages
@@ -31,15 +31,6 @@
     ];
   };
 
-  services.xserver = {
-    enable = true;
-    libinput.enable = true;
-    displayManager.sddm = {
-      enable = true;
-      theme = "breeze";
-    };
-  };
-
   environment = {
     etc = {
       # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
@@ -64,7 +55,6 @@
   location.provider = "geoclue2";
 
   systemd.user.targets.sway-session = {
-    enable = true;
     description = "sway compositor session";
     documentation = [ "man:systemd.special(7)" ];
     bindsTo = [ "graphical-session.target" ];
@@ -79,6 +69,7 @@
   };
 
   systemd.user.services.kanshi = {
+    enable = true;
     description = "Kanshi output autoconfig ";
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
