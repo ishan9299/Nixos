@@ -22,6 +22,9 @@
     gnome3.gnome-remote-desktop.enable = true;
   };
 
+  services.gnome3.sushi.enable = true;
+  services.packagekit.enable = false;
+
   environment = {
     systemPackages = with pkgs; [
       gnome3.gnome-tweaks
