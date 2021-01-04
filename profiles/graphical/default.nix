@@ -51,7 +51,7 @@
 
       # Image Editors
       gimp
-      drawing
+      krita
       shotwell
       contrast
 
