@@ -7,8 +7,9 @@ NixOS configuration using flakes.
 To build this config you will need 8GB or more space on the hard drive or the live disk.
 The commands to do so are :-
 ```nix
-nix-shell -p nixUnstable --run "nix build /mnt/etc/nixos#nixosConfigurations.X542URR.config.system.build.toplevel"
-sudo nixos-install --root /mnt --system ./result
+nix-shell -p nixUnstable
+nix build /mnt/etc/nixos#nixosConfigurations.<HOSTNAME>.config.system.build.toplevel --experimental-features "flakes nix-command" --store "/mnt" --impure
+nixos-install --root /mnt --system ./result
 ```
 NOTE:
 + X542URR is my hostname change it accordingly.
