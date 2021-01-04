@@ -46,6 +46,9 @@
       brave
       firefox-wayland
 
+      # studies
+      teams
+
       # Image Editors
       gimp
       drawing
