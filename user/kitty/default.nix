@@ -28,6 +28,9 @@
       # transperency
       background_opacity = "0.65";
       dynamic_background_opacity = "yes";
+
+      # layouts
+      enabled_layouts = "stack";
     };
   };
 }
