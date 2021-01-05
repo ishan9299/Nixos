@@ -11,9 +11,24 @@ nix-shell -p nixUnstable
 nix build /mnt/etc/nixos#nixosConfigurations.<HOSTNAME>.config.system.build.toplevel --experimental-features "flakes nix-command" --store "/mnt" --impure
 nixos-install --root /mnt --system ./result
 ```
+
+# Repository Layout
++ `user` - contains the home-manager configs all the configuration is automatically sourced to nixos config.
++ `overlays` - contains overlays for some packages.
++ `profiles`
+  - `core` - aliases and settings for nix.
+  - `develop` - packages I need for programming.
+  - `graphical` - all the graphical packages that I use in my system.
+    + `gnome`
+    + `sway`
+    + `plasma`
+  - `laptop` - stuff I need for my laptop.
+  - `network` - networking stuff.
+  - `virt` - kvm.
+
 NOTE:
 + X542URR is my hostname change it accordingly.
-+ If you have less space than 8GB in the live disk consider disabling some modules and commenting out some packages to reduce the size.
++ If you have less space than 8GB in the live disk consider disabling some modules and commenting out some packages to reduce the size (I recommend disabling the graphical one in hosts/<HOSTNAME>/configuration.nix). Don't worry you can enable it after install.
 
 # TODO
 1. Add Dconf in home manager
