@@ -36,3 +36,8 @@ Have gnome with same settings every time.
 
 2. May be add the Neovim configuration in the NixOS configuration.
 The system will use my Neovim configuration by default.
+
+# Other Nix configuration using flakes
+- [nixcfg](https://github.com/colemickens/nixpkgs-wayland)
+- [nixflk](https://github.com/nrdxp/nixflk)
+- [nixrc](https://github.com/bqv/nixrc)
