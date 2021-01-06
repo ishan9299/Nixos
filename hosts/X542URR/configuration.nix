@@ -70,6 +70,7 @@ in {
         exa
         cava
         youtube-dl
+        ffmpeg
       ];
     };
 
