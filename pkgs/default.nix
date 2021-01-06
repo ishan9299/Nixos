@@ -1,3 +1,3 @@
 final: prev: {
-  miningcore = prev.callPackage ./onlyoffice { };
+  onlyoffice-desktopeditors = prev.callPackage ./onlyoffice-desktopeditors { };
 }
