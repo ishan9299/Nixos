@@ -23,6 +23,11 @@
     gitAndTools.gitui # I still kinda need it for the root folder
   ];
 
+  services.mysql = {
+    enable = true;
+    package = pkgs.mysql;
+  };
+
   fonts.fonts = with pkgs; [
     (nerdfonts.override {
       fonts =
