@@ -53,6 +53,8 @@ in
 
       # studies
       teams
+      dbeaver
+      onlyoffice
 
       # Image Editors
       gimp

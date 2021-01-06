@@ -40,6 +40,8 @@
       }) (filter (file: lib.hasSuffix ".nix" file)
         (attrNames (readDir ./overlays))));
 
+        overlay = import ./pkgs;
+
       nixosConfigurations = {
         X542URR = mkSystem "x86_64-linux" unstable "X542URR";
       };
