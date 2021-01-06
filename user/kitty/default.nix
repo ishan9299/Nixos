@@ -1,7 +1,8 @@
-{ config, libs, pkgs, ... }:
-{
-  xdg.configFile."kitty/themes/modus-operandi.conf".source = ./themes/modus-operandi.conf;
-  xdg.configFile."kitty/themes/modus-vivendi.conf".source = ./themes/modus-vivendi.conf;
+{ config, libs, pkgs, ... }: {
+  xdg.configFile."kitty/themes/modus-operandi.conf".source =
+    ./themes/modus-operandi.conf;
+  xdg.configFile."kitty/themes/modus-vivendi.conf".source =
+    ./themes/modus-vivendi.conf;
   programs.kitty = {
     enable = true;
     settings = {
@@ -19,7 +20,7 @@
       tab_bar_style = "fade";
       tab_bar_min_tabs = "2";
       tab_switch_stratergy = "previous";
-      active_tab_font_style = "bold-italic";
+      active_tab_font_style = "bold";
       inactive_tab_font_style = "normal";
 
       # colorscheme
@@ -30,7 +31,7 @@
       dynamic_background_opacity = "yes";
 
       # layouts
-      enabled_layouts = "stack";
+      enabled_layouts = "tall,splits";
     };
   };
 }
