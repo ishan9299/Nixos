@@ -14,10 +14,11 @@
     };
     stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
+    iceberg.url = "github:icebox-nix/iceberg";
   };
 
   outputs = { self, home-manager, master, neovim, nixpkgs-wayland, stable
-    , unstable, ... }@inputs:
+    , unstable, iceberg, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;
@@ -40,7 +41,7 @@
       }) (filter (file: lib.hasSuffix ".nix" file)
         (attrNames (readDir ./overlays))));
 
-        overlay = import ./pkgs;
+        # overlay = import ./pkgs;
 
       nixosConfigurations = {
         X542URR = mkSystem "x86_64-linux" unstable "X542URR";

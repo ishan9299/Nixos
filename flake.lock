@@ -47,6 +47,21 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1609246779,
+        "narHash": "sha256-eq6ZXE/VWo3EMC65jmIT6H/rrUc9UWOWVujkzav025k=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "08c7ad4a0844adc4a7f9f5bb3beae482e789afa4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "gitignore": {
       "flake": false,
       "locked": {
@@ -84,6 +99,25 @@
         "type": "github"
       }
     },
+    "iceberg": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixos": "nixos"
+      },
+      "locked": {
+        "lastModified": 1609895822,
+        "narHash": "sha256-npbG4gc95z5QKpCYC7V9ciYan3w0zBTCN9PYwCfEzbs=",
+        "owner": "icebox-nix",
+        "repo": "iceberg",
+        "rev": "db16d51f81bedbc632f91c63147ab7548a4aaeba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "icebox-nix",
+        "repo": "iceberg",
+        "type": "github"
+      }
+    },
     "master": {
       "locked": {
         "lastModified": 1609910712,
@@ -103,7 +137,7 @@
     "neovim": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "flake-utils": "flake-utils",
+        "flake-utils": "flake-utils_2",
         "gitignore": "gitignore",
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs",
@@ -136,6 +170,22 @@
       "original": {
         "owner": "neovim",
         "repo": "neovim",
+        "type": "github"
+      }
+    },
+    "nixos": {
+      "locked": {
+        "lastModified": 1609779634,
+        "narHash": "sha256-LYNAH7Pv9IyoIs7di0rg6vnSC+VxhXhX94LXq04hsOE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1a57d96edd156958b12782e8c8b6a374142a7248",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -196,6 +246,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "iceberg": "iceberg",
         "master": "master",
         "neovim": "neovim",
         "nixpkgs-wayland": "nixpkgs-wayland",
