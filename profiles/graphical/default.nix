@@ -54,7 +54,7 @@ in
       # studies
       teams
       dbeaver
-      onlyoffice-desktopeditors
+      # onlyoffice-desktopeditors
 
       # Image Editors
       gimp
