@@ -71,6 +71,13 @@ in {
         cava
         youtube-dl
         ffmpeg
+        teams
+        dbeaver
+        gimp
+        krita
+        shotwell
+        contrast
+        geany-with-vte
       ];
     };
 

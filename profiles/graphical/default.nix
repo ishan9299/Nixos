@@ -51,20 +51,6 @@ in
       brave
       firefox-wayland
 
-      # studies
-      teams
-      dbeaver
-      # onlyoffice-desktopeditors
-
-      # Image Editors
-      gimp
-      krita
-      shotwell
-      contrast
-
-      # Editor
-      geany-with-vte
-
     ];
   };
 
