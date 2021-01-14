@@ -8,6 +8,9 @@
     settings = {
       allow_remote_control = "yes";
 
+      # cursor
+      cursor_shape = "block";
+
       # font setting
       font_family = "Monoid Regular Nerd Font Complete";
       bold_font = "Monoid Bold Nerd Font Complete";
