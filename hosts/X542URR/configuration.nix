@@ -31,7 +31,7 @@ in {
     boot.supportedFilesystems = [ "btrfs" ];
     boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.kernelModules = [ "kvm-intel" ];
-    boot.kernelParams = [ "intel_pstate=active" ];
+    boot.kernelParams = [ "intel_pstate=active zswap.enabled=1 quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3" ];
     boot.cleanTmpDir = true;
 
     nixpkgs.config.allowUnfree = true;
@@ -51,12 +51,6 @@ in {
 
     # microcode
     hardware.cpu.intel.updateMicrocode = true;
-
-    # Using Zram will switch to zswap when I reinstall the system
-    zramSwap = {
-      enable = true;
-      memoryPercent = 25;
-    };
 
     environment = {
       systemPackages = with pkgs; [
