@@ -28,9 +28,9 @@ in
    # environment.systemPackages = with pkgs; [ nvidia-offload ];
 
   imports = [
-    # ./gnome
+    ./gnome
     # ./sway
-    ./plasma
+    # ./plasma
   ];
 
   # hardware.nvidiaOptimus.disable = true;
