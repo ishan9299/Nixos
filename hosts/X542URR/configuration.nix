@@ -66,7 +66,6 @@ in {
         youtube-dl
         ffmpeg
         teams
-        dbeaver
         gimp
         krita
         shotwell
