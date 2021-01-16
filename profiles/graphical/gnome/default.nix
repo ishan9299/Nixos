@@ -14,16 +14,16 @@
         lightdm.enable = false;
         gdm.enable = true;
         gdm.wayland = true;
-        # gdm.nvidiaWayland = true;
       };
       # Enable TouchInputs
       libinput.enable = true;
     };
-    gnome3.gnome-remote-desktop.enable = true;
+    gnome3 = {
+      gnome-remote-desktop.enable = true;
+      gnome-keyring.enable = true;
+      sushi.enable = true;
+    };
   };
-
-  services.gnome3.sushi.enable = true;
-  services.packagekit.enable = false;
 
   environment = {
     systemPackages = with pkgs; [
@@ -39,6 +39,7 @@
       gnome3.epiphany
       gnome3.eog
       gnome3.gedit
+      gnome3.geary
       gnome3.gnome-software
       gnome-photos
     ];
