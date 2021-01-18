@@ -78,10 +78,9 @@ in {
       isNormalUser = true;
       extraGroups = [
         "wheel"
-        "networkmanager"
         "libvirtd"
         "kvm"
-      ]; # Enable ‘sudo’ for the user.
+      ];
       shell = pkgs.fish;
     };
 
