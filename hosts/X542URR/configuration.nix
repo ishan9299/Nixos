@@ -79,6 +79,7 @@ in {
       extraGroups = [
         "wheel"
         "libvirtd"
+        "networkmanager"
         "kvm"
       ];
       shell = pkgs.fish;

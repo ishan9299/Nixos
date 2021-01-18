@@ -17,7 +17,7 @@
 
       # Browser
       google-chrome
-      brave
+      # brave
       firefox-wayland
 
     ];
