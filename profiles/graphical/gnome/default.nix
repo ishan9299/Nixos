@@ -19,9 +19,10 @@
       libinput.enable = true;
     };
     gnome3 = {
-      gnome-remote-desktop.enable = true;
+      # gnome-remote-desktop.enable = true;
       gnome-keyring.enable = true;
       sushi.enable = true;
+      gnome-user-share.enable = true;
     };
   };
 
