@@ -118,6 +118,22 @@
         "type": "github"
       }
     },
+    "lowdown-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1598695561,
+        "narHash": "sha256-gyH/5j+h/nWw0W8AcR2WKvNBUsiQ7QuxqSJNXAwV+8E=",
+        "owner": "kristapsdz",
+        "repo": "lowdown",
+        "rev": "1705b4a26fbf065d9574dce47a94e8c7c79e052f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kristapsdz",
+        "repo": "lowdown",
+        "type": "github"
+      }
+    },
     "master": {
       "locked": {
         "lastModified": 1610955957,
@@ -170,6 +186,25 @@
       "original": {
         "owner": "neovim",
         "repo": "neovim",
+        "type": "github"
+      }
+    },
+    "nix": {
+      "inputs": {
+        "lowdown-src": "lowdown-src",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1611133210,
+        "narHash": "sha256-Jxh1PZHL0fsYZ/tyTtf0PPfwwIxovSc8nc+WCESxydQ=",
+        "owner": "nixos",
+        "repo": "nix",
+        "rev": "d04d8463faba97164f21fc64780574561a954555",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nix",
         "type": "github"
       }
     },
@@ -227,6 +262,21 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1602702596,
+        "narHash": "sha256-fqJ4UgOb4ZUnCDIapDb4gCrtAah5Rnr2/At3IzMitig=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ad0d20345219790533ebe06571f82ed6b034db31",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-20.09-small",
+        "type": "indirect"
+      }
+    },
     "pre-commit-hooks": {
       "flake": false,
       "locked": {
@@ -249,6 +299,7 @@
         "iceberg": "iceberg",
         "master": "master",
         "neovim": "neovim",
+        "nix": "nix",
         "nixpkgs-wayland": "nixpkgs-wayland",
         "stable": "stable",
         "unstable": "unstable"
