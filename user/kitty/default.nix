@@ -35,6 +35,11 @@
 
       # layouts
       enabled_layouts = "tall,splits";
+
+      # padding
+      window_padding_width = "20";
+      placement_strategy = "center";
+
     };
   };
 }
