@@ -16,7 +16,7 @@
       bold_font = "Monoid Bold Nerd Font Complete";
       italic_font = "Monoid Italic Nerd Font Complete";
       bold_italic_font = "Monoid Italic Nerd Font Complete";
-      font_size = "15.0";
+      font_size = "13.0";
 
       # tab bar
       tab_bar_edge = "bottom";
@@ -37,9 +37,11 @@
       enabled_layouts = "tall,splits";
 
       # padding
-      window_padding_width = "20";
+      window_padding_width = "25";
       placement_strategy = "center";
 
+      # Decorations
+      hide_window_decorations = "yes";
     };
   };
 }
