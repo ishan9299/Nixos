@@ -16,7 +16,7 @@
       bold_font = "Iosevka";
       italic_font = "Iosevka";
       bold_italic_font = "Iosevka";
-      font_size = "13.0";
+      font_size = "15.0";
 
       # tab bar
       tab_bar_edge = "bottom";
@@ -30,8 +30,8 @@
       include = "themes/modus-vivendi.conf";
 
       # transperency
-      background_opacity = "0.65";
-      dynamic_background_opacity = "yes";
+      # background_opacity = "0.65";
+      # dynamic_background_opacity = "yes";
 
       # layouts
       enabled_layouts = "tall,splits";
