@@ -8,9 +8,9 @@ in {
     ../../profiles/core
     ../../profiles/develop
     ../../profiles/graphical
-    ../../profiles/laptop
-    ../../profiles/network
-    ../../profiles/virt
+    # ../../profiles/laptop
+    # ../../profiles/network
+    # ../../profiles/virt
     inputs.home-manager.nixosModules."home-manager"
   ];
   config = {
@@ -31,7 +31,7 @@ in {
     boot.supportedFilesystems = [ "btrfs" ];
     boot.kernelPackages = pkgs.linuxPackages_latest;
     boot.kernelModules = [ "kvm-intel" ];
-    boot.kernelParams = [ "intel_pstate=active zswap.enabled=1 quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3" ];
+    boot.kernelParams = [ "zswap.enabled=1 quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3" ];
     boot.cleanTmpDir = true;
 
     nixpkgs.config.allowUnfree = true;

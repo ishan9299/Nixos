@@ -181,8 +181,8 @@ bindsym $mod+Return mode "management"
     bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
 default_border pixel 4
-smart_gaps on
-smart_borders on
+# smart_gaps on
+# smart_borders on
 gaps inner 6
 gaps outer 12
 
