@@ -13,6 +13,7 @@
       displayManager = {
         lightdm.enable = false;
         gdm.enable = true;
+        gdm.debug = true;
         gdm.wayland = true;
       };
       # Enable TouchInputs
