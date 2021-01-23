@@ -47,21 +47,6 @@
         "type": "github"
       }
     },
-    "flake-utils_2": {
-      "locked": {
-        "lastModified": 1610051610,
-        "narHash": "sha256-U9rPz/usA1/Aohhk7Cmc2gBrEEKRzcW4nwPWMPwja4Y=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "3982c9903e93927c2164caa727cd3f6a0e6d14cc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "gitignore": {
       "flake": false,
       "locked": {
@@ -96,25 +81,6 @@
         "owner": "nix-community",
         "ref": "master",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "iceberg": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixos": "nixos"
-      },
-      "locked": {
-        "lastModified": 1610933823,
-        "narHash": "sha256-MrPU84+dKZvjz8Hojd/N8DUHxLvY316kDFSkdDqgxQ0=",
-        "owner": "icebox-nix",
-        "repo": "iceberg",
-        "rev": "d4fee7a462a8b5227fe4c85468b6dcbf89e849ce",
-        "type": "github"
-      },
-      "original": {
-        "owner": "icebox-nix",
-        "repo": "iceberg",
         "type": "github"
       }
     },
@@ -153,7 +119,7 @@
     "neovim": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils",
         "gitignore": "gitignore",
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs",
@@ -205,22 +171,6 @@
       "original": {
         "owner": "nixos",
         "repo": "nix",
-        "type": "github"
-      }
-    },
-    "nixos": {
-      "locked": {
-        "lastModified": 1610842533,
-        "narHash": "sha256-6hW8CML8RnNrRJMv7E56rXAhsCNgUM97HIVSqWxnO64=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "68398d2dd50efc2d878bf0f83bbc8bc323b6b0e0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -296,7 +246,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "iceberg": "iceberg",
         "master": "master",
         "neovim": "neovim",
         "nix": "nix",

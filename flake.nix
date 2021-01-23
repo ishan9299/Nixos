@@ -15,22 +15,14 @@
     };
     stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
-    iceberg.url = "github:icebox-nix/iceberg";
   };
 
   outputs = { self, home-manager, master, neovim, nixpkgs-wayland, stable
-    , unstable, iceberg, ... }@inputs:
+    , unstable, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;
       inherit (lib) removeSuffix recursiveUpdate genAttrs filterAttrs;
-
-      mkSystem = sys: pkgs_: hostname:
-        pkgs_.lib.nixosSystem {
-          system = sys;
-          modules = [ (./. + "/hosts/${hostname}/configuration.nix") ];
-          specialArgs = { inherit inputs; };
-        };
     in {
       X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
 
@@ -42,10 +34,31 @@
       }) (filter (file: lib.hasSuffix ".nix" file)
         (attrNames (readDir ./overlays))));
 
-        # overlay = import ./pkgs;
+      # overlay = import ./pkgs;
 
       nixosConfigurations = {
-        X542URR = mkSystem "x86_64-linux" unstable "X542URR";
+        X542URR = unstable.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/X542URR/configuration.nix
+            {
+              nixpkgs.overlays = attrValues self.overlays
+                ++ [ neovim.overlay nixpkgs-wayland.overlay ];
+
+              system.configurationRevision = unstable.lib.mkIf (self ? rev) self.rev;
+            }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users."me" = {
+                # This automatically sources all the files in ./user
+                imports = (map (name: ./user + "/${name}"))
+                  (attrNames (readDir ./user));
+              };
+            }
+          ];
+        };
       };
     };
 }
