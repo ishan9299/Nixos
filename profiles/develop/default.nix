@@ -29,10 +29,9 @@
   };
 
   fonts.fonts = with pkgs; [
-    iosevka-bin
     (nerdfonts.override {
       fonts =
-        [ "FiraCode" "JetBrainsMono" "Hasklig" "Monoid" ];
+        [ "FiraCode" "JetBrainsMono" "Hasklig" "Monoid" "Iosevka" ];
     })
   ];
 }

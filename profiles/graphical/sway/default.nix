@@ -28,6 +28,11 @@
       polkit_gnome
       waybar
       wlogout
+      pavucontrol
+
+      evince
+
+      font-awesome
     ];
   };
 
