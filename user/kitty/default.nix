@@ -12,10 +12,10 @@
       cursor_shape = "block";
 
       # font setting
-      font_family = "Iosevka";
-      bold_font = "Iosevka";
-      italic_font = "Iosevka";
-      bold_italic_font = "Iosevka";
+      font_family = "Iosevka Nerd Font Complete";
+      bold_font = "Iosevka Bold Nerd Font Complete";
+      italic_font = "Iosevka Italic Nerd Font Complete";
+      bold_italic_font = "Iosevka Bold Italic Nerd Font Complete";
       font_size = "15.0";
 
       # tab bar
