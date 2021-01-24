@@ -21,18 +21,15 @@
       wl-clipboard # clipboard
       autotiling # dynamic tiling in sway
       brightnessctl # brightness control
+      font-awesome # waybar icons
       nwg-launchers # launcher
-      wofi
+      wofi # launcher
       grim
       slurp
       polkit_gnome
-      waybar
+      waybar # bar
       wlogout
       pavucontrol
-
-      evince
-
-      font-awesome
     ];
   };
 
@@ -43,17 +40,14 @@
       "sway/scripts/swayworkspace".source = ./dotfiles/sway/scripts/swayworkspace;
       "xdg/waybar/config".source = ./dotfiles/waybar/config;
       "xdg/waybar/style.css".source = ./dotfiles/waybar/style.css;
-
-      "xdg/gtk-3.0/settings.ini" = {
-        text = ''
-          [Settings]
-          gtk-icon-theme-name=Adwaita
-          gtk-theme-name=Adwaita
-          gtk-cursor-theme-name=Adwaita
-        '';
-        mode = "444";
       };
-    };
+
+    systemPackages = with pkgs; [
+      zathura
+      gnome3.nautilus
+      gnome3.nautilus-python
+      gnome3.sushi
+    ];
   };
 
   # needed for redshift
