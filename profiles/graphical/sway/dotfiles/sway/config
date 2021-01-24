@@ -15,6 +15,7 @@ set $right l
 # Your preferred terminal emulator
 set $term kitty
 # Your preferred application launcher
+bindsym $mod+slash exec wofi --show drun -n
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 
@@ -127,7 +128,6 @@ bindsym $mod+Return mode "management"
 # Workspaces:
 #
 
-# super + PgUp and super + PgDn
     bindsym $mod+d exec "/etc/sway/scripts/swayworkspace navigate next"
     bindsym $mod+a exec "/etc/sway/scripts/swayworkspace navigate prev"
 
@@ -181,16 +181,29 @@ bindsym $mod+Return mode "management"
     bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
 default_border pixel 4
-# smart_gaps on
-# smart_borders on
+default_floating_border pixel 4
 gaps inner 6
 gaps outer 12
+
+#window
+client.background #2f2f2f
+client.focused #0e0e0e #0e0e0e #5ac3cf #181a20 #2f2f2f
+client.unfocused #3d3d3d #3d3d3d #ffffff #202020 #202020
+client.focused_inactive #3d3d3d #3d3d3d #ffffff #202020 #202020
 
 # bindsym $mod+a exec 'nwggrid'
 bar {
     swaybar_command waybar
 }
 
+for_window [app_id="wofi"] floating enable; border pixel 4
+for_window [app_id="org.gnome.Nautilus"] floating enable; border none
+for_window [app_id="pavucontrol"] floating enable; border none
+
 exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
-exec "systemctl --user import-environment; systemctl --user start sway-session.target"
+
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 exec autotiling

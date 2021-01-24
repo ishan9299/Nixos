@@ -5,16 +5,17 @@
     xserver = {
       enable = true;
       layout = "us"; # keyboard layout
-      desktopManager = {
-        gnome3.enable = true;
-        xterm.enable = false;
-      };
       # Enable GDM
       displayManager = {
         lightdm.enable = false;
+        defaultSession = "sway";
         gdm.enable = true;
         gdm.debug = true;
         gdm.wayland = true;
+      };
+      desktopManager = {
+        gnome3.enable = true;
+        xterm.enable = false;
       };
       # Enable TouchInputs
       libinput.enable = true;
@@ -24,6 +25,7 @@
       gnome-keyring.enable = true;
       sushi.enable = true;
       gnome-user-share.enable = true;
+      core-shell.enable = true;
     };
   };
 

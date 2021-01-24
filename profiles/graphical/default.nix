@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    # ./gnome
+    ./gnome
     ./sway
     # ./plasma
   ];
@@ -25,6 +25,7 @@
 
   fonts.fonts = with pkgs; [
     corefonts
+    cantarell-fonts
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
@@ -37,6 +38,7 @@
   qt5.platformTheme = "gnome";
   programs.dconf.enable = true;
   services.flatpak.enable = true;
+  services.flatpak.guiPackages = []; # don't install gnome-software
   xdg.portal.enable = true;
   xdg.portal.gtkUsePortal = true;
   xdg.portal.extraPortals = with pkgs; [

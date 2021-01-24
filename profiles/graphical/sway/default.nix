@@ -46,6 +46,10 @@
       gnome3.nautilus
       gnome3.nautilus-python
       gnome3.sushi
+      gtk-engine-murrine
+      gtk_engines
+      gsettings-desktop-schemas
+      lxappearance
     ];
   };
 
