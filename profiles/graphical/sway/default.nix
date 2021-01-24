@@ -43,7 +43,6 @@
       };
 
     systemPackages = with pkgs; [
-      zathura
       gnome3.nautilus
       gnome3.nautilus-python
       gnome3.sushi
