@@ -49,9 +49,6 @@
     ];
   };
 
-  xdg.configFile."wofi/config".source = ./dotfiles/wofi/config;
-  xdg.configFile."wofi/style.css".source = ./dotfiles/wofi/style.css;
-
   # needed for redshift
   location.provider = "geoclue2";
 
