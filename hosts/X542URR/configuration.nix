@@ -3,14 +3,16 @@ let
   hostname = "X542URR";
   inherit (builtins) attrValues attrNames readDir;
 in {
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./hardware-configuration.nix
     ../../profiles/core
     ../../profiles/develop
-    ../../profiles/graphical
     ../../profiles/laptop
     ../../profiles/network
     ../../profiles/virt
+    ../../profiles/graphical
   ];
 
   networking.hostName = hostname;
@@ -27,14 +29,13 @@ in {
 
   boot.blacklistedKernelModules = [ "iTCO_wdt" ];
   boot.supportedFilesystems = [ "btrfs" ];
-  boot.kernelPackages = pkgs.linuxPackages;
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelModules = [ "kvm-intel" ];
   boot.kernelParams = [
     "zswap.enabled=1 quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3"
   ];
   boot.cleanTmpDir = true;
 
-  nixpkgs.config.allowUnfree = true;
 
   # Diable some services for faster boot
   systemd.services.systemd-udev-settle.enable = false;
@@ -47,7 +48,7 @@ in {
   '';
 
   # microcode
-  hardware.cpu.intel.updateMicrocode = true;
+  # hardware.cpu.intel.updateMicrocode = true;
 
   environment = {
     systemPackages = with pkgs; [
@@ -64,7 +65,7 @@ in {
       ffmpeg
       teams
       gimp
-      krita
+      # krita
       shotwell
       contrast
       geany-with-vte
