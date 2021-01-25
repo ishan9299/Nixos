@@ -14,13 +14,13 @@
 
 stdenv.mkDerivation rec {
   pname = "WhiteSur-gtk-theme";
-  version = "2021-01-15";
+  version = "master";
 
   src = fetchFromGitHub {
     owner = "vinceliuice";
     repo = "WhiteSur-gtk-theme";
     rev = "ccc7fbb467f7bdd9a39c5d1ec7030374b1ec46a8";
-    sha256 = "0000000000000000000000000000000000000000000000000000";
+    sha256 = "sha256-veokZma7MQMR4NLJcGIb5lxM3J+IO9mnorxpl7m3+bQ=";
   };
 
   nativeBuildInputs = [
