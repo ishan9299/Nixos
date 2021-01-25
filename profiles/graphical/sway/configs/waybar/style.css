@@ -52,6 +52,7 @@ window#waybar.hidden {
 #backlight,
 #network,
 #pulseaudio,
+#custom-media,
 #mode,
 #idle_inhibitor,
 #mpd {
@@ -123,6 +124,11 @@ label:focus,
 }
 
 #pulseaudio {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#custom-media {
     background-color: #000000;
     color: #ffffff;
 }

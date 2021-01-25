@@ -47,6 +47,7 @@
       glib # gsettings
       gsettings-desktop-schemas
       pavucontrol
+      playerctl
       # WhiteSur-gtk-theme
     ];
   };

@@ -1,8 +1,19 @@
 {
     "height": 30, // Waybar height (to be removed for auto height)
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "backlight", "battery"],
+    "custom/media": {
+      "format": "{icon} {}",
+      "return-type": "json",
+      "format-icons": {
+        "Playing": " ",
+        "Paused": " ",
+      },
+      "max-length":50,
+      "exec": "playerctl metadata --format '{\"text\": \"{{title}}\", \"tooltip\": \"{{playerName}} : {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click": "playerctl play-pause",
+    },
     "sway/workspaces": {
       "disable-scroll": false,
       "all-outputs": true,

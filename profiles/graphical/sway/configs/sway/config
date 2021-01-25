@@ -177,6 +177,12 @@ bindsym $mod+Return mode "management"
     bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
     bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
+# playerctl
+   bindsym XF86AudioPrev exec playerctl previous
+   bindsym XF86AudioPlay exec playerctl play-pause
+   bindsym XF86AudioStop exec playerctl stop
+   bindsym XF86AudioNext exec playerctl next
+
 default_border pixel 4
 default_floating_border pixel 4
 gaps inner 6
