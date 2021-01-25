@@ -143,21 +143,18 @@ bindsym $mod+Return mode "management"
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+s layout toggle stacking split
+    bindsym $mod+w layout toggle tabbed split
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    bindsym f11 fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+f floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+space layout toggle all
 
-    # Move focus to the parent container
-    # bindsym $mod+a focus parent
 #
 # Scratchpad:
 #

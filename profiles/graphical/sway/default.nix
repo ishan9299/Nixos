@@ -47,7 +47,7 @@
       glib # gsettings
       gsettings-desktop-schemas
       pavucontrol
-      WhiteSur-gtk-theme
+      # WhiteSur-gtk-theme
     ];
   };
 
