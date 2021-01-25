@@ -11,19 +11,19 @@ window:
 # Font configuration
 font:
   normal:
-    family: Monoid Nerd Font
+    family: Iosevka Term
     style: Regular
 
   bold:
-    family: Monoid Nerd Font
+    family: Iosevka Term
     style: Bold
 
   italic:
-    family: Monoid Nerd Font
+    family: Iosevka Term
     style: Italic
 
   bold_italic:
-    family: Monoid Nerd Font
+    family: Iosevka Term
     style: Italic
 
   size: 13.0
