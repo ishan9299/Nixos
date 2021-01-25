@@ -203,6 +203,12 @@ for_window [app_id="wofi"] floating enable; border pixel 4
 for_window [app_id="org.gnome.Nautilus"] floating enable; border none
 for_window [app_id="pavucontrol"] floating enable; border none
 
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema icon-theme 'Tela'
+}
+
+
 exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
 
 exec "systemctl --user import-environment"

@@ -42,6 +42,7 @@
       gnome3.nautilus
       gnome3.nautilus-python
       gnome3.sushi
+      gnome3.adwaita-icon-theme
       gtk-engine-murrine
       gtk_engines
       glib # gsettings
