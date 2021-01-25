@@ -1,8 +1,16 @@
 {
     "height": 30, // Waybar height (to be removed for auto height)
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["custom/applications", "sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": ["custom/media","pulseaudio", "network", "backlight", "battery"],
+    "custom/applications": {
+      "format": "{icon}  Applications",
+      "format-icons": [""],
+      "tooltip": false,
+      "escape": true,
+      "on-click": "wofi --gtk-dark -x 0 -y 0 -W 25% -H 45% --show drun",
+      "max-length":19,
+    },
     "custom/media": {
       "format": "{icon} {}",
       "return-type": "json",
