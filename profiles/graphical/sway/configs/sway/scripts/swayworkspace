@@ -1,7 +1,5 @@
 #!/usr/bin/env dash
 
-# This script allows to use ctrl+PgUp/PgDn for switching workspaces
-
 navigate(){
         currentWorkspace=$(swaymsg -t get_workspaces |jq ".[] | select(.focused).num")
         case $1 in
@@ -22,11 +20,11 @@ move(){
                 "next")
                         num=$((currentWorkspace+1))
                         [ $num -ge 6 ] && num=1
-                        swaymsg move container to workspace number $num;;
+                        swaymsg move container to workspace number $num && navigate $1;;
                 "prev")
                         num=$((currentWorkspace-1))
                         [ $num -le 0 ] && num=5
-                        swaymsg move container to workspace number $num;;
+                        swaymsg move container to workspace number $num && navigate $1;;
         esac
 }
 
