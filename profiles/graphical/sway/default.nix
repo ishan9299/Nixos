@@ -44,6 +44,7 @@
       gnome3.sushi
       gtk-engine-murrine
       gtk_engines
+      glib # gsettings
       gsettings-desktop-schemas
       pavucontrol
     ];
