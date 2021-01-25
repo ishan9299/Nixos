@@ -33,6 +33,8 @@
         value = import (./overlays + "/${name}");
       }) (filter (file: lib.hasSuffix ".nix" file)
         (attrNames (readDir ./overlays))));
+      # Output
+      ## { nnn = <<lambda>> @ /etc/nixos/overlays/nnn.nix; }
 
       overlay = import ./pkgs;
 
@@ -43,7 +45,7 @@
             ./hosts/X542URR/configuration.nix
             {
               nixpkgs.overlays = attrValues self.overlays
-                ++ [ neovim.overlay nixpkgs-wayland.overlay ];
+                ++ [ neovim.overlay nixpkgs-wayland.overlay ] ++ [ (self.overlay) ];
 
               system.configurationRevision = unstable.lib.mkIf (self ? rev) self.rev;
             }
