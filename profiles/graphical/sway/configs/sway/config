@@ -214,6 +214,7 @@ exec_always {
     gsettings set $gnome-schema font-name 'Source Sans Pro 11'
 }
 
+seat seat0 xcursor_theme "capitaine-cursors"
 
 exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
 exec "systemctl --user import-environment"

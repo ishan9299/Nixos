@@ -48,6 +48,7 @@
       glib # gsettings
       gsettings-desktop-schemas
       pavucontrol
+      capitaine-cursors
       playerctl
       # WhiteSur-gtk-theme
     ];
