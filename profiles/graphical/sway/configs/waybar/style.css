@@ -52,11 +52,8 @@ window#waybar.hidden {
 #backlight,
 #network,
 #pulseaudio,
-#custom-applications,
 #custom-media,
-#mode,
-#idle_inhibitor,
-#mpd {
+#mode {
     padding: 0 10px;
     margin: 0 4px;
     color: #ffffff;
@@ -109,32 +106,15 @@ window#waybar.hidden {
 }
 
 label:focus,
-#memory,
 #backlight,
 #network,
-#network.disconnected,
-#temperature,
-#temperature.critical,
-#tray {
+#network.disconnected {
     background-color: #000000;
 }
 
-#cpu {
-    background-color: #000000;
-    color: #ffffff;
-}
-
+#pulseaudio.muted,
+#custom-media,
 #pulseaudio {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-#custom-media {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-#pulseaudio.muted {
     background-color: #000000;
     color: #ffffff;
 }

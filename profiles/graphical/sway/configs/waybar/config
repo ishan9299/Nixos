@@ -1,15 +1,8 @@
 {
     "height": 30, // Waybar height (to be removed for auto height)
-    "modules-left": ["custom/applications", "sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": ["custom/media","pulseaudio", "network", "backlight", "battery"],
-    "custom/applications": {
-      "format": "{icon}  Applications{}",
-      "format-icons": [""],
-      "tooltip": false,
-      "on-click": "nwggrid -f",
-      "max-length":19,
-    },
     "custom/media": {
       "format": "{icon} {}",
       "return-type": "json",

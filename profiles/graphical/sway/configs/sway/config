@@ -185,8 +185,11 @@ bindsym $mod+Return mode "management"
 
 default_border pixel 4
 default_floating_border pixel 4
+smart_borders on
+
 gaps inner 6
 gaps outer 12
+smart_gaps on
 
 focus_follows_mouse no
 
@@ -213,7 +216,5 @@ exec_always {
 
 
 exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
-
 exec "systemctl --user import-environment"
-
 exec autotiling
