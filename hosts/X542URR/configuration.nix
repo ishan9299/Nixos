@@ -61,8 +61,11 @@ in {
       "https://nixpkgs-wayland.cachix.org"
       "https://nix-community.cachix.org"
     ];
+    extraOptions = ''
+     binary-caches-parallel-connections = 3
+     connect-timeout = 5
+    '';
   };
-
   environment = {
     systemPackages = with pkgs; [
       tree
