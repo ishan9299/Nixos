@@ -51,6 +51,8 @@
       pavucontrol
       capitaine-cursors
       playerctl
+      xdg_utils
+      xdg-user-dirs
       # WhiteSur-gtk-theme
     ];
   };
