@@ -15,7 +15,8 @@ set $right l
 # Your preferred terminal emulator
 set $term kitty
 # Your preferred application launcher
-bindsym $mod+slash exec wofi --show drun -n
+# bindsym $mod+slash exec wofi --show drun -n
+bindsym $mod+x exec wofi --show drun -n
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 
