@@ -15,9 +15,10 @@
     };
     stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
+    nur = { url = "github:nix-community/NUR"; };
   };
 
-  outputs = { self, home-manager, master, neovim, nixpkgs-wayland, stable
+  outputs = { self, home-manager, master, neovim, nixpkgs-wayland, nur, stable
     , unstable, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
@@ -45,9 +46,11 @@
             ./hosts/X542URR/configuration.nix
             {
               nixpkgs.overlays = attrValues self.overlays
-                ++ [ neovim.overlay nixpkgs-wayland.overlay ] ++ [ (self.overlay) ];
+                ++ [ neovim.overlay nixpkgs-wayland.overlay nur.overlay ]
+                ++ [ (self.overlay) ];
 
-              system.configurationRevision = unstable.lib.mkIf (self ? rev) self.rev;
+              system.configurationRevision =
+                unstable.lib.mkIf (self ? rev) self.rev;
             }
             home-manager.nixosModules.home-manager
             {

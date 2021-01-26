@@ -227,6 +227,21 @@
         "type": "indirect"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1611593955,
+        "narHash": "sha256-ES3MROsdV5XphpBYMVjvnltpbOPP0iWzpuM5oIQOon4=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "d574b60f5a3e02a3e5be0496599c5358d0656eec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "flake": false,
       "locked": {
@@ -250,6 +265,7 @@
         "neovim": "neovim",
         "nix": "nix",
         "nixpkgs-wayland": "nixpkgs-wayland",
+        "nur": "nur",
         "stable": "stable",
         "unstable": "unstable"
       }
