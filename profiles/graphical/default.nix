@@ -37,11 +37,14 @@
   qt5.platformTheme = "gnome";
   programs.dconf.enable = true;
   services.flatpak.enable = true;
-  services.flatpak.guiPackages = []; # don't install gnome-software
-  xdg.portal.enable = true;
-  xdg.portal.gtkUsePortal = true;
-  xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-wlr
-  ];
+  services.flatpak.guiPackages = lib.mkForce []; # don't install gnome-software
+  xdg = {
+    mime.enable = true;
+    icons.enable = true;
+    menus.enable = true;
+    portal.enable = true;
+    portal.extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+    ];
+  }
 }
