@@ -213,9 +213,11 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema icon-theme 'Tela'
     gsettings set $gnome-schema font-name 'Source Sans Pro 11'
+    gsettings set $gnome-schema cursor-theme 'capitaine-cursors'
+    gsettings set $gnome-schema cursor-size 42
 }
 
-seat seat0 xcursor_theme "capitaine-cursors"
+seat seat0 xcursor_theme "capitaine-cursors" 42
 
 exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
 exec "systemctl --user import-environment"
