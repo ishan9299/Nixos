@@ -90,7 +90,7 @@ in {
 
   users.users.me = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "networkmanager" "kvm" ];
+    extraGroups = [ "wheel" "libvirtd" "networkmanager" "kvm" "audio" ];
     shell = pkgs.fish;
   };
 }
