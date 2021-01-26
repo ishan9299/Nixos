@@ -17,8 +17,7 @@
 
       # Browser
       google-chrome
-      # brave
-      firefox-wayland
+      brave
 
     ];
   };

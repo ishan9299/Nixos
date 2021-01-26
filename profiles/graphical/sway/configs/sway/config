@@ -188,6 +188,8 @@ default_floating_border pixel 4
 gaps inner 6
 gaps outer 12
 
+focus_follows_mouse no
+
 #window
 client.background #2f2f2f
 client.focused #0e0e0e #0e0e0e #5ac3cf #181a20 #2f2f2f
@@ -206,6 +208,7 @@ for_window [app_id="pavucontrol"] floating enable; border none
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema icon-theme 'Tela'
+    gsettings set $gnome-schema font-name 'Source Sans Pro 11'
 }
 
 
