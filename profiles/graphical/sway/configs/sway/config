@@ -23,7 +23,7 @@ bindsym $mod+x exec wofi --show drun -n
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg /etc/nixos/wallpapers/1105163.jpg fill
+output * bg /etc/nixos/wallpapers/1126809.jpg fill
 #
 # Example configuration:
 #
