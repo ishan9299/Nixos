@@ -124,6 +124,16 @@ mode "management" {
 }
 bindsym $mod+Return mode "management"
 
+mode "open-apps" {
+  # applications
+  bindsym b exec "chromium --enable-features=UseOzonePlatform --ozone-platform=wayland"
+  bindsym f exec "nautilus"
+
+  # Return to default mode
+  bindsym Escape mode "default"
+  bindsym Return mode "default"
+}
+bindsym $mod+o mode "open-apps"
 
 #
 # Workspaces:
