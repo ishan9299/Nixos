@@ -8,5 +8,5 @@
       { id = "gcbommkclmclpchllfjekcdonpmejbdp"; } # https-everywhere
       { id = "ebamaffgiechnomghfojkmlkaipoadni"; } # hide-likes
     ];
-  }
+  };
 }
