@@ -8,6 +8,7 @@
   ];
 
   hardware.bluetooth.enable = true;
+  hardware.nvidiaOptimus.disable = true;
 
   # power management features
   services.tlp.enable = true;
