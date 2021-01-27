@@ -14,11 +14,7 @@
 
   environment = {
     systemPackages = with pkgs; [
-
-      # Browser
-      google-chrome
       brave
-
     ];
   };
 
