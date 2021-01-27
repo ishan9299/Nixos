@@ -1,7 +1,7 @@
 {config, pkgs, lib, ...}:
 {
   programs.firefox = {
-    enable = false;
+    enable = true;
     package = pkgs.firefox-wayland;
     extensions = lib.mkIf config.programs.firefox.enable
       (with pkgs.nur.repos.rycee.firefox-addons; [
