@@ -2,7 +2,7 @@
 {
   programs.chromium = {
     enable = true;
-    package = pkgs.chromiumDev;
+    package = pkgs.ungoogled-chromium;
     extensions = [
       { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; } # vimium
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock-origin
