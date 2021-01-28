@@ -25,18 +25,6 @@
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;
       inherit (lib) removeSuffix recursiveUpdate genAttrs filterAttrs;
-
-      system = "x86_64-linux";
-
-      mkPkgs = pkgs: extraOverlays: import pkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = extraOverlays ++ (attrValues self.overlays);
-      }
-
-      pkgs  = mkPkgs master [ self.overlay ];
-      pkgs' = mkPkgs unstable [];
-
     in {
       X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
 
