@@ -2,6 +2,7 @@
   description = "NixOS Configuration";
 
   inputs = {
+    flake-utils = { url = "github:numtide/flake-utils"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "unstable";
@@ -18,12 +19,24 @@
     nur = { url = "github:nix-community/NUR"; };
   };
 
-  outputs = { self, home-manager, master, neovim, nixpkgs-wayland, nur, stable
-    , unstable, ... }@inputs:
+  outputs = { self, flake-utils, home-manager, master, neovim, nixpkgs-wayland
+    , nur, stable, unstable, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;
       inherit (lib) removeSuffix recursiveUpdate genAttrs filterAttrs;
+
+      system = "x86_64-linux";
+
+      mkPkgs = pkgs: extraOverlays: import pkgs {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = extraOverlays ++ (attrValues self.overlays);
+      }
+
+      pkgs  = mkPkgs master [ self.overlay ];
+      pkgs' = mkPkgs unstable [];
+
     in {
       X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
 

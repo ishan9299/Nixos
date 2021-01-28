@@ -226,5 +226,5 @@ exec_always {
 seat seat0 xcursor_theme "capitaine-cursors" 42
 
 exec /run/current-system/sw/libexec/polkit-gnome-authentication-agent-1
-exec "systemctl --user import-environment"
+exec "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK"
 exec autotiling
