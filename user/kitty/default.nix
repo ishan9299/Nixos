@@ -12,11 +12,11 @@
       cursor_shape = "block";
 
       # font setting
-      font_family = "Iosevka Term Nerd Font Complete";
-      bold_font = "Iosevka Term Bold Nerd Font Complete";
-      italic_font = "Iosevka Term Italic Nerd Font Complete";
-      bold_italic_font = "Iosevka Term Bold Italic Nerd Font Complete";
-      font_size = "15.0";
+      font_family = "agave regular Nerd Font Complete Mono";
+      bold_font = "agave regular Nerd Font Complete Mono";
+      italic_font = "agave regular Nerd Font Complete Mono";
+      bold_italic_font = "agave regular Nerd Font Complete Mono";
+      font_size = "17.0";
 
       # tab bar
       tab_bar_edge = "bottom";

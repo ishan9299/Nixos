@@ -31,7 +31,14 @@
   fonts.fonts = with pkgs; [
     (nerdfonts.override {
       fonts =
-        [ "JetBrainsMono" "Hasklig" "Iosevka" "Go-Mono" ];
+        [
+          "Hasklig"
+          "Iosevka"
+          "ShareTechMono"
+          "3270"
+          "Agave"
+          "VictorMono"
+        ];
     })
   ];
 }
