@@ -36,9 +36,8 @@ in {
     '';
 
     shellAliases = {
-      "ls" = "exa -GB1 --icons";
-      "ll" = "exa -abghHliS --icons";
-      "cat" = "bat";
+      "ls" = "exa -GB1";
+      "ll" = "exa -abghHliSG";
       "grep" = "rg";
     };
   };
