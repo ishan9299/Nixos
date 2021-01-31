@@ -1,15 +1,11 @@
 { config, pkgs, lib, ... }:
 let
-  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
-    export __NV_PRIME_RENDER_OFFLOAD=1
-    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-    export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    export __VK_LAYER_NV_optimus=NVIDIA_only
-    exec -a "$0" "$@"
+  prime-run = pkgs.writeShellScriptBin "prime-run" ''
+    __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"
   '';
 in {
   environment.systemPackages = with pkgs; [
-    nvidia-offload
+    prime-run
     acpi
     lm_sensors
     wirelesstools
@@ -20,13 +16,10 @@ in {
   #  hardware.nvidiaOptimus.disable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
-    nvidiaPersistenced = true;
     prime = {
       offload.enable = true;
-
       # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
       intelBusId = "PCI:0:2:0";
-
       # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
       nvidiaBusId = "PCI:1:0:0";
     };

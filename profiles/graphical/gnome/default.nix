@@ -6,22 +6,18 @@
       enable = true;
       layout = "us"; # keyboard layout
       # Enable GDM
-      displayManager = {
-        lightdm.enable = false;
-        defaultSession = "sway";
-        gdm.enable = true;
-        gdm.debug = true;
-        gdm.wayland = true;
-      };
       desktopManager = {
         gnome3.enable = true;
         xterm.enable = false;
+      };
+      displayManager = {
+        gdm.enable = true;
       };
       # Enable TouchInputs
       libinput.enable = true;
     };
     gnome3 = {
-      # gnome-remote-desktop.enable = true;
+      gnome-remote-desktop.enable = true;
       gnome-keyring.enable = true;
       sushi.enable = true;
       gnome-user-share.enable = true;

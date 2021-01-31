@@ -29,7 +29,8 @@ in {
 
   boot.blacklistedKernelModules = [ "iTCO_wdt" ];
   boot.supportedFilesystems = [ "btrfs" ];
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   # boot.kernelModules = [ "kvm-intel" ];
   boot.kernelParams = [
     "zswap.enabled=1 quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3"
