@@ -85,6 +85,8 @@ in {
       shotwell
       contrast
       geany-with-vte
+      steam
+      steam-run
     ];
   };
 
