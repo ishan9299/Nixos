@@ -1,5 +1,16 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }: 
+let
+  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export __VK_LAYER_NV_optimus=NVIDIA_only
+    exec -a "$0" "$@"
+  '';
+in
+{
   environment.systemPackages = with pkgs; [
+    nvidia-offload
     acpi
     lm_sensors
     wirelesstools
@@ -7,16 +18,19 @@
     usbutils
   ];
 
-  hardware.bluetooth.enable = true;
-  hardware.nvidiaOptimus.disable = true;
+  #  hardware.nvidiaOptimus.disable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.prime = {
+    offload.enable = true;
 
-  # power management features
-  services.tlp.enable = true;
-  services.tlp.settings = {
-    CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-    CPU_HWP_ON_AC = "performance";
+    # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
+    intelBusId = "PCI:0:2:0";
+
+    # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
+    nvidiaBusId = "PCI:1:0:0";
   };
+
+  hardware.bluetooth.enable = true;
 
   hardware.opengl = {
     enable = true;
