@@ -3,7 +3,6 @@
   imports = [
     ./gnome
     #  ./sway
-    ./dwm
     # ./plasma
   ];
 
