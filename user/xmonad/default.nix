@@ -1,6 +1,9 @@
 { pkgs, ... }: {
+  home.packages = with pkgs; [
+    dmenu
+  ];
   xsession = {
-    enable = true;
+    enable = false;
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
