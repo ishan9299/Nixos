@@ -22,7 +22,6 @@
       tab_bar_edge = "bottom";
       tab_bar_style = "fade";
       tab_bar_min_tabs = "2";
-      tab_switch_stratergy = "previous";
       active_tab_font_style = "bold";
       inactive_tab_font_style = "normal";
 
