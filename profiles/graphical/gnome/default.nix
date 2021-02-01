@@ -11,7 +11,7 @@
         xterm.enable = false;
       };
       displayManager = {
-        gdm.enable = true;
+        sddm.enable = true;
       };
       # Enable TouchInputs
       libinput.enable = true;
