@@ -2,7 +2,8 @@
 {
   imports = [
     ./gnome
-    ./sway
+    #  ./sway
+    ./dwm
     # ./plasma
   ];
 
