@@ -5,12 +5,12 @@
   ];
 
   xsession = {
-    enable = true;
+    enable = false;
     windowManager = {
       awesome.enable = false;
       xmonad = {
-        enable = true;
-        enableContribAndExtras = true;
+        enable = false;
+        enableContribAndExtras = false;
         config = ./xmonad/xmonad.hs;
       };
     };
