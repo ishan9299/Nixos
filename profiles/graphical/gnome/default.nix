@@ -11,7 +11,13 @@
         xterm.enable = false;
       };
       displayManager = {
-        sddm.enable = true;
+        lightdm = {
+          enable = true;
+          greeters.enso.enable = true;
+          greeters.enso.blur = true;
+          #  greeters.enso.cursorTheme.package = "pkgs.capitaine-cursor";
+          #  greeters.enso.cursorTheme.name = "capitaine-cursor";
+        };
       };
       # Enable TouchInputs
       libinput.enable = true;
