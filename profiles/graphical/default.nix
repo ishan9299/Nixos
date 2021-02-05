@@ -4,8 +4,6 @@
     ./gnome
     ./sway
     # ./plasma
-    # ./wms/xmonad
-    # ./wms/awesome
   ];
 
   hardware.pulseaudio = {
