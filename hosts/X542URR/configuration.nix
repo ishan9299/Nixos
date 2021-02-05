@@ -1,4 +1,4 @@
-{ pkgs, inputs, config, lib, ... }:
+{ pkgs, inputs, config, ... }:
 let
   hostname = "X542URR";
   inherit (builtins) attrValues attrNames readDir;

@@ -1,4 +1,4 @@
-{ lib, stdenv
+{ stdenv
 , fetchFromGitHub
 , meson
 , ninja
@@ -49,7 +49,7 @@ stdenv.mkDerivation rec {
     rm $out/share/themes/*/{AUTHORS,LICENSE}
   '';
 
-  meta = with lib; {
+  meta = with pkgs.lib; {
     description = "Macos Big Sur gtk theme";
     homepage = "https://github.com/vinceliuice/WhiteSur-gtk-theme";
     license = with licenses; [ gpl3 ];

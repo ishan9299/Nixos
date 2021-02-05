@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   imports = [ ./fish ./tmux ];
 
   environment.systemPackages = with pkgs; [

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports = [
     ./gnome
@@ -36,7 +36,7 @@
   qt5.platformTheme = "gnome";
   programs.dconf.enable = true;
   services.flatpak.enable = true;
-  services.flatpak.guiPackages = pkgs.lib.mkForce []; # don't install gnome-software
+  services.flatpak.guiPackages = lib.mkForce []; # don't install gnome-software
   xdg = {
     mime.enable = true;
     icons.enable = true;

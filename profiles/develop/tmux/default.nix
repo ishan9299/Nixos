@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let inherit (builtins) readFile;
 in {
   programs.tmux = {
