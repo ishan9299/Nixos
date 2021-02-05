@@ -1,4 +1,4 @@
-{ config, libs, pkgs, ... }:
+{ config, pkgs, ... }:
 {
   home.packages = with pkgs; [
     alacritty

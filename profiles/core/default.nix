@@ -1,7 +1,4 @@
-{ config, lib, pkgs, ... }:
-let inherit (lib) fileContents;
-
-in
+{ config, pkgs, ... }:
 {
   nix.package = pkgs.nixFlakes;
 
@@ -26,12 +23,12 @@ in
     shellInit = ''
       export STARSHIP_CONFIG=${
         pkgs.writeText "starship.toml"
-        (fileContents ./starship.toml)
+        (pkgs.lib.fileContents ./starship.toml)
       }
     '';
 
     shellAliases =
-      let ifSudo = lib.mkIf config.security.sudo.enable;
+      let ifSudo = pkgs.lib.mkIf config.security.sudo.enable;
       in
       {
         # quick cd

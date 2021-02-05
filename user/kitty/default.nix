@@ -1,4 +1,4 @@
-{ config, libs, pkgs, ... }: {
+{ config, pkgs, ... }: {
   xdg.configFile."kitty/themes/modus-operandi.conf".source =
     ./themes/modus-operandi.conf;
   xdg.configFile."kitty/themes/modus-vivendi.conf".source =
