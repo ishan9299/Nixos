@@ -24,16 +24,16 @@
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (unstable) lib;
-      inherit (lib) removeSuffix recursiveUpdate genAttrs filterAttrs;
+      inherit (lib) removeSuffix hasSuffix;
     in {
       X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
 
       # Automatically source the overlays directory
       # got this from https://github.com/bqv/nixrc/blob/live/flake.nix#L538
       overlays = listToAttrs (map (name: {
-        name = lib.removeSuffix ".nix" name;
+        name = removeSuffix ".nix" name;
         value = import (./overlays + "/${name}");
-      }) (filter (file: lib.hasSuffix ".nix" file)
+      }) (filter (file: hasSuffix ".nix" file)
         (attrNames (readDir ./overlays))));
       # Output
       ## { nnn = <<lambda>> @ /etc/nixos/overlays/nnn.nix; }
