@@ -27,6 +27,7 @@
       gnome-user-share.enable = true;
       core-shell.enable = true;
     };
+    #  switcherooControl.enable = true;
   };
 
   environment = {
