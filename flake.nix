@@ -23,7 +23,7 @@
     , nur, stable, unstable, ... }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
-      inherit (unstable) lib;
+      inherit (master) lib;
       inherit (lib) removeSuffix hasSuffix;
     in {
       X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
@@ -41,7 +41,7 @@
       overlay = import ./pkgs;
 
       nixosConfigurations = {
-        X542URR = unstable.lib.nixosSystem {
+        X542URR = master.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/X542URR/configuration.nix
