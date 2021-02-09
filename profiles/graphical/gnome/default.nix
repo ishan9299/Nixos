@@ -11,10 +11,10 @@
         xterm.enable = false;
       };
       displayManager = {
-        lightdm = {
+        gdm = {
           enable = true;
-          greeters.enso.enable = true;
-          greeters.enso.blur = true;
+          #  wayland = true;
+          #  nvidiaWayland = true;
         };
       };
       # Enable TouchInputs
@@ -27,12 +27,12 @@
       gnome-user-share.enable = true;
       core-shell.enable = true;
     };
-    #  switcherooControl.enable = true;
   };
 
   environment = {
     systemPackages = with pkgs; [
       gnome3.gnome-tweaks
+      switcheroo-control
     ];
     # Exclude some gnome packages
     gnome3.excludePackages = with pkgs; [
@@ -49,4 +49,6 @@
       gnome-photos
     ];
   };
+
+  security.hideProcessInformation = false;
 }

@@ -3,7 +3,6 @@
   imports = [
     ./gnome
     ./sway
-    # ./plasma
   ];
 
   hardware.pulseaudio = {
@@ -31,9 +30,6 @@
     source-serif-pro
   ];
 
-  /*  qt5.style = "adwaita-dark";
-  qt5.enable = true;
-  qt5.platformTheme = "gnome";  */
   programs.qt5ct.enable = true;
   programs.dconf.enable = true;
   services.flatpak.enable = true;
