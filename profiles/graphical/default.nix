@@ -31,7 +31,10 @@
     source-serif-pro
   ];
 
-  qt5.platformTheme = "gnome";
+  /*  qt5.style = "adwaita-dark";
+  qt5.enable = true;
+  qt5.platformTheme = "gnome";  */
+  programs.qt5ct.enable = true;
   programs.dconf.enable = true;
   services.flatpak.enable = true;
   services.flatpak.guiPackages = lib.mkForce []; # don't install gnome-software
