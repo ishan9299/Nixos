@@ -14,6 +14,7 @@
     # C/C++
     gdbgui
     nixfmt
+    qtcreator
 
     # neovim
     neovim-nightly
