@@ -13,7 +13,7 @@
 
     # C/C++
     gdbgui
-    nixfmt
+    nixpkgs-fmt
     qtcreator
 
     # neovim

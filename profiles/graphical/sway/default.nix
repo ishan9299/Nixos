@@ -37,7 +37,7 @@
       "sway/scripts/swayworkspace".source = ./configs/sway/scripts/swayworkspace;
       "xdg/waybar/config".source = ./configs/waybar/config;
       "xdg/waybar/style.css".source = ./configs/waybar/style.css;
-      };
+    };
 
     systemPackages = with pkgs; [
       gnome3.nautilus

@@ -19,22 +19,35 @@
     nur = { url = "github:nix-community/NUR"; };
   };
 
-  outputs = { self, flake-utils, home-manager, master, neovim, nixpkgs-wayland
-    , nur, stable, unstable, ... }@inputs:
+  outputs =
+    { self
+    , flake-utils
+    , home-manager
+    , master
+    , neovim
+    , nixpkgs-wayland
+    , nur
+    , stable
+    , unstable
+    , ...
+    }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (master) lib;
       inherit (lib) removeSuffix hasSuffix;
-    in {
+    in
+    {
       X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
 
       # Automatically source the overlays directory
       # got this from https://github.com/bqv/nixrc/blob/live/flake.nix#L538
-      overlays = listToAttrs (map (name: {
-        name = removeSuffix ".nix" name;
-        value = import (./overlays + "/${name}");
-      }) (filter (file: hasSuffix ".nix" file)
-        (attrNames (readDir ./overlays))));
+      overlays = listToAttrs (map
+        (name: {
+          name = removeSuffix ".nix" name;
+          value = import (./overlays + "/${name}");
+        })
+        (filter (file: hasSuffix ".nix" file)
+          (attrNames (readDir ./overlays))));
       # Output
       ## { nnn = <<lambda>> @ /etc/nixos/overlays/nnn.nix; }
 

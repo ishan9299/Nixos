@@ -2,7 +2,8 @@
 let
   hostname = "X542URR";
   inherit (builtins) attrValues attrNames readDir;
-in {
+in
+{
   nixpkgs.config.allowUnfree = true;
 
   imports = [
@@ -63,8 +64,8 @@ in {
       "https://nix-community.cachix.org"
     ];
     extraOptions = ''
-     binary-caches-parallel-connections = 3
-     connect-timeout = 5
+      binary-caches-parallel-connections = 3
+      connect-timeout = 5
     '';
   };
   environment = {
