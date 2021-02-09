@@ -96,13 +96,13 @@
 
   };
 
-  security = {
+  /*  security = {
 
     hideProcessInformation = true;
 
     protectKernelImage = true;
 
-  };
+  };  */
 
   services.earlyoom.enable = true;
 
