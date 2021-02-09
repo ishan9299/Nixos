@@ -51,4 +51,10 @@
   };
 
   security.hideProcessInformation = false;
+
+  # switcheroo-control stuff
+  services.dbus.packages = [ pkgs.switcheroo-control ];
+  environment.systemPackages = [ pkgs.switcheroo-control ];
+  systemd.packages = [ pkgs.switcheroo-control ];
+  systemd.targets.multi-user.wants = [ "switcheroo-control.service" ];
 }
