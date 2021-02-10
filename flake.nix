@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "unstable";
     };
     master = { url = "github:NixOS/nixpkgs/master"; };
-    neovim = { url = "github:mjlbach/neovim-nightly-overlay"; };
+    neovim = { url = "github:neovim/neovim?dir=contrib"; };
     nix = { url = "github:nixos/nix"; };
     nixpkgs-wayland = {
       url = "github:colemickens/nixpkgs-wayland";
@@ -35,49 +35,80 @@
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (master) lib;
       inherit (lib) removeSuffix hasSuffix;
+
+      packagesOverlay = system: final: prev: {
+        neovim = inputs.neovim.defaultPackage."x86_64-linux";
+        nnn = prev.nnn.overrideAttrs (oldAttrs: {
+          makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
+        });
+      };
+
+      overlays = system: [
+        nixpkgs-wayland.overlay
+        nur.overlay
+        (packagesOverlay system)
+      ];
     in
     {
-      X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
+      homeConfigurations = {
+        nixosHomeConfig = home-manager.lib.homeManagerConfiguration {
+          configuration = { pkgs, ... }:
+          {
+            imports = [
+              ./user/alacritty
+              ./user/bat
+              ./user/direnv
+              ./user/fzf
+              ./user/git
+              ./user/kitty
+              ./user/mpv
+              ./user/musikcube
+              ./user/neofetch
+            ];
+          };
+          system = "x86_64-linux";
+          homeDirectory = "/home/me";
+          username = "me";
+        };
 
-      # Automatically source the overlays directory
-      # got this from https://github.com/bqv/nixrc/blob/live/flake.nix#L538
-      overlays = listToAttrs (map
-        (name: {
-          name = removeSuffix ".nix" name;
-          value = import (./overlays + "/${name}");
-        })
-        (filter (file: hasSuffix ".nix" file)
-          (attrNames (readDir ./overlays))));
-      # Output
-      ## { nnn = <<lambda>> @ /etc/nixos/overlays/nnn.nix; }
-
-      overlay = import ./pkgs;
+        archHomeConfig = home-manager.lib.homeManagerConfiguration {
+          configuration = { pkgs, ... }:
+          {
+            imports = [
+              ./user/alacritty
+              ./user/bat
+              ./user/direnv
+              ./user/fzf
+              ./user/git
+              ./user/kitty
+              ./user/mpv
+              ./user/musikcube
+              ./user/neofetch
+            ];
+          };
+          system = "x86_64-linux";
+          homeDirectory = "/home/me";
+          username = "me";
+        };
+      };
 
       nixosConfigurations = {
         X542URR = master.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            home-manager.nixosModules.home-manager
             ./hosts/X542URR/configuration.nix
             {
-              nixpkgs.overlays = attrValues self.overlays
-                ++ [ neovim.overlay nixpkgs-wayland.overlay nur.overlay ]
-                ++ [ (self.overlay) ];
-
-              system.configurationRevision =
-                unstable.lib.mkIf (self ? rev) self.rev;
-            }
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users."me" = {
-                # This automatically sources all the files in ./user
-                imports = (map (name: ./user + "/${name}"))
-                  (attrNames (readDir ./user));
-              };
+              nixpkgs.overlays = (overlays "x86_64-linux");
             }
           ];
+          specialArgs = { inherit inputs; };
         };
       };
+
+      X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
+      nixosHomeConfig = self.homeConfigurations.nixosHomeConfig.activationPackage;
+      archHomeConfig = self.homeConfigurations.archHomeConfig.activationPackage;
+
     };
 }
