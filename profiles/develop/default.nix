@@ -17,7 +17,7 @@
     qtcreator
 
     # neovim
-    neovim-nightly
+    neovim
     neovim-remote
 
     # git
