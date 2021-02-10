@@ -53,19 +53,19 @@
       homeConfigurations = {
         nixosHomeConfig = home-manager.lib.homeManagerConfiguration {
           configuration = { pkgs, ... }:
-          {
-            imports = [
-              ./user/alacritty
-              ./user/bat
-              ./user/direnv
-              ./user/fzf
-              ./user/git
-              ./user/kitty
-              ./user/mpv
-              ./user/musikcube
-              ./user/neofetch
-            ];
-          };
+            {
+              imports = [
+                ./user/alacritty
+                ./user/bat
+                ./user/direnv
+                ./user/fzf
+                ./user/git
+                ./user/kitty
+                ./user/mpv
+                ./user/musikcube
+                ./user/neofetch
+              ];
+            };
           system = "x86_64-linux";
           homeDirectory = "/home/me";
           username = "me";
@@ -73,19 +73,19 @@
 
         archHomeConfig = home-manager.lib.homeManagerConfiguration {
           configuration = { pkgs, ... }:
-          {
-            imports = [
-              ./user/alacritty
-              ./user/bat
-              ./user/direnv
-              ./user/fzf
-              ./user/git
-              ./user/kitty
-              ./user/mpv
-              ./user/musikcube
-              ./user/neofetch
-            ];
-          };
+            {
+              imports = [
+                ./user/alacritty
+                ./user/bat
+                ./user/direnv
+                ./user/fzf
+                ./user/git
+                ./user/kitty
+                ./user/mpv
+                ./user/musikcube
+                ./user/neofetch
+              ];
+            };
           system = "x86_64-linux";
           homeDirectory = "/home/me";
           username = "me";
