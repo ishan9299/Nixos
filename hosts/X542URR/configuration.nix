@@ -99,4 +99,6 @@ in
     extraGroups = [ "wheel" "libvirtd" "networkmanager" "kvm" "audio" ];
     shell = pkgs.fish;
   };
+
+  system.stateVersion = "21.03";
 }

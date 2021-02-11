@@ -5,7 +5,7 @@
     flake-utils = { url = "github:numtide/flake-utils"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "unstable";
+      inputs.nixpkgs.follows = "master";
     };
     master = { url = "github:NixOS/nixpkgs/master"; };
     neovim = { url = "github:neovim/neovim?dir=contrib"; };
@@ -65,6 +65,7 @@
                 ./user/musikcube
                 ./user/neofetch
               ];
+              home.stateVersion = "20.09";
             };
           system = "x86_64-linux";
           homeDirectory = "/home/me";
@@ -85,6 +86,7 @@
                 ./user/musikcube
                 ./user/neofetch
               ];
+              home.stateVersion = "20.09";
             };
           system = "x86_64-linux";
           homeDirectory = "/home/me";
@@ -96,9 +98,9 @@
         X542URR = master.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            home-manager.nixosModules.home-manager
             ./hosts/X542URR/configuration.nix
             {
+              #  inherit inputs;
               nixpkgs.overlays = (overlays "x86_64-linux");
             }
           ];
