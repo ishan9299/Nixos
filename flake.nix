@@ -51,27 +51,6 @@
     in
     {
       homeConfigurations = {
-        nixosHomeConfig = home-manager.lib.homeManagerConfiguration {
-          configuration = { pkgs, ... }:
-            {
-              imports = [
-                ./user/alacritty
-                ./user/bat
-                ./user/direnv
-                ./user/fzf
-                ./user/git
-                ./user/kitty
-                ./user/mpv
-                ./user/musikcube
-                ./user/neofetch
-              ];
-              home.stateVersion = "20.09";
-            };
-          system = "x86_64-linux";
-          homeDirectory = "/home/me";
-          username = "me";
-        };
-
         archHomeConfig = home-manager.lib.homeManagerConfiguration {
           configuration = { pkgs, ... }:
             {
@@ -100,8 +79,25 @@
           modules = [
             ./hosts/X542URR/configuration.nix
             {
-              #  inherit inputs;
               nixpkgs.overlays = (overlays "x86_64-linux");
+            }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.me = {
+                imports = [
+                  ./user/alacritty
+                  ./user/bat
+                  ./user/direnv
+                  ./user/fzf
+                  ./user/git
+                  ./user/kitty
+                  ./user/mpv
+                  ./user/musikcube
+                  ./user/neofetch
+                ];
+              };
             }
           ];
           specialArgs = { inherit inputs; };
@@ -109,7 +105,6 @@
       };
 
       X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
-      nixosHomeConfig = self.homeConfigurations.nixosHomeConfig.activationPackage;
       archHomeConfig = self.homeConfigurations.archHomeConfig.activationPackage;
 
     };
