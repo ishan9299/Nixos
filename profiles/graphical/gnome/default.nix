@@ -25,14 +25,14 @@
       gnome-keyring.enable = true;
       sushi.enable = true;
       gnome-user-share.enable = true;
-      core-shell.enable = true;
+      # core-shell.enable = true;
     };
+    switcherooControl.enable = true;
   };
 
   environment = {
     systemPackages = with pkgs; [
       gnome3.gnome-tweaks
-      switcheroo-control
     ];
     # Exclude some gnome packages
     gnome3.excludePackages = with pkgs; [
@@ -51,9 +51,4 @@
   };
 
   security.hideProcessInformation = false;
-
-  # switcheroo-control stuff
-  services.dbus.packages = [ pkgs.switcheroo-control ];
-  systemd.packages = [ pkgs.switcheroo-control ];
-  systemd.targets.multi-user.wants = [ "switcheroo-control.service" ];
 }
