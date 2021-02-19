@@ -29,13 +29,11 @@
   ];
 
   fonts.fonts = with pkgs; [
+    "sudo-font"
     (nerdfonts.override {
       fonts =
         [
           "Hasklig"
-          "Iosevka"
-          "ShareTechMono"
-          "3270"
           "Agave"
           "VictorMono"
         ];

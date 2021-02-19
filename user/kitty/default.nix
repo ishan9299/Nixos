@@ -12,10 +12,10 @@
       cursor_shape = "block";
 
       # font setting
-      font_family = "agave regular Nerd Font Complete Mono";
-      bold_font = "agave regular Nerd Font Complete Mono";
-      italic_font = "agave regular Nerd Font Complete Mono";
-      bold_italic_font = "agave regular Nerd Font Complete Mono";
+      font_family = "Victor Mono Regular Nerd Font Complete";
+      bold_font = "Victor Mono Bold Nerd Font Complete";
+      italic_font = "Victor Mono Italic Nerd Font Complete";
+      bold_italic_font = "Victor Mono Bold Italic Nerd Font Complete";
       font_size = "17.0";
 
       # tab bar
