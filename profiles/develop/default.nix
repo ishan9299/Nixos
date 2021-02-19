@@ -29,12 +29,13 @@
   ];
 
   fonts.fonts = with pkgs; [
-    "sudo-font"
+    sudo-font
     (nerdfonts.override {
       fonts =
         [
           "Hasklig"
           "Agave"
+          "Terminus"
           "VictorMono"
         ];
     })

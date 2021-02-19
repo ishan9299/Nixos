@@ -11,19 +11,19 @@ window:
 # Font configuration
 font:
   normal:
-    family: agave Nerd Font
+    family: TerminessTTF Nerd Font Mono
     style: Regular
 
   bold:
-    family: agave Nerd Font
+    family: TerminessTTF Nerd Font Mono
     style: Bold
 
   italic:
-    family: agave Nerd Font
+    family: TerminessTTF Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: agave Nerd Font
+    family: TerminessTTF Nerd Font Mono
     style: Bold Italic
 
   size: 18.0
