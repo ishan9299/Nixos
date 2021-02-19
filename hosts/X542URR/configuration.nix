@@ -58,6 +58,7 @@ in
       tree
       catimg
       unzip
+      cmus
       nnn
       bpytop
       trash-cli
@@ -101,6 +102,8 @@ in
     extraGroups = [ "wheel" "libvirtd" "networkmanager" "kvm" "audio" ];
     shell = pkgs.fish;
   };
+
+  services.earlyoom.enable = true;
 
   system.stateVersion = "21.03";
 }

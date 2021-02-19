@@ -28,11 +28,6 @@
     cmakeWithGui
   ];
 
-  services.mysql = {
-    enable = true;
-    package = pkgs.mysql;
-  };
-
   fonts.fonts = with pkgs; [
     (nerdfonts.override {
       fonts =
