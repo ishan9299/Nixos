@@ -76,17 +76,17 @@
   nix = {
 
     autoOptimiseStore = true;
+    maxJobs = 6;
 
-    gc.automatic = true;
-
-    optimise.automatic = true;
+    gc = {
+      automatic = true;
+      dates = "monthly";
+      options = "--delete-older-than 60d";
+    };
 
     useSandbox = true;
-
     allowedUsers = [ "@wheel" ];
-
     trustedUsers = [ "root" "@wheel" ];
-
     extraOptions = ''
       experimental-features = nix-command flakes ca-references
       min-free = 536870912
@@ -96,16 +96,7 @@
 
   };
 
-  /*  security = {
-
-    hideProcessInformation = true;
-
-    protectKernelImage = true;
-
-  };  */
-
   services.earlyoom.enable = true;
-
   users.mutableUsers = true;
 
 }
