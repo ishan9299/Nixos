@@ -77,6 +77,7 @@
 
     autoOptimiseStore = true;
     maxJobs = 6;
+    buildCores = 6;
 
     gc = {
       automatic = true;
