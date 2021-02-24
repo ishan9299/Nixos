@@ -75,6 +75,7 @@ in
       contrast
       geany-with-vte
       steam
+      qbittorrent
       steam-run
     ];
   };
