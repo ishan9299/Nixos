@@ -75,7 +75,6 @@
 
   nix = {
 
-    autoOptimiseStore = true;
     maxJobs = 6;
     buildCores = 6;
 
