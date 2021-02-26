@@ -21,6 +21,7 @@ in
   #  hardware.nvidiaOptimus.disable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
+    nvidiaPersistenced = true;
     prime = {
       offload.enable = true;
       # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
@@ -36,10 +37,7 @@ in
   hardware.opengl = {
     enable = true;
     driSupport32Bit = true;
-    extraPackages = with pkgs;
-      [
-        intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
   };
 
   security.rtkit.enable = true;

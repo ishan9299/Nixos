@@ -74,6 +74,7 @@ in
       shotwell
       contrast
       geany-with-vte
+      mesa-demos
       steam
       qbittorrent
       steam-run
@@ -98,7 +99,7 @@ in
 
   users.users.me = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "networkmanager" "kvm" "audio" ];
+    extraGroups = [ "wheel" "libvirtd" "networkmanager" "kvm" "audio" "video" ];
     shell = pkgs.fish;
   };
 
