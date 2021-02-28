@@ -78,11 +78,11 @@
     maxJobs = 6;
     buildCores = 6;
 
-    gc = {
-      automatic = true;
-      dates = "monthly";
-      options = "--delete-older-than 60d";
-    };
+    # gc = {
+    #   automatic = true;
+    #   dates = "monthly";
+    #   options = "--delete-older-than 60d";
+    # };
 
     useSandbox = true;
     allowedUsers = [ "@wheel" ];
