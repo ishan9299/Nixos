@@ -2,7 +2,6 @@
   description = "NixOS Configuration";
 
   inputs = {
-    flake-utils = { url = "github:numtide/flake-utils"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "master";
@@ -10,10 +9,6 @@
     master = { url = "github:NixOS/nixpkgs/master"; };
     neovim = { url = "github:neovim/neovim?dir=contrib"; };
     nix = { url = "github:nixos/nix"; };
-    nixpkgs-wayland = {
-      url = "github:colemickens/nixpkgs-wayland";
-      inputs.nixpkgs.follows = "unstable";
-    };
     stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     nur = { url = "github:nix-community/NUR"; };
@@ -44,7 +39,6 @@
       };
 
       overlays = system: [
-        nixpkgs-wayland.overlay
         nur.overlay
         (packagesOverlay system)
       ];

@@ -2,7 +2,6 @@
 {
   imports = [
     ./gnome
-    ./sway
   ];
 
   hardware.pulseaudio = {
