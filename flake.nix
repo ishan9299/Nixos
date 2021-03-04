@@ -16,11 +16,10 @@
 
   outputs =
     { self
-    , flake-utils
     , home-manager
     , master
     , neovim
-    , nixpkgs-wayland
+    , nix
     , nur
     , stable
     , unstable
