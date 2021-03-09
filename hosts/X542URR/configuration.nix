@@ -56,11 +56,13 @@ in
   environment = {
     systemPackages = with pkgs; [
       tree
+      atom
       catimg
       unzip
       cmus
       nnn
-      bpytop
+      cmatrix
+      bottom
       trash-cli
       ripgrep
       exa
