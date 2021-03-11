@@ -2,6 +2,7 @@
   description = "NixOS Configuration";
 
   inputs = {
+    emacs = { url = "github:nix-community/emacs-overlay/master"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "master";
@@ -16,6 +17,7 @@
 
   outputs =
     { self
+    , emacs
     , home-manager
     , master
     , neovim
@@ -39,6 +41,7 @@
 
       overlays = system: [
         nur.overlay
+        emacs.overlay
         (packagesOverlay system)
       ];
     in

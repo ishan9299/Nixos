@@ -67,14 +67,16 @@ in
       ripgrep
       exa
       cava
+      emacs
       youtube-dl
       ffmpeg
       teams
       gimp
+      bless
       krita
       kid3
       shotwell
-      contrast
+      # contrast
       geany-with-vte
       mesa-demos
       steam
