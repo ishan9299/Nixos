@@ -41,6 +41,7 @@
     extraConfig = {
       core = { editor = "nvim"; };
       diff = { ignoreSubmodules = "dirty"; };
+      init = { defaultBranch = "master"; };
     };
 
     userName = "ishan";
