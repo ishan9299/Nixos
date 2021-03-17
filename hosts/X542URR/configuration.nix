@@ -35,7 +35,11 @@ in
   boot.kernelModules = [ "kvm-intel" ];
   # intel_pstate for low performace fix
   boot.kernelParams = [
-    "zswap.enabled=1 intel_pstate=active"
+    "zswap.enabled=1"
+    "intel_pstate=active"
+    "i915.enable_gvt=1"
+    "kvm.ignore_msrs=1"
+    "intel_iommu=on"
   ];
   boot.cleanTmpDir = true;
 
@@ -56,7 +60,8 @@ in
   environment = {
     systemPackages = with pkgs; [
       tree
-      atom
+      lshw
+      dmidecode
       catimg
       unzip
       cmus
@@ -77,7 +82,6 @@ in
       kid3
       shotwell
       # contrast
-      geany-with-vte
       mesa-demos
       steam
       qbittorrent

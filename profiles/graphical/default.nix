@@ -15,6 +15,7 @@
       brave
       google-chrome-dev
       yaru-theme
+      vanilla-dmz
     ];
   };
 

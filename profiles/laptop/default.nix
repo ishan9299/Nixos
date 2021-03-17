@@ -30,6 +30,7 @@ in
       nvidiaBusId = "PCI:1:0:0";
     };
     powerManagement.finegrained = true;
+    modesetting.enable = true;
   };
 
   hardware.bluetooth.enable = true;

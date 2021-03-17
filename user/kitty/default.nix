@@ -20,8 +20,9 @@
 
       # tab bar
       tab_bar_edge = "bottom";
-      tab_bar_style = "fade";
+      tab_bar_style = "round";
       tab_bar_min_tabs = "2";
+      tab_title_template = "{title[:10]}";
       active_tab_font_style = "bold";
       inactive_tab_font_style = "normal";
 
