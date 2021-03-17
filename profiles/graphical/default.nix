@@ -14,6 +14,7 @@
     systemPackages = with pkgs; [
       brave
       google-chrome-dev
+      yaru-theme
     ];
   };
 
@@ -23,6 +24,8 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
+    fira
+    ubuntu_font_family
     lato
     source-han-sans
     source-sans-pro

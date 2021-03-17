@@ -13,8 +13,8 @@
       displayManager = {
         gdm = {
           enable = true;
-          #  wayland = true;
-          #  nvidiaWayland = true;
+           wayland = true;
+           nvidiaWayland = true;
         };
       };
       # Enable TouchInputs

@@ -30,14 +30,17 @@
 
   fonts.fonts = with pkgs; [
     sudo-font
+    nanum-gothic-coding
     (nerdfonts.override {
       fonts =
         [
+          "FiraCode"
           "Hasklig"
+          "UbuntuMono"
           "Agave"
           "Terminus"
           "VictorMono"
         ];
-    })
-  ];
+      })
+    ];
 }
