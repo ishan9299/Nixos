@@ -81,7 +81,9 @@ in
       mesa-demos
       steam
       qbittorrent
+      unrar
       steam-run
+      gzdoom
     ];
   };
 
