@@ -12,11 +12,11 @@
       cursor_shape = "block";
 
       # font setting
-      font_family = "Terminess (TTF) Nerd Font Complete Mono";
-      bold_font = "Terminess (TTF) Bold Nerd Font Complete Mono";
-      italic_font = "Terminess (TTF) Italic Nerd Font Complete Mono";
-      bold_italic_font = "Terminess (TTF) Bold Italic Nerd Font Complete Mono";
-      font_size = "17.0";
+      font_family = "Fira Code Retina Nerd Font Complete Mono";
+      bold_font = "Fira Code Retina Nerd Font Complete Mono";
+      italic_font = "Fira Code Retina Nerd Font Complete Mono";
+      bold_italic_font = "Fira Code Retina Nerd Font Complete Mono";
+      font_size = "16.0";
 
       # tab bar
       tab_bar_edge = "bottom";

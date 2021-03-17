@@ -11,19 +11,19 @@ window:
 # Font configuration
 font:
   normal:
-    family: TerminessTTF Nerd Font Mono
+    family: FiraCode Nerd Font Mono
     style: Regular
 
   bold:
-    family: TerminessTTF Nerd Font Mono
+    family: FiraCode Nerd Font Mono
     style: Bold
 
   italic:
-    family: TerminessTTF Nerd Font Mono
+    family: FiraCode Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: TerminessTTF Nerd Font Mono
+    family: FiraCode Nerd Font Mono
     style: Bold Italic
 
   size: 16.0
