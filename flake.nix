@@ -9,7 +9,7 @@
     };
     master = { url = "github:NixOS/nixpkgs/master"; };
     neovim = { url = "github:neovim/neovim?dir=contrib"; };
-    nix = { url = "github:nixos/nix"; };
+    # nix = { url = "github:nixos/nix"; };
     stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     nur = { url = "github:nix-community/NUR"; };
@@ -21,7 +21,6 @@
     , home-manager
     , master
     , neovim
-    , nix
     , nur
     , stable
     , unstable

@@ -1,8 +1,5 @@
 { config, pkgs, lib, ... }:
 {
-  nix.package = pkgs.nixFlakes;
-
-  nix.systemFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
 
   imports = [ ../../local/locale.nix ];
 
@@ -92,7 +89,18 @@
       min-free = 536870912
       keep-outputs = true
       keep-derivations = true
+      binary-caches-parallel-connections = 3
+      connect-timeout = 5
     '';
+    binaryCachePublicKeys = [
+      "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+    binaryCaches = [
+      "https://nixpkgs-wayland.cachix.org"
+      "https://nix-community.cachix.org"
+    ];
+    package = pkgs.nixUnstable;
 
   };
 
