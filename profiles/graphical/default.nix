@@ -13,7 +13,7 @@
   environment = {
     systemPackages = with pkgs; [
       brave
-      google-chrome-dev
+      vivaldi
       yaru-theme
       vanilla-dmz
     ];
