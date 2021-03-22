@@ -14,6 +14,9 @@
     systemPackages = with pkgs; [
       brave
       vivaldi
+      vivaldi-widevine
+      vivaldi-ffmpeg-codecs
+      dconf
       yaru-theme
       vanilla-dmz
     ];
@@ -34,7 +37,6 @@
   ];
 
   programs.qt5ct.enable = true;
-  programs.dconf.enable = true;
   services.flatpak.enable = true;
   services.flatpak.guiPackages = lib.mkForce [ ]; # don't install gnome-software
   xdg = {
