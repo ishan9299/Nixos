@@ -5,9 +5,9 @@
   ];
 
   hardware.pulseaudio = {
-    enable = true;
-    support32Bit = true;
-    package = pkgs.pulseaudioFull;
+    enable = false;
+    # support32Bit = true;
+    # package = pkgs.pulseaudioFull;
   };
 
   environment = {
@@ -19,6 +19,7 @@
       dconf
       yaru-theme
       vanilla-dmz
+      lagrange
     ];
   };
 

@@ -66,6 +66,9 @@
         dn = ifSudo "s systemctl stop";
         jtl = "journalctl";
 
+        # bottom (htop clone)
+        btm = "btm -b";
+
       };
 
   };
