@@ -28,18 +28,13 @@ in
     systemd-boot.editor = false;
   };
 
-  # boot.blacklistedKernelModules = [ "iTCO_wdt" ];
+  boot.blacklistedKernelModules = [ "iTCO_wdt" ];
   boot.supportedFilesystems = [ "btrfs" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
-  boot.kernelModules = [ "kvm-intel" ];
   # intel_pstate for low performace fix
   boot.kernelParams = [
     "zswap.enabled=1"
     "intel_pstate=active"
-    "i915.enable_gvt=1"
-    "kvm.ignore_msrs=1"
-    "intel_iommu=on"
   ];
   boot.cleanTmpDir = true;
 
@@ -94,7 +89,7 @@ in
 
   users.users.me = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "networkmanager" "kvm" "audio" "video" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
     shell = pkgs.fish;
   };
 
