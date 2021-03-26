@@ -29,7 +29,6 @@
       fonts =
         [
           "FiraCode"
-          "Agave"
         ];
       })
     ];

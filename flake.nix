@@ -2,33 +2,26 @@
   description = "NixOS Configuration";
 
   inputs = {
-    emacs = { url = "github:nix-community/emacs-overlay/master"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "master";
+      inputs.nixpkgs.follows = "unstable";
     };
-    master = { url = "github:NixOS/nixpkgs/master"; };
     neovim = { url = "github:neovim/neovim?dir=contrib"; };
-    # nix = { url = "github:nixos/nix"; };
-    stable = { url = "github:NixOS/nixpkgs/nixos-20.09"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     nur = { url = "github:nix-community/NUR"; };
   };
 
   outputs =
     { self
-    , emacs
     , home-manager
-    , master
     , neovim
     , nur
-    , stable
     , unstable
     , ...
     }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
-      inherit (master) lib;
+      inherit (unstable) lib;
       inherit (lib) removeSuffix hasSuffix;
 
       packagesOverlay = system: final: prev: {
@@ -52,7 +45,6 @@
 
       overlays = system: [
         nur.overlay
-        emacs.overlay
         (packagesOverlay system)
       ];
     in
@@ -81,7 +73,7 @@
       };
 
       nixosConfigurations = {
-        X542URR = master.lib.nixosSystem {
+        X542URR = unstable.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/X542URR/configuration.nix

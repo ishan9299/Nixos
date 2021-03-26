@@ -6,8 +6,6 @@
 
   hardware.pulseaudio = {
     enable = false;
-    # support32Bit = true;
-    # package = pkgs.pulseaudioFull;
   };
 
   environment = {
@@ -17,23 +15,16 @@
       vivaldi-widevine
       vivaldi-ffmpeg-codecs
       dconf
-      yaru-theme
-      vanilla-dmz
       lagrange
     ];
   };
 
   fonts.fonts = with pkgs; [
     corefonts
-    cantarell-fonts
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
     fira
-    lato
-    source-han-sans
-    source-sans-pro
-    source-serif-pro
   ];
 
   programs.qt5ct.enable = true;

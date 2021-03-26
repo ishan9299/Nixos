@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "emacs": {
-      "locked": {
-        "lastModified": 1616214656,
-        "narHash": "sha256-ceFOGcsbGlP/qtxMBlRGFH5fsbN+uGQYeHUrpgcRS4U=",
-        "owner": "nix-community",
-        "repo": "emacs-overlay",
-        "rev": "d9530a7048f4b1c0f65825202a0ce1d111a1d39a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "ref": "master",
-        "repo": "emacs-overlay",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "locked": {
         "lastModified": 1610051610,
@@ -34,7 +18,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "master"
+          "unstable"
         ]
       },
       "locked": {
@@ -49,22 +33,6 @@
         "owner": "nix-community",
         "ref": "master",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "master": {
-      "locked": {
-        "lastModified": 1616718339,
-        "narHash": "sha256-Ws2v4ztENEYfxmeRdYUx5R0vKH2sz2k3YtwDsJwh3U8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b33c36e5eae5537415d6384856a59ef82d68f1b0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -122,29 +90,10 @@
     },
     "root": {
       "inputs": {
-        "emacs": "emacs",
         "home-manager": "home-manager",
-        "master": "master",
         "neovim": "neovim",
         "nur": "nur",
-        "stable": "stable",
         "unstable": "unstable"
-      }
-    },
-    "stable": {
-      "locked": {
-        "lastModified": 1616628936,
-        "narHash": "sha256-AlrgEUkhV4nulv35iNV7iRIcssqvbjNg8+mf5B6SM2Q=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "d395190b24b27a65588f4539c423d9807ad8d4e7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-20.09",
-        "repo": "nixpkgs",
-        "type": "github"
       }
     },
     "unstable": {

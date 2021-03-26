@@ -72,7 +72,7 @@ in
       teams
       gimp
       bless
-      krita
+      # krita
       kid3
       shotwell
       steam

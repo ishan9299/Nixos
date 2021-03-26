@@ -4,7 +4,7 @@
   xdg.configFile."kitty/themes/modus-vivendi.conf".source =
     ./themes/modus-vivendi.conf;
   programs.kitty = {
-    enable = true;
+    enable = false;
     settings = {
       allow_remote_control = "yes";
 
@@ -12,10 +12,10 @@
       cursor_shape = "block";
 
       # font setting
-      font_family = "Fira Code Retina Nerd Font Complete Mono";
-      bold_font = "Fira Code Retina Nerd Font Complete Mono";
-      italic_font = "Fira Code Retina Nerd Font Complete Mono";
-      bold_italic_font = "Fira Code Retina Nerd Font Complete Mono";
+      font_family = "Fira Code Retina Nerd Font Complete";
+      bold_font = "Fira Code Retina Nerd Font Complete";
+      italic_font = "Fira Code Retina Nerd Font Complete";
+      bold_italic_font = "Fira Code Retina Nerd Font Complete";
       font_size = "16.0";
 
       # tab bar
@@ -28,10 +28,6 @@
 
       # colorscheme
       include = "themes/modus-vivendi.conf";
-
-      # transperency
-      # background_opacity = "0.65";
-      # dynamic_background_opacity = "yes";
 
       # layouts
       enabled_layouts = "tall,splits";
