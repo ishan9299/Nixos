@@ -30,7 +30,6 @@
     noto-fonts-cjk
     noto-fonts-emoji
     fira
-    ubuntu_font_family
     lato
     source-han-sans
     source-sans-pro
