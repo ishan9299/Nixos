@@ -59,7 +59,6 @@ in
       dmidecode
       catimg
       unzip
-      cmus
       nnn
       cmatrix
       bottom
@@ -76,8 +75,6 @@ in
       krita
       kid3
       shotwell
-      # contrast
-      mesa-demos
       steam
       qbittorrent
       unrar

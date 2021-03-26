@@ -11,10 +11,7 @@
     wget
     dash
 
-    # C/C++
-    gdbgui
     nixpkgs-fmt
-    qtcreator
 
     # neovim
     neovim
@@ -25,7 +22,6 @@
 
     #cmake
     cmake
-    cmakeWithGui
   ];
 
   fonts.fonts = with pkgs; [
