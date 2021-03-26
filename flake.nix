@@ -36,17 +36,19 @@
         nnn = prev.nnn.overrideAttrs (oldAttrs: {
           makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
         });
-        looking-glass-client = prev.looking-glass-client.overrideAttrs (oldAttrs: {
-          version = "B3";
-          src = fetchFromGitHub {
-            owner = "gnif";
-            repo = "LookingGlass";
-            rev = version;
-            sha256 = "0fnzf5xrlrgkficp8867kbw0alb1za86sl470hdyrasz7xvs195i";
-            fetchSubmodules = true;
-          };
-        });
       };
+
+      # final: prev: {
+      #   nnn = prev.nnn.overrideAttrs (oldAttrs: {
+      #     src = prev.fetchFromGitHub {
+      #       owner = "jarun";
+      #       repo = "nnn";
+      #       rev = "3.5";
+      #       sha256 = "1fa7cmwrzn6kx87kms8i98p9azdlwyh2gnif29l340syl9hkr5qy";
+      #     };
+      #     makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
+      #   });
+      # }
 
       overlays = system: [
         nur.overlay
