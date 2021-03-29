@@ -6,7 +6,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "unstable";
     };
-    neovim = { url = "github:neovim/neovim?dir=contrib"; };
+    neovim = { url = "github:nix-community/neovim-nightly-overlay"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     nur = { url = "github:nix-community/NUR"; };
   };
@@ -25,7 +25,6 @@
       inherit (lib) removeSuffix hasSuffix;
 
       packagesOverlay = system: final: prev: {
-        neovim = inputs.neovim.defaultPackage."x86_64-linux";
         nnn = prev.nnn.overrideAttrs (oldAttrs: {
           makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
         });
@@ -45,6 +44,7 @@
 
       overlays = system: [
         nur.overlay
+        inputs.neovim.overlay
         (packagesOverlay system)
       ];
     in

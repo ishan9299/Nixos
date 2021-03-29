@@ -14,7 +14,7 @@
     nixpkgs-fmt
 
     # neovim
-    neovim
+    neovim-nightly
     neovim-remote
 
     # git
@@ -28,7 +28,9 @@
     (nerdfonts.override {
       fonts =
         [
-          "FiraCode"
+          "Go-Mono"
+          "Hasklig"
+          "InconsolataGo"
         ];
       })
     ];

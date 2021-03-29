@@ -70,9 +70,11 @@ in
       youtube-dl
       ffmpeg
       teams
+      lite
+      tilix
       gimp
       bless
-      # krita
+      krita
       kid3
       shotwell
       steam
