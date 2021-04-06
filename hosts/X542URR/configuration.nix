@@ -51,6 +51,8 @@ in
 
   # microcode
   hardware.cpu.intel.updateMicrocode = true;
+	# firmware
+	hardware.enableAllFirmware = true;
 
   environment = {
     systemPackages = with pkgs; [
@@ -69,7 +71,7 @@ in
       emacs
       youtube-dl
       ffmpeg
-      teams
+      /* teams */
       lite
       tilix
       gimp
