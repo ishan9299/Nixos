@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
   programs.qutebrowser = {
-    enable = false;
+    enable = true;
   };
 }
