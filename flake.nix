@@ -95,6 +95,7 @@
                   ./user/mpv
                   ./user/musikcube
                   ./user/neofetch
+									./user/qutebrowser
                 ];
               };
             }

@@ -74,7 +74,6 @@ in
       tilix
       gimp
       bless
-      krita
       kid3
       shotwell
       steam
