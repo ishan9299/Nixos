@@ -8,13 +8,13 @@
       # Enable GDM
       desktopManager = {
         gnome3.enable = true;
-        xterm.enable = false;
+        xterm.enable = true;
       };
       displayManager = {
         gdm = {
           enable = true;
-           wayland = true;
-           nvidiaWayland = true;
+          wayland = true;
+          nvidiaWayland = true;
         };
       };
       # Enable TouchInputs

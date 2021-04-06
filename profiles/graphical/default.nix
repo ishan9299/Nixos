@@ -1,7 +1,8 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    ./gnome
+    /* ./gnome */
+		./plasma
   ];
 
   hardware.pulseaudio = {
