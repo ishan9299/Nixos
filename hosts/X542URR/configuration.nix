@@ -51,8 +51,8 @@ in
 
   # microcode
   hardware.cpu.intel.updateMicrocode = true;
-	# firmware
-	hardware.enableAllFirmware = true;
+  # firmware
+  hardware.enableAllFirmware = true;
 
   environment = {
     systemPackages = with pkgs; [
@@ -71,13 +71,10 @@ in
       emacs
       youtube-dl
       ffmpeg
-      /* teams */
       lite
-      tilix
       gimp
       bless
       kid3
-      shotwell
       steam
       qbittorrent
       unrar

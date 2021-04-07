@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 let inherit (builtins) readFile;
-in {
+in
+{
   programs.tmux = {
     enable = true;
     baseIndex = 1;

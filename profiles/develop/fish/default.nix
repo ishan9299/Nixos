@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 let inherit (builtins) readFile;
-in {
+in
+{
   users.defaultUserShell = pkgs.fish;
 
   programs.fish = {

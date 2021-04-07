@@ -1,8 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    /* ./gnome */
-		./plasma
+    ./plasma
   ];
 
   hardware.pulseaudio = {
@@ -28,7 +27,6 @@
     fira
   ];
 
-  programs.qt5ct.enable = true;
   services.flatpak.enable = true;
   services.flatpak.guiPackages = lib.mkForce [ ]; # don't install gnome-software
   xdg = {
@@ -36,8 +34,5 @@
     icons.enable = true;
     menus.enable = true;
     portal.enable = true;
-    portal.extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-    ];
   };
 }

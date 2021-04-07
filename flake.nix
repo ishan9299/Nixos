@@ -29,15 +29,15 @@
           makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
         });
 
-				vivaldi = prev.vivaldi.overrideAttrs (oldAttrs: rec {
-				  pname = "vivaldi";
-					version = "3.7.2218.52-1";
+        vivaldi = prev.vivaldi.overrideAttrs (oldAttrs: rec {
+          pname = "vivaldi";
+          version = "3.7.2218.52-1";
 
-					src = prev.fetchurl {
-					  url = "https://downloads.vivaldi.com/stable/vivaldi-stable_${version}_amd64.deb";
-						sha256 = "sha256-8THxgrxt1uc1qD/6pP8qPMqQGE2qJuCZbRy2Ttdlqyo=";
-					};
-				});
+          src = prev.fetchurl {
+            url = "https://downloads.vivaldi.com/stable/vivaldi-stable_${version}_amd64.deb";
+            sha256 = "sha256-8THxgrxt1uc1qD/6pP8qPMqQGE2qJuCZbRy2Ttdlqyo=";
+          };
+        });
       };
 
       # final: prev: {
@@ -105,7 +105,7 @@
                   ./user/mpv
                   ./user/musikcube
                   ./user/neofetch
-									./user/qutebrowser
+                  ./user/qutebrowser
                 ];
               };
             }

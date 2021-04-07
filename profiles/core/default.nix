@@ -70,19 +70,11 @@
         btm = "btm -b";
 
       };
-
   };
 
   nix = {
-
     maxJobs = 6;
     buildCores = 6;
-
-    # gc = {
-    #   automatic = true;
-    #   dates = "monthly";
-    #   options = "--delete-older-than 60d";
-    # };
 
     useSandbox = true;
     allowedUsers = [ "@wheel" ];
@@ -104,10 +96,5 @@
       "https://nix-community.cachix.org"
     ];
     package = pkgs.nixUnstable;
-
   };
-
-  services.earlyoom.enable = true;
-  users.mutableUsers = true;
-
 }
