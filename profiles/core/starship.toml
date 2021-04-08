@@ -1,35 +1,53 @@
-[cmd_duration]
+[character]
+use_symbol_for_status = true
+success_symbol = "[➜](bold green)"
+error_symbol = "[✖](bold red)"
+
+[package]
 disabled = true
 
+[hostname]
+ssh_only = false
+format = "[$hostname]($style) in "
+style = "bold blue"
+
 [directory]
-style = "cyan"
+format = "[$path]($style)[$read_only]($read_only_style) "
 
-[git_branch]
-symbol = " "
-style = "bold dimmed purple"
+[cmd_duration]
+format = "took [$duration]($style) "
+style = "bold yellow"
+disabled = false
 
-[git_status]
-conflicted = "䷅"
-ahead.value = "⟫"
-ahead.style = "green"
-behind.value = "⟪"
-behind.style = "red"
-diverged = "🔀"
-untracked.value = " ❓‍"
-untracked.style = "purple"
-stashed = "↪"
-modified.value = "➕"
-modified.style = "yellow"
-staged.value = "𝚫 "
-staged.style = "green"
-format = '([\[$all_status$ahead_behind\]]($style) )'
-renamed = "⇆"
-deleted.value = "✘ "
-deleted.style = "red"
+[time]
+disabled = false
+time_format = "%T"
+format = "at 🕙[$time]($style) "
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
 style = "bold red"
 
-[memory_usage]
-symbol = " "
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 30
+style = "bold yellow"
 
-[nix_shell]
-symbol = " "
+[username]
+style_user = "bold yellow"
+style_root = "bold green"
+format = "[$user]($style) on "
+disabled = false
+show_always = true
+
+[status]
+style = "bg:black"
+symbol = "🔴"
+format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+map_symbol = true
+disabled = false
+
