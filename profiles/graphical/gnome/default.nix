@@ -1,5 +1,4 @@
 { config, pkgs, ... }: {
-
   # Gnome default desktop
   services = {
     xserver = {
@@ -33,7 +32,7 @@
   environment = {
     systemPackages = with pkgs; [
       gnome3.gnome-tweaks
-      papirus-icon-theme
+      dconf
     ];
     # Exclude some gnome packages
     gnome3.excludePackages = with pkgs; [

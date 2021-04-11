@@ -1,7 +1,8 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    ./plasma
+    # ./plasma
+    ./gnome
   ];
 
   hardware.pulseaudio = {
@@ -10,11 +11,9 @@
 
   environment = {
     systemPackages = with pkgs; [
-      brave
       vivaldi
       vivaldi-widevine
       vivaldi-ffmpeg-codecs
-      dconf
       lagrange
     ];
   };
