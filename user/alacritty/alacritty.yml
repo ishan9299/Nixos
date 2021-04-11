@@ -40,8 +40,8 @@ modus-vivendi: &dark
     foreground: '#ffffff'
 
   cursor:
-    text: '#000000'
-    background: '#777777'
+    text: CellBackground
+    background: CellForeground
 
   # Normal colors (except green it is from intense colors)
   normal:
@@ -83,8 +83,8 @@ modus-operandi: &light
     foreground: '#000000'
 
   cursor:
-    text: '#ffffff'
-    background: '#777777'
+    text: CellBackground
+    background: CellForeground
 
   # Normal colors (except green it is from intense colors)
   normal:
