@@ -6,7 +6,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "unstable";
     };
-    neovim = { url = "github:nix-community/neovim-nightly-overlay"; };
+    neovim = { url = "github:neovim/neovim?dir=contrib"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     nur = { url = "github:nix-community/NUR"; };
   };
@@ -39,18 +39,6 @@
           };
         });
       };
-
-      # final: prev: {
-      #   nnn = prev.nnn.overrideAttrs (oldAttrs: {
-      #     src = prev.fetchFromGitHub {
-      #       owner = "jarun";
-      #       repo = "nnn";
-      #       rev = "3.5";
-      #       sha256 = "1fa7cmwrzn6kx87kms8i98p9azdlwyh2gnif29l340syl9hkr5qy";
-      #     };
-      #     makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
-      #   });
-      # }
 
       overlays = system: [
         nur.overlay

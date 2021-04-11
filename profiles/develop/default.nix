@@ -14,7 +14,7 @@
     nixpkgs-fmt
 
     # neovim
-    neovim-nightly
+    neovim
     neovim-remote
 
     # git
