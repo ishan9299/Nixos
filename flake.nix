@@ -64,7 +64,6 @@
           configuration = { pkgs, ... }:
             {
               imports = [
-                ./user/alacritty
                 ./user/bat
                 ./user/direnv
                 ./user/fzf
@@ -73,12 +72,14 @@
                 ./user/mpv
                 ./user/musikcube
                 ./user/neofetch
+                ./user/qutebrowser
               ];
               home.stateVersion = "20.09";
             };
           system = "x86_64-linux";
           homeDirectory = "/home/me";
           username = "me";
+          xdg.configFile."alacritty/alacritty.yml".source = ./user/alacritty/alacritty.yml;
         };
       };
 
