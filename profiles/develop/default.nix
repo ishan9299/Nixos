@@ -22,8 +22,6 @@
 
     #cmake
     cmake
-
-		tree-sitter
   ];
 
   fonts.fonts = with pkgs; [
