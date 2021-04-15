@@ -11,19 +11,19 @@ window:
 # Font configuration
 font:
   normal:
-    family: InconsolataGo Nerd Font
-    style: Regular
+    family: IBM Plex Mono
+    style: Light
 
   bold:
-    family: InconsolataGo Nerd Font
+    family: IBM Plex Mono
     style: Bold
 
   italic:
-    family: InconsolataGo Nerd Font
+    family: IBM Plex Mono
     style: Italic
 
   bold_italic:
-    family: InconsolataGo Nerd Font
+    family: IBM Plex Mono
     style: Bold Italic
 
   size: 16.0

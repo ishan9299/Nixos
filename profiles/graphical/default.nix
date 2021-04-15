@@ -14,6 +14,7 @@
       vivaldi
       vivaldi-widevine
       vivaldi-ffmpeg-codecs
+      cool-retro-term
       lagrange
     ];
   };
@@ -23,6 +24,7 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
+    ibm-plex
     fira
   ];
 
