@@ -185,7 +185,7 @@ solarized-light: &solarized-light
     cyan:    '#93a1a1' # base1
     white:   '#fdf6e3' # base3
 
-colors: *solarized-light
+colors: *modus-operandi
 
 background_opacity: 1
 
