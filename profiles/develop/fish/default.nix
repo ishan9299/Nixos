@@ -6,9 +6,6 @@ in
 
   programs.fish = {
     enable = true;
-    promptInit = ''
-      ${pkgs.starship}/bin/starship init fish | source
-    '';
 
     interactiveShellInit = ''
 
@@ -24,6 +21,9 @@ in
 
       #------------ cd on quit for nnn -------------+
       ${readFile ./functions/n.fish}
+
+      #----------- my prompt for fish --------------+
+      ${readFile ./functions/fish_prompt.fish}
 
       #------------ neovim-remote configuration ----+
       if test -n "$NVIM_LISTEN_ADDRESS"
