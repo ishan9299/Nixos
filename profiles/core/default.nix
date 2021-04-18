@@ -17,13 +17,6 @@
       whois
     ];
 
-    shellInit = ''
-      export STARSHIP_CONFIG=${
-        pkgs.writeText "starship.toml"
-        (lib.fileContents ./starship.toml)
-      }
-    '';
-
     shellAliases =
       let ifSudo = lib.mkIf config.security.sudo.enable;
       in
