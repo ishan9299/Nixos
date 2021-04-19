@@ -7,6 +7,11 @@ in
   programs.fish = {
     enable = true;
 
+    vendor = {
+      functions.enable = true;
+      completions.enable = true;
+    };
+
     interactiveShellInit = ''
 
       #------------ Disable the greeting -----------+
