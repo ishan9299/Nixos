@@ -75,11 +75,12 @@ in
       gimp
       bless
       kid3
-      /* steam */
+      steam
       qbittorrent
       unrar
-      /* steam-run */
+      steam-run
       gzdoom
+      godot
     ];
   };
 
