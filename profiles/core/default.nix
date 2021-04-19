@@ -60,7 +60,7 @@
         jtl = "journalctl";
 
         # bottom (htop clone)
-        btm = "btm -b --color default-light";
+        btm = "btm -b";
 
       };
   };
