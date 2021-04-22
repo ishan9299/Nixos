@@ -57,6 +57,7 @@ in
   environment = {
     systemPackages = with pkgs; [
       tree
+      fortune
       lshw
       dmidecode
       catimg

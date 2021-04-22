@@ -17,7 +17,7 @@ in
       #------------ Disable the greeting -----------+
       set fish_greeting
 
-      #---- NNN settings
+      #---- NNN settings ---------------------------+
       export NNN_OPTS="eRHdF"
       export NNN_TRASH=1
       export NNN_FIFO=/tmp/nnn.fifo
@@ -39,6 +39,7 @@ in
         export VISUAL="nvim"
         export EDITOR="nvim"
       end
+
     '';
 
     shellAliases = {

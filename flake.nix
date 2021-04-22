@@ -40,11 +40,12 @@
         });
       };
 
-      overlays = system: [
-        nur.overlay
-        inputs.neovim.overlay
-        (packagesOverlay system)
-      ];
+      overlays =
+        system: [
+          nur.overlay
+          inputs.neovim.overlay
+          (packagesOverlay system)
+        ];
     in
     {
       homeConfigurations = {
