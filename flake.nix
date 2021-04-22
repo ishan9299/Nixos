@@ -96,6 +96,7 @@
                   ./user/musikcube
                   ./user/neofetch
                   ./user/qutebrowser
+                  ./user/termite
                 ];
               };
             }
