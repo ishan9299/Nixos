@@ -26,7 +26,7 @@ font:
     family: IBM Plex Mono
     style: Bold Italic
 
-  size: 14.0
+  size: 19.0
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -127,8 +127,8 @@ solarized-dark: &solarized-dark
 
   # Cursor colors
   cursor:
-    text:   '#002b36' # base03
-    cursor: '#839496' # base0
+    text:   CellBackground # base03
+    background: CellForeground # base0
 
   # Normal colors
   normal:
@@ -160,8 +160,8 @@ solarized-light: &solarized-light
 
   # Cursor colors
   cursor:
-    text:   '#fdf6e3' # base3
-    cursor: '#657b83' # base00
+    text:   CellBackground # base3
+    background: CellForeground # base00
 
   # Normal colors
   normal:
