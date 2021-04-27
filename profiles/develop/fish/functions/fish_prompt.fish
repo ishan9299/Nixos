@@ -56,7 +56,8 @@ function fish_prompt
 		 (tput bold)$USER@(hostname) \
 		 (set_color normal --bold)'on' \
 		 (set_color yellow --bold)\[(date '+%Y-%m-%d %H:%M:%S')\] \
-		 (set_color cyan --bold)(prompt_pwd)(fish_git_prompt) \
+		 (set_color cyan --bold)(prompt_pwd)\
+		 (fish_git_prompt) \
 		 "$nix_shell_info"
 	echo -n (set_color magenta --bold)'#:'(set_color normal)
 end
