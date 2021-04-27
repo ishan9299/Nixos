@@ -81,6 +81,7 @@ in
       unrar
       steam-run
       gzdoom
+      glow
       godot
     ];
   };

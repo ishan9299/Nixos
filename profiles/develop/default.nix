@@ -29,6 +29,7 @@
       fonts =
         [
           "Go-Mono"
+          "Hack"
           "Hasklig"
           "InconsolataGo"
         ];
