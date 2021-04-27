@@ -11,19 +11,19 @@ window:
 # Font configuration
 font:
   normal:
-    family: IBM Plex Mono
+    family: Hack Nerd Font
     style: Light
 
   bold:
-    family: IBM Plex Mono
+    family: Hack Nerd Font
     style: Bold
 
   italic:
-    family: IBM Plex Mono
+    family: Hack Nerd Font
     style: Italic
 
   bold_italic:
-    family: IBM Plex Mono
+    family: Hack Nerd Font
     style: Bold Italic
 
   size: 19.0
