@@ -8,6 +8,7 @@
     less
     ncdu
     tokei
+    luaformatter
     wget
     dash
 

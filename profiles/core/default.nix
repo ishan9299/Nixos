@@ -10,6 +10,7 @@
       coreutils
       curl
       dosfstools
+      mmv
       fd
       git
       jq
