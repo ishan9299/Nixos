@@ -12,10 +12,10 @@
       cursor_shape = "block";
 
       # font setting
-      font_family = "Hack Regular Nerd Font Complete Mono";
-      bold_font = "Hack Bold Nerd Font Complete";
-      italic_font = "Hack Italic Nerd Font Complete";
-      bold_italic_font = "Hack Bold Italic Nerd Font Complete";
+      font_family = "VictorMono Nerd Font";
+      bold_font = "VictorMono Nerd Font";
+      italic_font = "VictorMono Nerd Font";
+      bold_italic_font = "VictorMono Nerd Font";
       font_size = "19.0";
 
       # tab bar

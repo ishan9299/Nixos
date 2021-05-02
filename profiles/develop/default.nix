@@ -32,6 +32,7 @@
           "Go-Mono"
           "Hack"
           "Hasklig"
+          "VictorMono"
           "InconsolataGo"
         ];
     })
