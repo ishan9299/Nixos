@@ -49,10 +49,33 @@
     in
     {
       homeConfigurations = {
-        archHomeConfig = home-manager.lib.homeManagerConfiguration {
+        archHomeConfig = inputs.home-manager.lib.homeManagerConfiguration {
           configuration = { pkgs, ... }:
             {
               imports = [
+                ./user/bat
+                ./user/direnv
+                ./user/fzf
+                ./user/git
+                ./user/kitty
+                ./user/mpv
+                ./user/musikcube
+                ./user/neofetch
+                ./user/qutebrowser
+              ];
+              xdg.configFile."alacritty/alacritty.yml".source = ./user/alacritty/alacritty.yml;
+              home.stateVersion = "20.09";
+            };
+          system = "x86_64-linux";
+          homeDirectory = "/home/me";
+          username = "me";
+        };
+
+        nixosHomeConfig = inputs.home-manager.lib.homeManagerConfiguration {
+          configuration = { pkgs, ... }:
+            {
+              imports = [
+                ./user/alacritty
                 ./user/bat
                 ./user/direnv
                 ./user/fzf
@@ -68,7 +91,6 @@
           system = "x86_64-linux";
           homeDirectory = "/home/me";
           username = "me";
-          xdg.configFile."alacritty/alacritty.yml".source = ./user/alacritty/alacritty.yml;
         };
       };
 
@@ -80,25 +102,6 @@
             {
               nixpkgs.overlays = (overlays "x86_64-linux");
             }
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.me = {
-                imports = [
-                  ./user/alacritty
-                  ./user/bat
-                  ./user/direnv
-                  ./user/fzf
-                  ./user/git
-                  ./user/kitty
-                  ./user/mpv
-                  ./user/musikcube
-                  ./user/neofetch
-                  ./user/qutebrowser
-                ];
-              };
-            }
           ];
           specialArgs = { inherit inputs; };
         };
@@ -106,6 +109,6 @@
 
       X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
       archHomeConfig = self.homeConfigurations.archHomeConfig.activationPackage;
-
+      nixosHomeConfig = self.homeConfigurations.nixosHomeConfig.activationPackage;
     };
 }
