@@ -11,19 +11,19 @@ window:
 # Font configuration
 font:
   normal:
-    family: Hack Nerd Font
+    family: VictorMono Nerd Font Mono
     style: Light
 
   bold:
-    family: Hack Nerd Font
+    family: VictorMono Nerd Font Mono
     style: Bold
 
   italic:
-    family: Hack Nerd Font
+    family: VictorMono Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: Hack Nerd Font
+    family: VictorMono Nerd Font Mono
     style: Bold Italic
 
   size: 19.0
@@ -203,5 +203,5 @@ cursor:
   #   - | Beam
   style: Block
 
-shell:
-  program: tmux
+# shell:
+#   program: tmux
