@@ -86,6 +86,8 @@
                 ./user/musikcube
                 ./user/neofetch
                 ./user/qutebrowser
+                ./user/wezterm
+                ./user/zellij
               ];
               xdg.configFile."gitui/key_config.ron".source = ./user/gitui/key_config.ron;
               home.stateVersion = "20.09";
