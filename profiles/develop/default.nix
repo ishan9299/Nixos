@@ -16,6 +16,8 @@
 
     # neovim
     neovim
+    luajitPackages.luacheck
+    luaformatter
     neovim-remote
 
     # git
