@@ -64,6 +64,7 @@
                 ./user/qutebrowser
               ];
               xdg.configFile."alacritty/alacritty.yml".source = ./user/alacritty/alacritty.yml;
+              xdg.configFile."gitui/key_config.ron".source = ./user/gitui/key_config.ron;
               home.stateVersion = "20.09";
             };
           system = "x86_64-linux";
@@ -86,6 +87,7 @@
                 ./user/neofetch
                 ./user/qutebrowser
               ];
+              xdg.configFile."gitui/key_config.ron".source = ./user/gitui/key_config.ron;
               home.stateVersion = "20.09";
             };
           system = "x86_64-linux";
