@@ -27,6 +27,7 @@
     noto-fonts-emoji
     ibm-plex
     fira
+    open-sans
   ];
 
   services.flatpak.enable = true;
