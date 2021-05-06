@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "unstable";
     };
     neovim = { url = "github:neovim/neovim?dir=contrib"; };
-    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
+    unstable = { url = "github:NixOS/nixpkgs/gnome-40"; };
     nur = { url = "github:nix-community/NUR"; };
   };
 
