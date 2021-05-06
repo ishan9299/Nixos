@@ -17,7 +17,7 @@
   environment.systemPackages = with pkgs; [
     virt-manager
     looking-glass-client
-    scream-receivers
+    scream
   ];
 
   boot.kernelModules = [
