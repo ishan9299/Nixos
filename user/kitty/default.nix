@@ -33,7 +33,7 @@
       enabled_layouts = "tall,splits";
 
       # padding
-      window_padding_width = "25";
+      window_padding_width = "18";
       placement_strategy = "center";
 
       # Decorations
