@@ -63,11 +63,13 @@ in
       catimg
       unzip
       nnn
+      wl-clipboard
       cmatrix
       bottom
       trash-cli
       ripgrep
       exa
+      contrast
       cava
       emacs
       youtube-dl
