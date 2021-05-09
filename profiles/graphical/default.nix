@@ -15,6 +15,7 @@
       vivaldi-widevine
       vivaldi-ffmpeg-codecs
       cool-retro-term
+      foot
       firefox
       lagrange
     ];
