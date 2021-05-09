@@ -8,7 +8,7 @@ in
     keyMode = "vi";
     escapeTime = 0;
     customPaneNavigationAndResize = true;
-    terminal = "screen-256color";
+    terminal = "tmux";
     extraConfig = ''
       ${readFile ./tmux.conf}
     '';
