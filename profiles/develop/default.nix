@@ -1,5 +1,5 @@
 { pkgs, lib, ... }: {
-  imports = [ ./fish ./tmux ];
+  imports = [ ./fish ];
 
   environment.systemPackages = with pkgs; [
     file
@@ -34,8 +34,11 @@
           "Go-Mono"
           "Hack"
           "Hasklig"
-          "VictorMono"
+          "Hermit"
           "InconsolataGo"
+          "Iosevka"
+          "Meslo"
+          "VictorMono"
         ];
     })
   ];
