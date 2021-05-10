@@ -1,3 +1,4 @@
+{ config, pkgs, ... }:
 {
   programs.tmux = {
     enable = true;
@@ -7,7 +8,7 @@
     customPaneNavigationAndResize = true;
     terminal = "tmux-256color";
     extraConfig = ''
-      ${readFile ./tmux.conf}
+      ${builtins.readFile ./tmux.conf}
     '';
   };
 }

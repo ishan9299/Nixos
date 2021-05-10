@@ -62,6 +62,7 @@
                 ./user/musikcube
                 ./user/neofetch
                 ./user/qutebrowser
+                ./user/tmux
               ];
               xdg.configFile."alacritty/alacritty.yml".source = ./user/alacritty/alacritty.yml;
               xdg.configFile."gitui/key_config.ron".source = ./user/gitui/key_config.ron;
@@ -86,6 +87,7 @@
                 ./user/musikcube
                 ./user/neofetch
                 ./user/qutebrowser
+                ./user/tmux
                 ./user/wezterm
                 ./user/zellij
               ];

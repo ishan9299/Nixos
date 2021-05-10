@@ -12,6 +12,17 @@ nix build /mnt/etc/nixos#nixosConfigurations.<HOSTNAME>.config.system.build.topl
 nixos-install --root /mnt --system ./result
 ```
 
+To use home-manager
+```nix
+nix build /etc/nixos#homeConfigurations.nixosHomeConfig.activationPackage
+./result/activate
+
+or
+
+nix build /etc/nixos#homeConfigurations.archHomeConfig.activationPackage
+./result/activate
+```
+
 # Repository Layout
 + `user` - contains the home-manager configs all the configuration is automatically sourced to nixos config.
 + `overlays` - contains overlays for some packages.
@@ -20,8 +31,6 @@ nixos-install --root /mnt --system ./result
   - `develop` - packages I need for programming.
   - `graphical` - all the graphical packages that I use in my system.
     + `gnome`
-    + `sway`
-    + `plasma`
   - `laptop` - stuff I need for my laptop.
   - `network` - networking stuff.
   - `virt` - kvm.
@@ -29,13 +38,6 @@ nixos-install --root /mnt --system ./result
 NOTE:
 + X542URR is my hostname change it accordingly.
 + If you have less space than 8GB in the live disk consider disabling some modules and commenting out some packages to reduce the size (I recommend disabling the graphical one in hosts/<HOSTNAME>/configuration.nix). Don't worry you can enable it after install.
-
-# TODO
-1. Add Dconf in home manager
-Have gnome with same settings every time.
-
-2. May be add the Neovim configuration in the NixOS configuration.
-The system will use my Neovim configuration by default.
 
 # Other Nix configuration using flakes
 - [nixcfg](https://github.com/colemickens/nixpkgs-wayland)
