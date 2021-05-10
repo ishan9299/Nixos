@@ -65,6 +65,7 @@
                 ./user/tmux
               ];
               xdg.configFile."alacritty/alacritty.yml".source = ./user/alacritty/alacritty.yml;
+              xdg.configFile."foot/foot.ini".source = ./user/foot/foot.ini;
               xdg.configFile."gitui/key_config.ron".source = ./user/gitui/key_config.ron;
               home.stateVersion = "20.09";
             };
@@ -80,6 +81,7 @@
                 ./user/alacritty
                 ./user/bat
                 ./user/direnv
+                ./user/foot
                 ./user/fzf
                 ./user/git
                 ./user/kitty

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    alacritty
+    foot
   ];
   xdg.configFile."foot/foot.ini".source = ./foot.ini;
 }
