@@ -4,10 +4,11 @@
   inputs = {
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "unstable";
+      inputs.nixpkgs.follows = "master";
     };
     neovim = { url = "github:neovim/neovim?dir=contrib"; };
-    unstable = { url = "github:NixOS/nixpkgs/gnome-40"; };
+    master = { url = "github:NixOS/nixpkgs/master"; };
+    unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     nur = { url = "github:nix-community/NUR"; };
   };
 
