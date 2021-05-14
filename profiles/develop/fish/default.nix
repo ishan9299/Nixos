@@ -30,6 +30,9 @@ in
       #----------- my prompt for fish --------------+
       ${readFile ./functions/fish_prompt.fish}
 
+      #----------- my fish colorsceheme ------------+
+      ${readFile ./functions/_my_colors.fish}
+
       #------------ neovim-remote configuration ----+
       if test -n "$NVIM_LISTEN_ADDRESS"
         alias nvim "nvr -cc split --remote-wait +'set bufhidden=wipe'"

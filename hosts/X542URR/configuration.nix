@@ -30,7 +30,7 @@ in
 
   boot.blacklistedKernelModules = [ "iTCO_wdt" ];
   boot.supportedFilesystems = [ "btrfs" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
   # intel_pstate for low performace fix
   boot.kernelParams = [
     "zswap.enabled=1"

@@ -3,6 +3,7 @@
   imports = [
     # ./plasma
     ./gnome
+    ./river
   ];
 
   hardware.pulseaudio = {
