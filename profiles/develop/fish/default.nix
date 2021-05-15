@@ -26,12 +26,10 @@ in
 
       #------------ cd on quit for nnn -------------+
       ${readFile ./functions/n.fish}
-
-      #----------- my prompt for fish --------------+
+      #------------ fish syntax highlighting -------+
+      ${readFile ./functions/__colors.fish}
+      #------------ fish prompt --------------------+
       ${readFile ./functions/fish_prompt.fish}
-
-      #----------- my fish colorsceheme ------------+
-      ${readFile ./functions/_my_colors.fish}
 
       #------------ neovim-remote configuration ----+
       if test -n "$NVIM_LISTEN_ADDRESS"
