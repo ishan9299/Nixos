@@ -1,23 +1,31 @@
-function ayu_theme_light
-	set --universal fish_color_autosuggestion 8A9199 # ayu:common.ui        autosuggestions
-	set --universal fish_color_command        55B4D4 # ayu:syntax.tag       commands
-	set --universal fish_color_comment        ABB0B6 # ayu:syntax.comment   code comments
-	set --universal fish_color_cwd            399EE6 # ayu:syntax.entity    current working directory in the default prompt
-	set --universal fish_color_end            ED9366 # ayu:syntax.operator  process separators like ';' and '&'
-	set --universal fish_color_error          F51818 # ayu:syntax.error     highlight potential errors
-	set --universal fish_color_escape         4CBF99 # ayu:syntax.regexp    highlight character escapes like '\n' and '\x70'
-	set --universal fish_color_match          F07171 # ayu:syntax.markup    highlight matching parenthesis
-	set --universal fish_color_normal         575F66 # ayu:common.fg        default color
-	set --universal fish_color_operator       FF9940 # ayu:syntax.accent    parameter expansion operators like '*' and '~'
-	set --universal fish_color_param          575F66 # ayu:common.fg        regular command parameters
-	set --universal fish_color_quote          86B300 # ayu:syntax.string    quoted blocks of text
-	set --universal fish_color_redirection    A37ACC # ayu:syntax.constant  IO redirections
-	set --universal fish_color_search_match   --background FF9940 # ayu:syntax.accent    highlight history search matches and the selected pager item (must be a background)
-	set --universal fish_color_selection      FF9940 # ayu:syntax.accent    when selecting text (in vi visual mode)
-
-	# color for fish default prompts item
-	set --universal fish_color_cancel         FAFAFA # ayu:common.bg        the '^C' indicator on a canceled command
-	set --universal fish_color_host           A37ACC # ayu:syntax.constant  current host system in some of fish default prompts
-	set --universal fish_color_host_remote    A37ACC # ayu:syntax.constant  current host system in some of fish default prompts, if fish is running remotely (via ssh or similar)
-	set --universal fish_color_user           FA8D3E # ayu:syntax.keyword   current username in some of fish default prompts
-end
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:3100
+SETUVAR fish_color_autosuggestion:7596E4
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:164CC9
+SETUVAR fish_color_comment:007B7B
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:02BDBD
+SETUVAR fish_color_error:9177E5
+SETUVAR fish_color_escape:00a6b2
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:A37ACC
+SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:00a6b2
+SETUVAR fish_color_param:4319CC
+SETUVAR fish_color_quote:4C3499
+SETUVAR fish_color_redirection:248E8E
+SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
