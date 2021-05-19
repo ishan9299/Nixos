@@ -21,6 +21,9 @@
     neovim-remote
     tree-sitter
 
+    # vscodium
+    vscodium-fhs
+
     # git
     gitAndTools.gitui # I still kinda need it for the root folder
 
