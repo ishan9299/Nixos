@@ -6,7 +6,7 @@
       layout = "us"; # keyboard layout
       # Enable GDM
       desktopManager = {
-        gnome3.enable = true;
+        gnome.enable = true;
         xterm.enable = true;
       };
       displayManager = {
@@ -19,7 +19,7 @@
       # Enable TouchInputs
       libinput.enable = true;
     };
-    gnome3 = {
+    gnome = {
       gnome-remote-desktop.enable = true;
       gnome-keyring.enable = true;
       sushi.enable = true;
@@ -31,21 +31,21 @@
 
   environment = {
     systemPackages = with pkgs; [
-      gnome3.gnome-tweaks
+      gnome.gnome-tweaks
       dconf
     ];
     # Exclude some gnome packages
-    gnome3.excludePackages = with pkgs; [
-      gnome3.gnome-music
-      gnome3.gnome-contacts
-      gnome3.gnome-maps
-      gnome3.totem
-      gnome3.yelp
-      gnome3.epiphany
-      gnome3.eog
-      gnome3.gedit
-      gnome3.geary
-      gnome3.gnome-software
+    gnome.excludePackages = with pkgs; [
+      gnome.gnome-music
+      gnome.gnome-contacts
+      gnome.gnome-maps
+      gnome.totem
+      gnome.yelp
+      gnome.epiphany
+      gnome.eog
+      gnome.gedit
+      gnome.geary
+      gnome.gnome-software
       gnome-photos
     ];
   };
