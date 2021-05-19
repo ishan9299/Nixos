@@ -35,11 +35,11 @@
 
         vivaldi = prev.vivaldi.overrideAttrs (oldAttrs: rec {
           pname = "vivaldi";
-          version = "3.8.2259.37-1";
+          version = "3.8.2259.42-1";
 
           src = prev.fetchurl {
             url = "https://downloads.vivaldi.com/stable/vivaldi-stable_${version}_amd64.deb";
-            sha256 = "sha256-RwR/+OLf7G88Ie1/vYTgoxiLhOZwFp7h2l5QU+VQ8dI=";
+            sha256 = "sha256-zWZItKa0UGnnvElVzARkq8pr2cXHD3pj86Fi6eAC+Aw=";
           };
         });
       };
