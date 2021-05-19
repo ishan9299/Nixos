@@ -13,14 +13,12 @@
     master = { url = "github:NixOS/nixpkgs/master"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     nur = { url = "github:nix-community/NUR"; };
-    nix-doom-emacs.url = "github:vlaci/nix-doom-emacs";
   };
 
   outputs =
     { self
     , home-manager
     , neovim
-    , nix-doom-emacs
     , nur
     , unstable
     , ...
@@ -84,11 +82,9 @@
           configuration = { pkgs, ... }:
             {
               imports = [
-                nix-doom-emacs.hmModule
                 ./user/alacritty
                 ./user/bat
                 ./user/direnv
-                ./user/doom
                 ./user/foot
                 ./user/fzf
                 ./user/git
