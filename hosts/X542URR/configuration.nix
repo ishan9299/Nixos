@@ -57,24 +57,20 @@ in
   environment = {
     systemPackages = with pkgs; [
       tree
-      fortune
       lshw
       dmidecode
       catimg
       unzip
       nnn
       wl-clipboard
-      cmatrix
       bottom
       trash-cli
       ripgrep
       exa
       contrast
-      cava
       emacs
       youtube-dl
       ffmpeg
-      lite
       gimp
       bless
       kid3
@@ -83,8 +79,6 @@ in
       unrar
       steam-run
       gzdoom
-      glow
-      godot
     ];
   };
 
