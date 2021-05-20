@@ -18,7 +18,7 @@
     neovim
     luajitPackages.luacheck
     luaformatter
-    neovim-remote
+    # neovim-remote
     tree-sitter
 
     # vscodium

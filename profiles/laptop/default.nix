@@ -20,7 +20,7 @@ in
 
   # services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidiaOptimus.disable = true;
-  hardware.nvidia = {
+  # hardware.nvidia = {
     #   nvidiaPersistenced = true;
     #   prime = {
     #     offload.enable = true;
@@ -30,8 +30,8 @@ in
     #     nvidiaBusId = "PCI:1:0:0";
     #   };
     #   powerManagement.finegrained = true;
-    modesetting.enable = true;
-  };
+    # modesetting.enable = true;
+  # };
 
   hardware.bluetooth.enable = true;
 
