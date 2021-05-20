@@ -18,6 +18,7 @@
   outputs =
     { self
     , home-manager
+    , master
     , neovim
     , nur
     , unstable
@@ -107,7 +108,7 @@
       };
 
       nixosConfigurations = {
-        X542URR = unstable.lib.nixosSystem {
+        X542URR = master.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/X542URR/configuration.nix
