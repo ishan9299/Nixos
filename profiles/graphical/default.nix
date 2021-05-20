@@ -33,7 +33,6 @@
   ];
 
   services.flatpak.enable = true;
-  services.flatpak.guiPackages = lib.mkForce [ ]; # don't install gnome-software
   xdg = {
     mime.enable = true;
     icons.enable = true;
