@@ -3,7 +3,12 @@
 
   environment.systemPackages = with pkgs; [
     file
+    ripgrep
+    emacs
+    tree
     git-crypt
+    nnn
+    bless
     gnupg
     less
     ncdu

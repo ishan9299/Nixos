@@ -56,23 +56,17 @@ in
 
   environment = {
     systemPackages = with pkgs; [
-      tree
       lshw
       dmidecode
       catimg
       unzip
-      nnn
       wl-clipboard
-      bottom
+      htop
       trash-cli
-      ripgrep
-      exa
       contrast
-      emacs
       youtube-dl
       ffmpeg
       gimp
-      bless
       kid3
       steam
       qbittorrent

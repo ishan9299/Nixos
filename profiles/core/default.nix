@@ -71,6 +71,7 @@
     buildCores = 6;
 
     useSandbox = true;
+    autoOptimiseStore = true;
     allowedUsers = [ "@wheel" ];
     trustedUsers = [ "root" "@wheel" ];
     extraOptions = ''

@@ -44,8 +44,6 @@ in
     '';
 
     shellAliases = {
-      "ls" = "exa -GB1";
-      "ll" = "exa -abghHliSG";
       "grep" = "rg";
     };
   };
