@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "emacs": {
+      "locked": {
+        "lastModified": 1621565684,
+        "narHash": "sha256-EDssKjLt2dDXatuZaLPw8qi8FwWAiOmbPMEoi782UhU=",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "cb4febf24b04ef44abe7aaa692e71b965083294d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "emacs-overlay",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1610051610,
@@ -92,6 +108,7 @@
     },
     "root": {
       "inputs": {
+        "emacs": "emacs",
         "home-manager": "home-manager",
         "master": "master",
         "neovim": "neovim",

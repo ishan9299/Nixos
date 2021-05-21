@@ -12,9 +12,9 @@
 
   environment = {
     systemPackages = with pkgs; [
-      vivaldi
-      vivaldi-widevine
-      vivaldi-ffmpeg-codecs
+      google-chrome-dev
+      chrome-export
+      torbrowser
       cool-retro-term
       foot
       lagrange

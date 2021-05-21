@@ -10,6 +10,7 @@
       url = "github:neovim/neovim?dir=contrib";
       inputs.nixpkgs.follows = "unstable";
     };
+    emacs = { url="github:nix-community/emacs-overlay/master"; };
     master = { url = "github:NixOS/nixpkgs/master"; };
     unstable = { url = "github:NixOS/nixpkgs/nixos-unstable"; };
     nur = { url = "github:nix-community/NUR"; };
@@ -17,6 +18,7 @@
 
   outputs =
     { self
+    , emacs
     , home-manager
     , master
     , neovim
@@ -49,12 +51,13 @@
         system: [
           nur.overlay
           inputs.neovim.overlay
+          inputs.emacs.overlay
           (packagesOverlay system)
         ];
     in
     {
       homeConfigurations = {
-        archHomeConfig = inputs.home-manager.lib.homeManagerConfiguration {
+        linuxHomeConfig = inputs.home-manager.lib.homeManagerConfiguration {
           configuration = { pkgs, ... }:
             {
               imports = [
@@ -121,7 +124,7 @@
       };
 
       X542URR = self.nixosConfigurations.X542URR.config.system.build.toplevel;
-      archHomeConfig = self.homeConfigurations.archHomeConfig.activationPackage;
+      linuxHomeConfig = self.homeConfigurations.linuxHomeConfig.activationPackage;
       nixosHomeConfig = self.homeConfigurations.nixosHomeConfig.activationPackage;
     };
 }

@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     file
     ripgrep
-    emacs
+    emacsPgtk
     tree
     git-crypt
     nnn
