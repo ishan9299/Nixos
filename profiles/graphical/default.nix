@@ -2,7 +2,7 @@
 {
   imports = [
     # ./plasma
-    ./gnome
+    # ./gnome
     ./wm
   ];
 

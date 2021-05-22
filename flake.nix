@@ -97,6 +97,7 @@
                 ./user/musikcube
                 ./user/neofetch
                 ./user/qutebrowser
+                ./user/sway
                 ./user/tmux
                 ./user/wezterm
                 ./user/zellij
