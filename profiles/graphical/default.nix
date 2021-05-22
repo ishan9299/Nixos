@@ -3,7 +3,7 @@
   imports = [
     # ./plasma
     # ./gnome
-    ./wm
+    ./wm/sway
   ];
 
   hardware.pulseaudio = {
