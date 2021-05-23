@@ -92,7 +92,6 @@
                 ./user/foot
                 ./user/fzf
                 ./user/git
-                ./user/i3status-rust
                 ./user/kitty
                 ./user/mpv
                 ./user/musikcube
