@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 let
   terminal = "foot";
-  gsettings = "${pkgs.glib}/bin/gsettings";
   wofi = "${pkgs.wofi}/bin/wofi -Iim";
   drun = "${wofi} --show drun";
   nwggrid = "${pkgs.nwg-launchers}/bin/nwggrid";
@@ -67,6 +66,9 @@ in
       modifier = "Mod4";
       inherit terminal;
       window.border = 4;
+      gaps = {
+        inner = 12;
+      };
       keybindings = {
         "${modifier}+t" = "exec ${terminal}";
         "${modifier}+r" = "reload";
@@ -122,8 +124,8 @@ in
 
         "${modifier}+p" = "exec ${drun}";
 
-        "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set +10";
-        "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 10-";
+        "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set +10%";
+        "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 10%-";
         "XF86AudioLowerVolume" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -2";
         "XF86AudioRaiseVolume" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +2";
         "XF86AudioMute" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --toggle-mute";
@@ -140,6 +142,7 @@ in
 
         "${modifier}+b" = "bar mode toggle";
 
+        "${modifier}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
       };
 
       output = {
@@ -149,27 +152,24 @@ in
       };
 
       startup = [
-        { command = "exec ${pkgs.autotiling}/bin/autotiling"; always = true; }
-        { command = "exec ${gsettings} org.gnome.desktop.interface font-name 'Fira Sans 11'"; always = true; }
-        { command = "exec ${gsettings} org.gnome.desktop.interface icon-theme 'Adwaita'"; always = true; }
-        { command = "exec ${gsettings} org.gnome.desktop.interface gtk-theme 'Adwaita'"; always = true; }
-        { command = "exec ${gsettings} org.gnome.desktop.interface cursor-theme 'Adwaita'"; always = true; }
+        { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
+        { command = "gsettings set org.gnome.desktop.interface font-name 'Fira Sans 11'"; always = true; }
+        { command = "gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'"; always = true; }
+        { command = "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'"; always = true; }
+        { command = "gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'"; always = true; }
+        { command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"; }
       ];
 
-      bars = [{
-        extraConfig = "
-        position top
-        status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-        ";
-      }];
+      bars = [];
 
     };
   };
   home.packages = with pkgs; [
     swayidle
+    glib
     capitaine-cursors
-    yambar
     gnome.nautilus
+    gnome.networkmanagerapplet
     gnome.adwaita-icon-theme
     wl-clipboard
   ];

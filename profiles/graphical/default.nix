@@ -17,6 +17,7 @@
       torbrowser
       cool-retro-term
       foot
+      libinput
       lagrange
     ];
   };

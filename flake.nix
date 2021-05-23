@@ -92,6 +92,7 @@
                 ./user/foot
                 ./user/fzf
                 ./user/git
+                ./user/i3status-rust
                 ./user/kitty
                 ./user/mpv
                 ./user/musikcube
@@ -99,7 +100,9 @@
                 ./user/qutebrowser
                 ./user/sway
                 ./user/tmux
+                ./user/waybar
                 ./user/wezterm
+                ./user/yambar
                 ./user/zellij
               ];
               xdg.configFile."gitui/key_config.ron".source = ./user/gitui/key_config.ron;
