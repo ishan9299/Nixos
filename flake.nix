@@ -100,9 +100,7 @@
                 ./user/qutebrowser
                 ./user/sway
                 ./user/tmux
-                ./user/waybar
                 ./user/wezterm
-                ./user/yambar
                 ./user/zellij
               ];
               xdg.configFile."gitui/key_config.ron".source = ./user/gitui/key_config.ron;

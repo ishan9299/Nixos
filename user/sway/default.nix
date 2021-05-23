@@ -158,9 +158,48 @@ in
         { command = "gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'"; always = true; }
         { command = "gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'"; always = true; }
         { command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"; }
+        { command = "swaymsg workspace 1"; } # make sure to start at workspace 1
       ];
-
-      bars = [];
+      bars = [{
+        mode = "dock";
+        hiddenState = "hide";
+        position = "bottom";
+        fonts = { names = [ "monospace" ]; size = 9.00; };
+        workspaceButtons = true;
+        workspaceNumbers = true;
+        statusCommand = "i3status-rs ~/.config/i3status-rust/config-bottom.toml";
+        trayOutput = "primary";
+        colors = {
+          background = "#2E3440";
+          statusline = "#839496";
+          separator = "#777777";
+          focusedWorkspace = {
+            border = "#4C7899";
+            background = "#285577";
+            text = "#D8DEE9";
+          };
+          activeWorkspace = {
+            border = "#333333";
+            background = "#4C7899";
+            text = "#D8DEE9";
+          };
+          inactiveWorkspace = {
+            border = "#3B4252";
+            background = "#2E3440";
+            text = "#888888";
+          };
+          urgentWorkspace = {
+            border = "#2F343A";
+            background = "#900000";
+            text = "#D8DEE9";
+          };
+          bindingMode = {
+            border = "#2F343A";
+            background = "#900000";
+            text = "#D8DEE9";
+          };
+        };
+      }];
 
     };
   };
