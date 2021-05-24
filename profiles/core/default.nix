@@ -5,19 +5,6 @@
 
   environment = {
 
-    systemPackages = with pkgs; [
-      binutils
-      coreutils
-      curl
-      dosfstools
-      mmv
-      fd
-      git
-      jq
-      ripgrep
-      whois
-    ];
-
     shellAliases =
       let ifSudo = lib.mkIf config.security.sudo.enable;
       in
@@ -59,9 +46,6 @@
         up = ifSudo "s systemctl start";
         dn = ifSudo "s systemctl stop";
         jtl = "journalctl";
-
-        # bottom (htop clone)
-        btm = "btm -b";
 
       };
   };

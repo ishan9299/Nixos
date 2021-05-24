@@ -11,11 +11,6 @@ in
 {
   environment.systemPackages = with pkgs; [
     prime-run
-    acpi
-    lm_sensors
-    wirelesstools
-    pciutils
-    usbutils
   ];
 
   # services.xserver.videoDrivers = [ "nvidia" ];

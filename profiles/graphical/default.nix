@@ -13,24 +13,9 @@
   environment = {
     systemPackages = with pkgs; [
       google-chrome-dev
-      chrome-export
       torbrowser
-      cool-retro-term
-      foot
-      libinput
-      lagrange
     ];
   };
-
-  fonts.fonts = with pkgs; [
-    corefonts
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    ibm-plex
-    fira
-    open-sans
-  ];
 
   services.flatpak.enable = true;
   xdg = {
