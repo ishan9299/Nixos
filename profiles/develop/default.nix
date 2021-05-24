@@ -35,20 +35,4 @@
     #cmake
     cmake
   ];
-
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override {
-      fonts =
-        [
-          "Go-Mono"
-          "Hack"
-          "Hasklig"
-          "Hermit"
-          "InconsolataGo"
-          "Iosevka"
-          "Meslo"
-          "VictorMono"
-        ];
-    })
-  ];
 }

@@ -35,16 +35,6 @@
         nnn = prev.nnn.overrideAttrs (oldAttrs: {
           makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
         });
-
-        vivaldi = prev.vivaldi.overrideAttrs (oldAttrs: rec {
-          pname = "vivaldi";
-          version = "3.8.2259.42-1";
-
-          src = prev.fetchurl {
-            url = "https://downloads.vivaldi.com/stable/vivaldi-stable_${version}_amd64.deb";
-            sha256 = "sha256-zWZItKa0UGnnvElVzARkq8pr2cXHD3pj86Fi6eAC+Aw=";
-          };
-        });
       };
 
       overlays =
@@ -63,18 +53,20 @@
               imports = [
                 ./user/bat
                 ./user/direnv
+                ./user/foot
                 ./user/fzf
                 ./user/git
                 ./user/kitty
                 ./user/mpv
-                ./user/musikcube
-                ./user/neofetch
+                ./user/packages
                 ./user/qutebrowser
+                ./user/sway
                 ./user/tmux
               ];
-              xdg.configFile."alacritty/alacritty.yml".source = ./user/alacritty/alacritty.yml;
-              xdg.configFile."foot/foot.ini".source = ./user/foot/foot.ini;
-              xdg.configFile."gitui/key_config.ron".source = ./user/gitui/key_config.ron;
+              xdg.configFile."gitui/key_config.ron".source = ./user/configs/gitui/key_config.ron;
+              xdg.configFile."alacritty/alacritty" = ./user/configs/alacritty/alacritty.yml;
+              xdg.configFile."musikcube/hotkeys.json" = ./user/configs/musikcube/hotkeys.json;
+              xdg.configFile."neofetch/config.conf" = ./user/configs/neofetch/config.conf;
               home.stateVersion = "20.09";
             };
           system = "x86_64-linux";
@@ -86,7 +78,6 @@
           configuration = { pkgs, ... }:
             {
               imports = [
-                ./user/alacritty
                 ./user/bat
                 ./user/direnv
                 ./user/foot
@@ -94,15 +85,15 @@
                 ./user/git
                 ./user/kitty
                 ./user/mpv
-                ./user/musikcube
-                ./user/neofetch
+                ./user/packages
                 ./user/qutebrowser
                 ./user/sway
                 ./user/tmux
-                ./user/wezterm
-                ./user/zellij
               ];
-              xdg.configFile."gitui/key_config.ron".source = ./user/gitui/key_config.ron;
+              xdg.configFile."gitui/key_config.ron".source = ./user/configs/gitui/key_config.ron;
+              xdg.configFile."alacritty/alacritty" = ./user/configs/alacritty/alacritty.yml;
+              xdg.configFile."musikcube/hotkeys.json" = ./user/configs/musikcube/hotkeys.json;
+              xdg.configFile."neofetch/config.conf" = ./user/configs/neofetch/config.conf;
               home.stateVersion = "20.09";
             };
           system = "x86_64-linux";

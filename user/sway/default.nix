@@ -242,6 +242,11 @@ in
         on_click = "pavucontrol";
       }
       {
+        block = "music";
+        buttons = [ "play" "next" ];
+        interface_name_exclude = [ "mpd" ];
+      }
+      {
         block = "networkmanager";
         on_click = "alacritty -e nmtui";
         interface_name_exclude = [ "br\\-[0-9a-f]{12}" "lxdbr\\d+" "lxcbr\\d+" ];
