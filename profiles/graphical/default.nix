@@ -4,6 +4,7 @@
     # ./plasma
     # ./gnome
     ./wm/sway
+    ./wm/river
   ];
 
   hardware.pulseaudio = {
