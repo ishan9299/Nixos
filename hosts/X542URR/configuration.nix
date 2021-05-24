@@ -56,21 +56,10 @@ in
 
   environment = {
     systemPackages = with pkgs; [
-      lshw
-      dmidecode
-      catimg
-      unzip
-      wl-clipboard
-      htop
-      trash-cli
-      contrast
-      youtube-dl
-      ffmpeg
+      alacritty
       gimp
       kid3
       steam
-      qbittorrent
-      unrar
       steam-run
       gzdoom
     ];
