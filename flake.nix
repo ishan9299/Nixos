@@ -54,6 +54,7 @@
               nixpkgs.config = import ./user/configs/nix/config.nix;
               nixpkgs.overlays = (overlays "x86_64-linux");
               imports = [
+                ./user/packages.nix
                 ./user/bat
                 ./user/direnv
                 ./user/foot
@@ -61,7 +62,6 @@
                 ./user/git
                 ./user/kitty
                 ./user/mpv
-                ./user/packages
                 ./user/qutebrowser
                 ./user/sway
                 ./user/tmux
@@ -84,6 +84,7 @@
               nixpkgs.config = import ./user/configs/nix/config.nix;
               nixpkgs.overlays = (overlays "x86_64-linux");
               imports = [
+                ./user/packages.nix
                 ./user/bat
                 ./user/direnv
                 ./user/foot
@@ -91,7 +92,6 @@
                 ./user/git
                 ./user/kitty
                 ./user/mpv
-                ./user/packages
                 ./user/qutebrowser
                 ./user/sway
                 ./user/tmux
