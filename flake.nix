@@ -50,6 +50,8 @@
         linuxHomeConfig = inputs.home-manager.lib.homeManagerConfiguration {
           configuration = { pkgs, ... }:
             {
+              xdg.configFile."nix/nix.conf".source = ./user/configs/nix/nix.conf;
+              nixpkgs.config = import ./user/configs/nix/config.nix;
               imports = [
                 ./user/bat
                 ./user/direnv
@@ -64,9 +66,9 @@
                 ./user/tmux
               ];
               xdg.configFile."gitui/key_config.ron".source = ./user/configs/gitui/key_config.ron;
-              xdg.configFile."alacritty/alacritty" = ./user/configs/alacritty/alacritty.yml;
-              xdg.configFile."musikcube/hotkeys.json" = ./user/configs/musikcube/hotkeys.json;
-              xdg.configFile."neofetch/config.conf" = ./user/configs/neofetch/config.conf;
+              xdg.configFile."alacritty/alacritty.yml".source = ./user/configs/alacritty/alacritty.yml;
+              xdg.configFile."musikcube/hotkeys.json".source = ./user/configs/musikcube/hotkeys.json;
+              xdg.configFile."neofetch/config.conf".source = ./user/configs/neofetch/config.conf;
               home.stateVersion = "20.09";
             };
           system = "x86_64-linux";
@@ -77,6 +79,8 @@
         nixosHomeConfig = inputs.home-manager.lib.homeManagerConfiguration {
           configuration = { pkgs, ... }:
             {
+              xdg.configFile."nix/nix.conf".source = ./user/configs/nix/nix.conf;
+              nixpkgs.config = import ./user/configs/nix/config.nix;
               imports = [
                 ./user/bat
                 ./user/direnv
@@ -91,9 +95,9 @@
                 ./user/tmux
               ];
               xdg.configFile."gitui/key_config.ron".source = ./user/configs/gitui/key_config.ron;
-              xdg.configFile."alacritty/alacritty" = ./user/configs/alacritty/alacritty.yml;
-              xdg.configFile."musikcube/hotkeys.json" = ./user/configs/musikcube/hotkeys.json;
-              xdg.configFile."neofetch/config.conf" = ./user/configs/neofetch/config.conf;
+              xdg.configFile."alacritty/alacritty.yml".source = ./user/configs/alacritty/alacritty.yml;
+              xdg.configFile."musikcube/hotkeys.json".source = ./user/configs/musikcube/hotkeys.json;
+              xdg.configFile."neofetch/config.conf".source = ./user/configs/neofetch/config.conf;
               home.stateVersion = "20.09";
             };
           system = "x86_64-linux";

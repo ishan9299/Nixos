@@ -20,5 +20,18 @@
     musikcube
     neofetch
     gitui
+
+    trash-cli
+    contrast
+    youtube-dl
+    ffmpeg
+    qbittorrent
+    unrar
+    catimg
+    lshw
+    wl-clipboard
+    htop
+    dmidecode
+    unzip
   ];
 }
