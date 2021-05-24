@@ -52,6 +52,7 @@
             {
               xdg.configFile."nix/nix.conf".source = ./user/configs/nix/nix.conf;
               nixpkgs.config = import ./user/configs/nix/config.nix;
+              nixpkgs.overlays = (overlays "x86_64-linux");
               imports = [
                 ./user/bat
                 ./user/direnv
@@ -81,6 +82,7 @@
             {
               xdg.configFile."nix/nix.conf".source = ./user/configs/nix/nix.conf;
               nixpkgs.config = import ./user/configs/nix/config.nix;
+              nixpkgs.overlays = (overlays "x86_64-linux");
               imports = [
                 ./user/bat
                 ./user/direnv
