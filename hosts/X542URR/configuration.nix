@@ -69,7 +69,7 @@ in
   users.users.me = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
 
   services.earlyoom.enable = true;
