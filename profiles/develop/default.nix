@@ -1,3 +1,3 @@
 { pkgs, lib, ... }: {
-  imports = [ ./fish ];
+  imports = [ ./zsh ];
 }
