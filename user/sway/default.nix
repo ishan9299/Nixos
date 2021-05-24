@@ -263,6 +263,7 @@ in
     swayidle
     glib
     capitaine-cursors
+    pavucontrol
     gnome.nautilus
     gnome.networkmanagerapplet
     gnome.adwaita-icon-theme
