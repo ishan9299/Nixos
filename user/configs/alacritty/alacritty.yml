@@ -11,19 +11,19 @@ window:
 # Font configuration
 font:
   normal:
-    family: VictorMono Nerd Font Mono
+    family: FiraMono Nerd Font
     style: Light
 
   bold:
-    family: VictorMono Nerd Font Mono
+    family: FiraMono Nerd Font
     style: Bold
 
   italic:
-    family: VictorMono Nerd Font Mono
+    family: Script12 BT
     style: Italic
 
   bold_italic:
-    family: VictorMono Nerd Font Mono
+    family: Script12 BT
     style: Bold Italic
 
   size: 14.0
