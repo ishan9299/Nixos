@@ -4,7 +4,7 @@
     server.enable = false;
     settings = {
       main = {
-        font="VictorMono Nerd Font Mono:size=10";
+        font="FiraMono Nerd Font:size=10";
         pad="0x0 center";
         term="xterm-256color";
       };
