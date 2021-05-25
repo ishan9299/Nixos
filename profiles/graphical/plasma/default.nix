@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{
   # Plasma Desktop
   services.xserver = {
     enable = true;

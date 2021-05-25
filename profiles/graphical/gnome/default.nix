@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{
   # Gnome default desktop
   services = {
     xserver = {

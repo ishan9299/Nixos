@@ -1,10 +1,10 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   imports = [
     # ./plasma
     # ./gnome
     ./wm/sway
-    ./wm/river
+    ./wm/awesome
   ];
 
   hardware.pulseaudio = {

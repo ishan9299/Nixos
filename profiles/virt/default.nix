@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }:
+{
   # Virtualization
   virtualisation.kvmgt.enable = true;
   virtualisation.kvmgt.vgpus = {

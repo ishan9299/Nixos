@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   prime-run = pkgs.writeShellScriptBin "prime-run" ''
     export __NV_PRIME_RENDER_OFFLOAD=1

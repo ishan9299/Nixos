@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   terminal = "foot";
   wofi = "${pkgs.wofi}/bin/wofi -Iim";
