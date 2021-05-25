@@ -4,55 +4,13 @@ let
   wofi = "${pkgs.wofi}/bin/wofi -Iim";
   drun = "${wofi} --show drun";
   nwggrid = "${pkgs.nwg-launchers}/bin/nwggrid";
-  swaylock = "${pkgs.swaylock}/bin/swaylock";
   swayworkspace = pkgs.writeShellScriptBin "swayworkspace" ''
-    navigate(){
-      currentWorkspace=$(swaymsg -t get_workspaces |jq ".[] | select(.focused).num")
-      case $1 in
-        "next")
-          num=$((currentWorkspace+1))
-          [ $num -ge 11 ] && num=1
-          swaymsg workspace number $num;;
-        "prev")
-          num=$((currentWorkspace-1))
-          [ $num -le 0 ] && num=10
-          swaymsg workspace number $num;;
-      esac
-    }
-
-    move(){
-      currentWorkspace=$(swaymsg -t get_workspaces |jq ".[] | select(.focused).num")
-      case $1 in
-        "next")
-          num=$((currentWorkspace+1))
-          [ $num -ge 11 ] && num=1
-          swaymsg move container to workspace number $num && navigate $1;;
-        "prev")
-          num=$((currentWorkspace-1))
-          [ $num -le 0 ] && num=10
-          swaymsg move container to workspace number $num && navigate $1;;
-      esac
-    }
-
-    case $1 in
-      "navigate")
-        case $2 in
-          "next")
-            navigate next;;
-          "prev")
-            navigate prev;;
-        esac;;
-      "move")
-        case $2 in
-          "next")
-            move next;;
-          "prev")
-            move prev;;
-        esac;;
-    esac
-
+  ${builtins.readFile ./scripts/swayworkspace.sh}
   '';
 
+  lock = pkgs.writeShellScriptBin "lock" ''
+  ${builtins.readFile ./scripts/lock.sh}
+  '';
 in
 {
   xresources.properties = {
@@ -143,6 +101,9 @@ in
         "${modifier}+b" = "bar mode toggle";
 
         "${modifier}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+
+        "Print" = "exec grim -o (swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') (xdg-user-dir PICTURES)/(date +'%Y-%m-%d-%H%M%S_grim.png')";
+        "Shift+Print" = "exec grim -g '(slurp)' (xdg-user-dir PICTURES)/(date +'%Y-%m-%d-%H%M%S_grim.png')";
       };
 
       output = {
@@ -268,6 +229,9 @@ in
     gnome.nautilus
     gnome.networkmanagerapplet
     gnome.adwaita-icon-theme
+    grim
+    slurp
+    xdg-user-dirs
     wl-clipboard
   ];
 }
