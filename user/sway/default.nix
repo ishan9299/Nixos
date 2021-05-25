@@ -264,6 +264,7 @@ in
     glib
     capitaine-cursors
     pavucontrol
+    bemenu
     gnome.nautilus
     gnome.networkmanagerapplet
     gnome.adwaita-icon-theme

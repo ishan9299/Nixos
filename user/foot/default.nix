@@ -2,7 +2,7 @@
 {
   programs.foot = {
     enable = true;
-    server.enable = true;
+    server.enable = false;
     settings = {
       main = {
         font="VictorMono Nerd Font Mono:size=10";
