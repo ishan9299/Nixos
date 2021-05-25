@@ -9,13 +9,19 @@
         body = "${builtins.readFile ./n.fish}";
       };
     };
+    loginShellInit = ''
+    ${builtins.readFile ./fish_profile.fish}
+    '';
     interactiveShellInit = ''
     ${builtins.readFile ./fish_init.fish}
     '';
-    plugins = {
-    };
-    promptInit = ''
-    ${builtins.readFile ./fish_prompt.fish}
-    '';
+    # promptInit = ''
+    # ${builtins.readFile ./fish_prompt.fish}
+    # '';
+  };
+
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
   };
 }
