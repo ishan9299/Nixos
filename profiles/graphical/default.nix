@@ -3,6 +3,7 @@
   imports = [
     # ./plasma
     # ./gnome
+    ./wm/display-manager.nix
     ./wm/sway
     ./wm/awesome
   ];
@@ -14,7 +15,7 @@
   environment = {
     systemPackages = with pkgs; [
       google-chrome-dev
-      torbrowser
+      brave
     ];
   };
 
