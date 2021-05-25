@@ -16,6 +16,7 @@
           "Go-Mono"
           "Hack"
           "Hasklig"
+          "FiraMono"
           "Hermit"
           "InconsolataGo"
           "Iosevka"
