@@ -15,38 +15,8 @@
         "...." = "cd ../../..";
         "....." = "cd ../../../..";
 
-        # git
-        g = "git";
-
         # grep
         grep = "rg";
-        gi = "grep -i";
-
-        # nix
-        n = "nix";
-        np = "n profile";
-        ni = "np install";
-        nr = "np remove";
-        ns = "n search --no-update-lock-file";
-        nf = "n flake";
-        srch = "ns nixpkgs";
-        nrb = ifSudo "sudo nixos-rebuild";
-
-        # sudo
-        s = ifSudo "sudo -E ";
-        si = ifSudo "sudo -i";
-        se = ifSudo "sudoedit";
-
-        # systemd
-        ctl = "systemctl";
-        stl = ifSudo "s systemctl";
-        utl = "systemctl --user";
-        ut = "systemctl --user start";
-        un = "systemctl --user stop";
-        up = ifSudo "s systemctl start";
-        dn = ifSudo "s systemctl stop";
-        jtl = "journalctl";
-
       };
   };
 
@@ -75,5 +45,10 @@
       "https://nix-community.cachix.org"
     ];
     package = pkgs.nixUnstable;
+  };
+
+  users.defaultUserShell = pkgs.fish;
+  programs.fish = {
+    enable = true;
   };
 }

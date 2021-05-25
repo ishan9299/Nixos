@@ -57,6 +57,7 @@
                 ./user/packages.nix
                 ./user/bat
                 ./user/direnv
+                ./user/fish
                 ./user/foot
                 ./user/fzf
                 ./user/git
@@ -87,6 +88,7 @@
                 ./user/packages.nix
                 ./user/bat
                 ./user/direnv
+                ./user/fish
                 ./user/foot
                 ./user/fzf
                 ./user/git

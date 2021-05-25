@@ -1,3 +1,0 @@
-{ pkgs, lib, ... }: {
-  imports = [ ./zsh ];
-}

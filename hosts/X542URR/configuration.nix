@@ -9,7 +9,6 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../profiles/core
-    ../../profiles/develop
     ../../profiles/laptop
     ../../profiles/network
     ../../profiles/virt
@@ -69,7 +68,7 @@ in
   users.users.me = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   services.earlyoom.enable = true;
