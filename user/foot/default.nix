@@ -4,10 +4,10 @@
     server.enable = false;
     settings = {
       main = {
-        font="Iosevka Nerd Font:size=11";
-        font-bold="Iosevka Nerd Font:size=11";
-        font-italic="Iosevka Nerd Font:size=11:slant=italic";
-        font-bold-italic="Iosevka Nerd Font:size=11:slant=italic";
+        font="Input Mono:size=11";
+        font-bold="Input Mono:size=11";
+        font-italic="Input Mono:size=11:slant=italic";
+        font-bold-italic="Input Mono:size=11:slant=italic";
         box-drawings-uses-font-glyphs="yes";
         pad="0x0 center";
         term="xterm-256color";
