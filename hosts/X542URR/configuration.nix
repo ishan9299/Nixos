@@ -38,7 +38,7 @@ in
   boot.cleanTmpDir = true;
 
 
-  # Diable some services for faster boot
+  # Disable some services for faster boot
   systemd.services.systemd-udev-settle.enable = false;
   systemd.services.NetworkManager-wait-online.enable = false;
   # settings for journalctl as it can reduce the boot speed by alot upto 20secs in my case
