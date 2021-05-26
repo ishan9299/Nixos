@@ -5,8 +5,9 @@ let
   drun = "${wofi} --show drun";
   nwggrid = "${pkgs.nwg-launchers}/bin/nwggrid";
   swayworkspace = pkgs.writeShellScriptBin "swayworkspace" ''
-  ${builtins.readFile ./scripts/swayworkspace.sh}
+    ${builtins.readFile ./scripts/swayworkspace.sh}
   '';
+  chromeWaylandFlags = "--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-native-gpu-memory-buffers --use-gl=egl";
 in
 {
   xresources.properties = {
@@ -25,7 +26,7 @@ in
       };
       keybindings = {
         "${modifier}+t" = "exec ${terminal}";
-        "${modifier}+r" = "reload";
+        "${modifier}+Shift+r" = "reload";
         "${modifier}+Shift+q" = "kill";
 
         "${modifier}+Left" = "focus left";
@@ -100,6 +101,16 @@ in
 
         "Print" = "exec grim -o (swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') (xdg-user-dir PICTURES)/(date +'%Y-%m-%d-%H%M%S_grim.png')";
         "Shift+Print" = "exec grim -g '(slurp)' (xdg-user-dir PICTURES)/(date +'%Y-%m-%d-%H%M%S_grim.png')";
+
+        "${modifier}+Return" = "mode 'management'";
+        "${modifier}+o" = "mode 'launcher'";
+      };
+
+      modes = {
+        launcher = {
+          b = "exec google-chrome-unstable ${chromeWaylandFlags}, mode 'default'";
+          t = "exec flatpak run com.microsoft.Teams, mode 'default'";
+        };
       };
 
       output = {
@@ -121,13 +132,13 @@ in
         mode = "dock";
         hiddenState = "hide";
         position = "top";
-        fonts = { names = [ "Iosevka Nerd Font" ]; size = 10.00; };
+        fonts = { names = [ "Iosevka Nerd Font" ]; size = 11.00; };
         workspaceButtons = true;
         workspaceNumbers = true;
         statusCommand = "i3status-rs ~/.config/i3status-rust/config-top.toml";
         trayOutput = "primary";
         extraConfig = ''
-        height 30
+          height 30
         '';
         colors = {
           background = "#2E3440";
@@ -162,6 +173,29 @@ in
       }];
 
     };
+    extraConfig = ''
+    mode 'management' {
+
+      bindsym h resize shrink width 10px
+      bindsym j resize grow width 10px
+      bindsym k resize shrink width 10px
+      bindsym l resize grow width 10px
+
+      bindsym Left resize shrink width 10px
+      bindsym Down resize grow height 10px
+      bindsym Up resize shrink height 10px
+      bindsym Right resize grow width 10px
+
+      bindsym Ctrl+h mark --add "_swap", focus left, swap container with mark "_swap", focus left, unmark "_swap"
+      bindsym Ctrl+j mark --add "_swap", focus down, swap container with mark "_swap", focus down, unmark "_swap"
+      bindsym Ctrl+k mark --add "_swap", focus up, swap container with mark "_swap", focus up, unmark "_swap"
+      bindsym Ctrl+l mark --add "_swap", focus right, swap container with mark "_swap", focus right, unmark "_swap"
+
+      # Return to default mode
+      bindsym Return mode "default"
+      bindsym Escape mode "default"
+    }
+    '';
   };
 
   programs.i3status-rust.enable = true;
