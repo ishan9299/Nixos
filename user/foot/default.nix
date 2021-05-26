@@ -4,7 +4,11 @@
     server.enable = false;
     settings = {
       main = {
-        font="FiraMono Nerd Font:size=10";
+        font="Iosevka Nerd Font:size=11";
+        font-bold="Iosevka Nerd Font:size=11";
+        font-italic="Iosevka Nerd Font:size=11:slant=italic";
+        font-bold-italic="Iosevka Nerd Font:size=11:slant=italic";
+        box-drawings-uses-font-glyphs="yes";
         pad="0x0 center";
         term="xterm-256color";
       };
