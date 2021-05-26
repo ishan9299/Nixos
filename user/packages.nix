@@ -10,7 +10,7 @@
     ibm-plex
     fira
     office-code-pro
-    # input-fonts
+    input-fonts
     open-sans
     (nerdfonts.override {
       fonts =
