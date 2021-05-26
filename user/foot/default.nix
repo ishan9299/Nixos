@@ -5,10 +5,9 @@
     settings = {
       main = {
         font="Recursive Mn Lnr St:size=11";
-        font-bold="Recursive Mn Lnr St:size=11";
+        font-bold="Recursive Mn Lnr St:size=11:weight=bold";
         font-italic="Recursive Mn Lnr St:size=11:slant=italic";
-        font-bold-italic="Recursive Mn Lnr St:size=11:slant=italic";
-        box-drawings-uses-font-glyphs="yes";
+        font-bold-italic="Recursive Mn Lnr St:size=11:slant=italic:weight=bold";
         pad="0x0 center";
         term="xterm-256color";
       };
