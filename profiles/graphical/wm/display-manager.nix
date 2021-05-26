@@ -1,3 +1,3 @@
 {
-  services.greetd.enable = true;
+  services.greetd.enable = false;
 }
