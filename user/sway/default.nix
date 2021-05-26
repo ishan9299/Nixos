@@ -7,10 +7,6 @@ let
   swayworkspace = pkgs.writeShellScriptBin "swayworkspace" ''
   ${builtins.readFile ./scripts/swayworkspace.sh}
   '';
-
-  lock = pkgs.writeShellScriptBin "lock" ''
-  ${builtins.readFile ./scripts/lock.sh}
-  '';
 in
 {
   xresources.properties = {
@@ -125,17 +121,20 @@ in
         mode = "dock";
         hiddenState = "hide";
         position = "top";
-        fonts = { names = [ "monospace" ]; size = 9.00; };
+        fonts = { names = [ "Iosevka Nerd Font" ]; size = 10.00; };
         workspaceButtons = true;
         workspaceNumbers = true;
         statusCommand = "i3status-rs ~/.config/i3status-rust/config-top.toml";
         trayOutput = "primary";
+        extraConfig = ''
+        height 30
+        '';
         colors = {
           background = "#2E3440";
           statusline = "#839496";
           separator = "#777777";
           focusedWorkspace = {
-            border = "#4C7899";
+            border = "#285577";
             background = "#285577";
             text = "#D8DEE9";
           };
@@ -145,7 +144,7 @@ in
             text = "#D8DEE9";
           };
           inactiveWorkspace = {
-            border = "#3B4252";
+            border = "#2E3440";
             background = "#2E3440";
             text = "#888888";
           };
