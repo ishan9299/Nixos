@@ -9,18 +9,15 @@
     noto-fonts-emoji
     ibm-plex
     fira
+    office-code-pro
+    # input-fonts
     open-sans
     (nerdfonts.override {
       fonts =
         [
-          "Go-Mono"
           "Hack"
-          "Hasklig"
           "FiraMono"
-          "Hermit"
-          "InconsolataGo"
           "Iosevka"
-          "Meslo"
           "VictorMono"
         ];
     })
