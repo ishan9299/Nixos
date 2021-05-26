@@ -11,20 +11,20 @@ window:
 # Font configuration
 font:
   normal:
-    family: Iosevka Nerd Font
-    style: Medium
+    family: Recursive Mn Lnr St
+    style: Regular
 
   bold:
-    family: Iosevka Nerd Font
-    style: Heavy
+    family: Recursive Mn Lnr St
+    style: Bold
 
   italic:
-    family: Iosevka Nerd Font
-    style: Medium Italic
+    family: Recursive Mn Lnr St
+    style: Italic
 
   bold_italic:
-    family: Iosevka Nerd Font
-    style: Heavy Italic
+    family: Recursive Mn Lnr St
+    style: Bold Italic
 
   size: 16.0
 

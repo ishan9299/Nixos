@@ -7,16 +7,17 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
-    ibm-plex
     fira
-    office-code-pro
     input-fonts
     open-sans
+    recursive
     (nerdfonts.override {
       fonts =
         [
           "Hack"
+          "Hasklig"
           "FiraMono"
+          "JetBrainsMono"
           "Iosevka"
           "VictorMono"
         ];
@@ -69,6 +70,7 @@
     # programs-gui
     contrast
     vscodium-fhs
+    gnome.gnome-terminal
     bless
     emacsPgtk
     qbittorrent
