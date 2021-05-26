@@ -132,7 +132,7 @@ in
         mode = "dock";
         hiddenState = "hide";
         position = "top";
-        fonts = { names = [ "Iosevka Nerd Font" ]; size = 11.00; };
+        fonts = { names = [ "Hack Nerd Font" ]; size = 11.00; };
         workspaceButtons = true;
         workspaceNumbers = true;
         statusCommand = "i3status-rs ~/.config/i3status-rust/config-top.toml";
@@ -201,15 +201,18 @@ in
   programs.i3status-rust.enable = true;
   programs.i3status-rust.bars.top = {
     settings = {
-      theme = "slick";
-      overrides = {
-        idle_bg = "#2e3440";
-        idle_fg = "#839496";
-        separator = "";
-
+      theme = {
+        name = "slick";
+        overrides = {
+          idle_bg = "#2e3440";
+          idle_fg = "#839496";
+          separator = "";
+        };
+      };
+      icons = {
+        name = "awesome5";
       };
     };
-    icons = "awesome5";
     blocks = [
       {
         block = "memory";
@@ -218,27 +221,14 @@ in
         format_swap = "{swap_used_percents}";
       }
       {
-        block = "cpu";
-        format = "{utilization} {frequency}";
-      }
-      {
-        block = "temperature";
-        collapsed = false;
-        interval = 1;
-        format = "{max}";
-        chip = "k10temp-*";
-        idle = 70;
-        info = 75;
-        warning = 80;
-      }
-      {
         block = "sound";
         on_click = "pavucontrol";
       }
       {
         block = "music";
-        buttons = [ "play" "next" ];
-        interface_name_exclude = [ "mpd" ];
+        buttons = ["play" "next"];
+        interface_name_exclude = [".*kdeconnect.*" "mpd"];
+        hide_when_empty = true;
       }
       {
         block = "networkmanager";
@@ -249,6 +239,11 @@ in
         block = "time";
         interval = 60;
         format = "%a %d/%m %R";
+      }
+      {
+        block = "battery";
+        interval = 10;
+        format = "{percentage} {time}";
       }
     ];
   };
@@ -266,5 +261,6 @@ in
     slurp
     xdg-user-dirs
     wl-clipboard
+    font-awesome
   ];
 }
