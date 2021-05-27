@@ -47,4 +47,8 @@ in
     jack.enable = true;
     pulse.enable = true;
   };
+
+  networking.networkmanager = {
+    enable = true;
+  };
 }
