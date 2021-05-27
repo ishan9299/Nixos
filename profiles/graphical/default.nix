@@ -1,11 +1,8 @@
 { pkgs, ... }:
 {
   imports = [
-    # ./plasma
-    # ./gnome
-    ./wm/display-manager.nix
+    ./plasma
     ./wm/sway
-    ./wm/awesome
   ];
 
   hardware.pulseaudio = {
@@ -25,5 +22,29 @@
     icons.enable = true;
     menus.enable = true;
     portal.enable = true;
+  };
+
+  hardware.bluetooth.enable = true;
+
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+    extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
+  };
+
+  security.rtkit.enable = true;
+  # To use this disable pulseaudio and make sure
+  # the user is in the audio group.
+  services.pipewire = {
+    enable = true;
+    socketActivation = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    jack.enable = true;
+    pulse.enable = true;
+  };
+
+  networking.networkmanager = {
+    enable = true;
   };
 }
