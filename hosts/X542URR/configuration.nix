@@ -9,10 +9,9 @@ in
   imports = [
     ./hardware-configuration.nix
     ../../profiles/core
-    ../../profiles/laptop
-    ../../profiles/network
-    ../../profiles/virt
     ../../profiles/graphical
+    ../../profiles/nvidia
+    ../../profiles/virt
   ];
 
   networking.hostName = hostname;
