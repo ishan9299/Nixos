@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   # Plasma Desktop
   services.xserver = {
