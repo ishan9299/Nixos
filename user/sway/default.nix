@@ -8,6 +8,9 @@ let
     ${builtins.readFile ./scripts/swayworkspace.sh}
   '';
   chromeWaylandFlags = "--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-native-gpu-memory-buffers --use-gl=egl";
+  wl-color-picker = pkgs.writeShellScriptBin "wl-color-picker" ''
+    ${builtins.readFile ./scripts/wl-color-picker.sh}
+  '';
 in
 {
   xresources.properties = {
@@ -259,6 +262,9 @@ in
     gnome.adwaita-icon-theme
     grim
     slurp
+    imagemagick
+    gnome.zenity
+    wl-color-picker
     xdg-user-dirs
     wl-clipboard
     font-awesome
