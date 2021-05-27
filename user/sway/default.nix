@@ -107,12 +107,15 @@ in
 
         "${modifier}+Return" = "mode 'management'";
         "${modifier}+o" = "mode 'launcher'";
+
+        "${modifier}+Shift+p" = "exec grim -g '(slurp -p)' -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy";
       };
 
       modes = {
         launcher = {
           b = "exec google-chrome-unstable ${chromeWaylandFlags}, mode 'default'";
           t = "exec flatpak run com.microsoft.Teams, mode 'default'";
+          f = "exec firefox, mode 'default'";
         };
       };
 
