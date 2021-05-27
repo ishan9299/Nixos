@@ -27,28 +27,4 @@ in
     #   powerManagement.finegrained = true;
     # modesetting.enable = true;
   # };
-
-  hardware.bluetooth.enable = true;
-
-  hardware.opengl = {
-    enable = true;
-    driSupport32Bit = true;
-    extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
-  };
-
-  security.rtkit.enable = true;
-  # To use this disable pulseaudio and make sure
-  # the user is in the audio group.
-  services.pipewire = {
-    enable = true;
-    socketActivation = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    jack.enable = true;
-    pulse.enable = true;
-  };
-
-  networking.networkmanager = {
-    enable = true;
-  };
 }
