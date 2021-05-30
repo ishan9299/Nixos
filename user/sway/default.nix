@@ -19,6 +19,15 @@ in
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+    extraSessionCommands = ''
+    export SDL_VIDEODRIVER=wayland
+    export QT_QPA_PLATFORM=wayland
+    export QT_QPA_PLATFORMTHEME=qt5ct
+    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    export _JAVA_AWT_WM_NONREPARENTING=1
+    export STUDIO_JDK=/nix/store/x6whbg1l2bxnlmv5kya7yw5lgc5797xd-openjdk-11.0.9+11/lib/openjdk/bin/java
+    export MOZ_DBUS_REMOTE=1
+    '';
     xwayland = true;
     config = rec {
       modifier = "Mod4";
