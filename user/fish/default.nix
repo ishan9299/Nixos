@@ -9,9 +9,6 @@
         body = "${builtins.readFile ./n.fish}";
       };
     };
-    loginShellInit = ''
-    ${builtins.readFile ./fish_profile.fish}
-    '';
     interactiveShellInit = ''
     ${builtins.readFile ./fish_init.fish}
     '';
