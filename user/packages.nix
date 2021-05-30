@@ -69,9 +69,10 @@
     chrome-export
     # programs-gui
     contrast
-    vscodium-fhs
+    vscode-fhs
     gnome.gnome-terminal
     bless
+    zathura
     emacsPgtk
     qbittorrent
   ];
