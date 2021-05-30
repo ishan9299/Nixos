@@ -22,6 +22,7 @@
     icons.enable = true;
     menus.enable = true;
     portal.enable = true;
+    portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
   };
 
   hardware.bluetooth.enable = true;
