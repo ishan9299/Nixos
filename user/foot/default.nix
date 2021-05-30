@@ -10,6 +10,7 @@
         font-bold-italic="Recursive Mn Lnr St:size=11:slant=italic:weight=bold";
         pad="0x0 center";
         term="xterm-256color";
+        shell="tmux";
       };
       mouse = {
         hide-when-typing = "yes";
