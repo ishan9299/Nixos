@@ -125,6 +125,8 @@ in
           b = "exec google-chrome-unstable ${chromeWaylandFlags}, mode 'default'";
           t = "exec flatpak run com.microsoft.Teams, mode 'default'";
           f = "exec firefox, mode 'default'";
+          Return = "mode 'default'";
+          Escape = "mode 'default'";
         };
       };
 
