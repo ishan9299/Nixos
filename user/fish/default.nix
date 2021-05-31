@@ -10,15 +10,18 @@
       };
     };
     interactiveShellInit = ''
-    ${builtins.readFile ./fish_init.fish}
+      ${builtins.readFile ./fish_init.fish}
     '';
-    # promptInit = ''
-    # ${builtins.readFile ./fish_prompt.fish}
-    # '';
-  };
-
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
+    plugins = [
+      {
+        name = "tide";
+        src = pkgs.fetchFromGitHub {
+          owner = "IlanCosman";
+          repo = "tide";
+          rev = "630ae9f7d93c5f53880e7d59ae4e61f6390b71a1";
+          sha256 = "sha256-XTpkjQOdFXBO9NlEwOMX26bbuxojVmdtxDcfLKXFUdE=";
+        };
+      }
+    ];
   };
 }
