@@ -46,6 +46,7 @@
     lshw
     luaformatter
     neovim
+    neovim-remote
     gnupg
     wl-clipboard
     htop
