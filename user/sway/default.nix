@@ -35,6 +35,8 @@ in
       window.border = 4;
       gaps = {
         inner = 12;
+        smartBorders = "on";
+        smartGaps = true;
       };
       keybindings = {
         "${modifier}+t" = "exec ${terminal}";
