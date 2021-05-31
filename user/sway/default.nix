@@ -253,6 +253,7 @@ in
         block = "networkmanager";
         on_click = "alacritty -e nmtui";
         interface_name_exclude = [ "br\\-[0-9a-f]{12}" "lxdbr\\d+" "lxcbr\\d+" ];
+        ap_format = "";
       }
       {
         block = "time";
