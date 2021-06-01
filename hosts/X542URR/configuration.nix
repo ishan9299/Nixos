@@ -28,7 +28,7 @@ in
 
   boot.blacklistedKernelModules = [ "iTCO_wdt" ];
   # boot.supportedFilesystems = [ "btrfs" ];
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   # intel_pstate for low performace fix
   boot.kernelParams = [
     "zswap.enabled=1"
