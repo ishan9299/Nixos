@@ -12,8 +12,8 @@
       displayManager = {
         gdm = {
           enable = true;
-          wayland = true;
-          nvidiaWayland = true;
+          # wayland = true;
+          # nvidiaWayland = true;
         };
       };
       # Enable TouchInputs
@@ -30,6 +30,10 @@
   };
 
   environment.gnome.excludePackages = with pkgs; [
+    gnome-connections
+    gnome-photos
+    gnome-tour
+    gnome.gnome-software
     gnome3.baobab
     gnome3.cheese
     gnome3.eog
@@ -44,11 +48,8 @@
     gnome3.gnome-maps
     gnome3.gnome-music
     gnome3.gnome-screenshot
-    gnome.gnome-software
     gnome3.gnome-system-monitor
     gnome3.gnome-weather
-    gnome-connections
-    gnome-photos
     gnome3.simple-scan
     gnome3.totem
     gnome3.yelp
