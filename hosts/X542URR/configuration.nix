@@ -63,12 +63,6 @@ in
     ];
   };
 
-  networking = {
-    networkmanager.enable = true;
-    networkmanager.wifi.backend = "iwd";
-    wireless.iwd.enable = true;
-  };
-
   users.users.me = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
