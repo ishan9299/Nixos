@@ -95,7 +95,7 @@
                 ./user/kitty
                 ./user/mpv
                 ./user/qutebrowser
-                ./user/sway
+                # ./user/sway
                 ./user/tmux
               ];
               xdg.configFile."gitui/key_config.ron".source = ./user/configs/gitui/key_config.ron;
