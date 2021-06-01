@@ -9,22 +9,24 @@ let
   '';
 in
 {
+
   environment.systemPackages = with pkgs; [
     prime-run
   ];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
-  # services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidiaOptimus.disable = true;
-  # hardware.nvidia = {
-    #   nvidiaPersistenced = true;
-    #   prime = {
-    #     offload.enable = true;
-    #     # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
-    #     intelBusId = "PCI:0:2:0";
-    #     # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
-    #     nvidiaBusId = "PCI:1:0:0";
-    #   };
-    #   powerManagement.finegrained = true;
-    # modesetting.enable = true;
-  # };
+  # hardware.nvidiaOptimus.disable = true;
+  hardware.nvidia = {
+    nvidiaPersistenced = true;
+    prime = {
+      offload.enable = true;
+      # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
+      intelBusId = "PCI:0:2:0";
+      # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
+      nvidiaBusId = "PCI:1:0:0";
+    };
+    powerManagement.finegrained = true;
+    modesetting.enable = true;
+  };
+
 }
