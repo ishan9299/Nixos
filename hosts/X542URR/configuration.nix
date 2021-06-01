@@ -55,22 +55,20 @@ in
   environment = {
     systemPackages = with pkgs; [
       alacritty
-      gimp
+      # gimp
       kid3
-      steam
-      steam-run
+      # steam
+      # steam-run
       gzdoom
     ];
   };
 
   users.users.me = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
+    extraGroups = [ "wheel" "audio" "video" ];
     shell = pkgs.fish;
   };
 
-  services.earlyoom.enable = true;
-
-  system.stateVersion = "21.05";
+  system.stateVersion = "21.11";
 
 }
