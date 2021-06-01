@@ -17,3 +17,7 @@ else
 	export VISUAL="nvim"
 	export EDITOR="nvim"
 end
+
+if not functions -q fisher
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+end
