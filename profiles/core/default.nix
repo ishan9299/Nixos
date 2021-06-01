@@ -21,8 +21,8 @@
   };
 
   nix = {
-    maxJobs = 6;
-    buildCores = 6;
+    maxJobs = 8;
+    buildCores = 8;
 
     useSandbox = true;
     autoOptimiseStore = true;
