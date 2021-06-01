@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./plasma
+    ./gnome
     ./wm/sway
   ];
 
