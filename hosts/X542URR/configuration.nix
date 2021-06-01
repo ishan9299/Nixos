@@ -63,6 +63,11 @@ in
     ];
   };
 
+  networking = {
+    networkmanager.enable = true;
+    networkmanager.wifi.backend = "iwd";
+    wireless.iwd.enable = true;
+  };
 
   users.users.me = {
     isNormalUser = true;
@@ -73,4 +78,5 @@ in
   services.earlyoom.enable = true;
 
   system.stateVersion = "21.05";
+
 }
