@@ -9,5 +9,8 @@
         body = "${builtins.readFile ./n.fish}";
       };
     };
+    interactiveShellInit = ''
+      ${builtins.readFile ./fish_shell_init.fish}
+    '';
   };
 }
