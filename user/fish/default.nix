@@ -10,7 +10,7 @@
       };
     };
     interactiveShellInit = ''
-      ${builtins.readFile ./fish_shell_init.fish}
+      ${builtins.readFile ./fish_init.fish}
     '';
   };
 }
