@@ -111,7 +111,7 @@
       };
 
       nixosConfigurations = {
-        X542URR = master.lib.nixosSystem {
+        X542URR = unstable.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/X542URR/configuration.nix
