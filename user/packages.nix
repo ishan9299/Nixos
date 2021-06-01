@@ -71,7 +71,7 @@
     # programs-gui
     contrast
     vscode-fhs
-    gnome.gnome-terminal
+    firefox
     bless
     zathura
     emacsPgtk
