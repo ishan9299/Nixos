@@ -6,7 +6,7 @@
     corefonts
     noto-fonts
     noto-fonts-cjk
-    noto-fonts-emoji
+    # noto-fonts-emoji
     fira
     input-fonts
     open-sans
@@ -46,7 +46,7 @@
     lshw
     luaformatter
     neovim
-    neovim-remote
+    # neovim-remote
     gnupg
     wl-clipboard
     htop
@@ -71,8 +71,7 @@
     # programs-gui
     contrast
     vscode-fhs
-    firefox
-    bless
+    firefox-bin
     zathura
     emacsPgtk
     qbittorrent
