@@ -14,7 +14,6 @@ in
     ../../profiles/virt
   ];
 
-  networking.hostName = hostname;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -65,10 +64,13 @@ in
 
   users.users.me = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "video" ];
+    extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.fish;
   };
 
+  # TODO disable the wifi powersaving it is causes a lot of issus in the newer kernels
+  networking.hostName = hostname;
+  networking.networkmanager.wifi.powersave = true;
   system.stateVersion = "21.11";
 
 }
