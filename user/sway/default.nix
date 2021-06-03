@@ -13,9 +13,6 @@ let
   '';
 in
 {
-  xresources.properties = {
-    "Xft.dpi" = 96;
-  };
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
