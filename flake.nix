@@ -97,6 +97,7 @@
                 ./user/qutebrowser
                 # ./user/sway
                 ./user/tmux
+                ./user/xresources
               ];
               xdg.configFile."alacritty/alacritty.yml".source = ./user/configs/alacritty/alacritty.yml;
               xdg.configFile."awesome/rc.lua".source = ./user/configs/awesome/rc.lua;
