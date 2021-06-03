@@ -4,9 +4,10 @@
   home.packages = with pkgs; [
     # fonts
     corefonts
+    vistafonts
     noto-fonts
     noto-fonts-cjk
-    # noto-fonts-emoji
+    noto-fonts-emoji
     fira
     input-fonts
     open-sans
@@ -14,11 +15,12 @@
     (nerdfonts.override {
       fonts =
         [
-          "Hack"
+          "AnonymousPro"
           "Hasklig"
-          "FiraMono"
+          "Monofur"
+          "FiraCode"
           "JetBrainsMono"
-          "Iosevka"
+          "CodeNewRoman"
           "VictorMono"
         ];
     })
