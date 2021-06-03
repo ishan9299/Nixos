@@ -25,7 +25,6 @@ in
       # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
       nvidiaBusId = "PCI:1:0:0";
     };
-    powerManagement.finegrained = true;
     modesetting.enable = true;
   };
 
