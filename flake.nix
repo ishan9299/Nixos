@@ -98,8 +98,9 @@
                 # ./user/sway
                 ./user/tmux
               ];
-              xdg.configFile."gitui/key_config.ron".source = ./user/configs/gitui/key_config.ron;
               xdg.configFile."alacritty/alacritty.yml".source = ./user/configs/alacritty/alacritty.yml;
+              xdg.configFile."awesome/rc.lua".source = ./user/configs/awesome/rc.lua;
+              xdg.configFile."gitui/key_config.ron".source = ./user/configs/gitui/key_config.ron;
               xdg.configFile."musikcube/hotkeys.json".source = ./user/configs/musikcube/hotkeys.json;
               xdg.configFile."neofetch/config.conf".source = ./user/configs/neofetch/config.conf;
               home.stateVersion = "20.09";
