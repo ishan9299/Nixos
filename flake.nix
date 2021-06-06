@@ -2,6 +2,7 @@
   description = "NixOS Configuration";
 
   inputs = {
+    stable = { url = "github:nixos/nixpkgs/nixos-21.05"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "master";
@@ -23,6 +24,7 @@
     , master
     , neovim
     , nur
+    , stable
     , unstable
     , ...
     }@inputs:
@@ -86,7 +88,6 @@
               nixpkgs.config = import ./user/configs/nix/config.nix;
               nixpkgs.overlays = (overlays "x86_64-linux");
               imports = [
-                # ./user/sway
                 ./user/awesome
                 ./user/bat
                 ./user/direnv
@@ -98,6 +99,7 @@
                 ./user/mpv
                 ./user/packages.nix
                 ./user/qutebrowser
+                ./user/sway
                 ./user/tmux
                 ./user/xresources
               ];
@@ -115,7 +117,7 @@
       };
 
       nixosConfigurations = {
-        X542URR = unstable.lib.nixosSystem {
+        X542URR = stable.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/X542URR/configuration.nix
