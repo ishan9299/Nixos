@@ -59,6 +59,7 @@ in
       # steam
       # steam-run
       gzdoom
+      wpsoffice
     ];
   };
 
@@ -70,7 +71,8 @@ in
 
   # TODO disable the wifi powersaving it is causes a lot of issus in the newer kernels
   networking.hostName = hostname;
+  networking.networkmanager.enable = true;
   networking.networkmanager.wifi.powersave = true;
-  system.stateVersion = "21.11";
+  system.stateVersion = "21.05";
 
 }

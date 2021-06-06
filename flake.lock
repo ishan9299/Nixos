@@ -113,7 +113,24 @@
         "master": "master",
         "neovim": "neovim",
         "nur": "nur",
+        "stable": "stable",
         "unstable": "unstable"
+      }
+    },
+    "stable": {
+      "locked": {
+        "lastModified": 1622622179,
+        "narHash": "sha256-XCw/9QDuj9J6prVR8YrteTcFKj2sRWYIjwgs8qOOrYQ=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "eaba7870ffc3400eca4407baa24184b7fe337ec1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "unstable": {
