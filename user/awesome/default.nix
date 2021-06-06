@@ -6,5 +6,8 @@
     gnome.nautilus
     gnome.adwaita-icon-theme
     gnome.networkmanagerapplet
+    gnome.gnome-terminal
   ];
+
+  services.picom.enable = true;
 }
