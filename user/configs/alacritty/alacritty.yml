@@ -11,19 +11,19 @@ window:
 # Font configuration
 font:
   normal:
-    family: Monofur Nerd Font
+    family: mononoki Nerd Font
     style: Regular
 
   bold:
-    family: Monofur Nerd Font
+    family: mononoki Nerd Font
     style: Bold
 
   italic:
-    family: Monofur Nerd Font
+    family: mononoki Nerd Font
     style: Italic
 
   bold_italic:
-    family: Monofur Nerd Font
+    family: mononoki Nerd Font
     style: Bold Italic
 
   size: 16.0

@@ -9,18 +9,17 @@
     noto-fonts-cjk
     noto-fonts-emoji
     fira
+    iosevka-bin
     input-fonts
     open-sans
     recursive
     (nerdfonts.override {
       fonts =
         [
-          "AnonymousPro"
-          "Hasklig"
           "Monofur"
           "FiraCode"
           "JetBrainsMono"
-          "CodeNewRoman"
+          "Mononoki"
           "VictorMono"
         ];
     })
