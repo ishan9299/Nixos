@@ -3,8 +3,7 @@
   imports = [
     ./gnome
     # ./wm/sway
-    # ./wm/awesome
-    # ./plasma
+    ./wm/awesome
   ];
 
   hardware.pulseaudio = {
