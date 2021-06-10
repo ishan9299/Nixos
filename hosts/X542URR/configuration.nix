@@ -59,7 +59,6 @@ in
       # steam
       # steam-run
       gzdoom
-      wpsoffice
     ];
   };
 
