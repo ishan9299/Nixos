@@ -68,10 +68,15 @@ in
     shell = pkgs.fish;
   };
 
-  # TODO disable the wifi powersaving it is causes a lot of issus in the newer kernels
-  networking.hostName = hostname;
-  networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.powersave = true;
+  # disable the wifi powersaving it is causes a lot of issus in the newer kernels
+  networking = {
+    hostName = hostname;
+    wireless.iwd.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+      wifi.powersave = false;
+    };
+  };
   system.stateVersion = "21.05";
-
 }
