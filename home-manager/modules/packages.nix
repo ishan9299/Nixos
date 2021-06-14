@@ -69,12 +69,12 @@
     pciutils
     usbutils
     chrome-export
+
     # programs-gui
     contrast
     vscode-fhs
     firefox-bin
     zathura
-    emacsPgtk
     qbittorrent
   ];
 }

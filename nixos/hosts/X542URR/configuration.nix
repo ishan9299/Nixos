@@ -68,6 +68,9 @@ in
     shell = pkgs.fish;
   };
 
+  i18n.defaultLocale = "en_US.UTF-8";
+  time.timeZone = "Asia/Kolkata";
+
   # disable the wifi powersaving it is causes a lot of issus in the newer kernels
   networking = {
     hostName = hostname;

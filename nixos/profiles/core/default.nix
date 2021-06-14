@@ -1,8 +1,6 @@
 { config, pkgs, lib, ... }:
 {
 
-  imports = [ ../../local/locale.nix ];
-
   environment = {
 
     shellAliases =

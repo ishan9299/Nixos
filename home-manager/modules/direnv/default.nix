@@ -3,7 +3,7 @@
     enable = true;
     enableFishIntegration = true;
     enableBashIntegration = true;
-    enableNixDirenvIntegration = true;
+    # enableNixDirenvIntegration = true;
     stdlib = ''
       use_flake() {
         watch_file flake.nix
