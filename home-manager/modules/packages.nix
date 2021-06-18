@@ -50,7 +50,6 @@
     neovim-remote
     gnupg
     wl-clipboard
-    htop
     dmidecode
     unzip
     binutils

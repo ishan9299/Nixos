@@ -47,6 +47,7 @@
                 ./modules/foot
                 ./modules/fzf
                 ./modules/git
+                ./modules/htop
                 ./modules/kitty
                 ./modules/mpv
                 ./modules/packages.nix
@@ -82,6 +83,7 @@
                 ./modules/foot
                 ./modules/fzf
                 ./modules/git
+                ./modules/htop
                 ./modules/kitty
                 ./modules/mpv
                 ./modules/packages.nix
