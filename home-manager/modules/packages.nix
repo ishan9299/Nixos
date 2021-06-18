@@ -47,7 +47,7 @@
     lshw
     luaformatter
     neovim
-    # neovim-remote
+    neovim-remote
     gnupg
     wl-clipboard
     htop
@@ -73,8 +73,8 @@
     # programs-gui
     contrast
     vscode-fhs
-    firefox-bin
     zathura
     qbittorrent
+    # firefox
   ];
 }
