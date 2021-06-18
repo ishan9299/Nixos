@@ -53,6 +53,7 @@
                 ./modules/qutebrowser
                 ./modules/sway
                 ./modules/tmux
+                ./modules/xresources
               ];
               xdg.configFile."gitui/key_config.ron".source = ./configs/gitui/key_config.ron;
               xdg.configFile."alacritty/alacritty.yml".source = ./configs/alacritty/alacritty.yml;
