@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    ./gnome
+    # ./gnome
     # ./wm/sway
-    ./wm/awesome
+    # ./wm/awesome
+    ./pantheon
   ];
 
   hardware.pulseaudio = {
