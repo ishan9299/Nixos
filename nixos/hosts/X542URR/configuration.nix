@@ -62,7 +62,9 @@ in
     ];
   };
 
+  users.mutableUsers = false;
   users.users.me = {
+    hashedPassword = "$6$CMk7rbvPy$hOhqC9C2Ud4JhH3SfCcHvqGzJja4vrONMU6fFDK62IeOJsAp5jR84kqcnDbkOGiZBjSCPvKGC8rss/wym47fz0";
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     shell = pkgs.fish;
