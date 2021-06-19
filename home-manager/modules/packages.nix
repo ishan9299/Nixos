@@ -3,16 +3,6 @@
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     # fonts
-    corefonts
-    vistafonts
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    fira
-    iosevka-bin
-    input-fonts
-    open-sans
-    recursive
     (nerdfonts.override {
       fonts =
         [
@@ -23,57 +13,68 @@
           "VictorMono"
         ];
     })
+    corefonts
+    fira
+    input-fonts
+    iosevka-bin
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    open-sans
+    recursive
+    vistafonts
+
     # programs-cli
-    musikcube
-    neofetch
-    gitui
-    trash-cli
-    youtube-dl
-    file
-    ripgrep
-    tree
-    ffmpeg
-    nnn
-    nixpkgs-fmt
-    tree-sitter
-    luaformatter
-    less
-    luajitPackages.luacheck
-    gitAndTools.gitui # I still kinda need it for the root folder
-    wget
-    unrar
-    git-crypt
-    catimg
-    lshw
-    luaformatter
-    neovim
-    neovim-remote
-    gnupg
-    wl-clipboard
-    dmidecode
-    unzip
+    acpi
     binutils
+    catimg
+    chrome-export
     coreutils
     curl
+    dmidecode
     dosfstools
-    mmv
     fd
+    ffmpeg
+    file
     git
+    git-crypt
+    gitAndTools.gitui # I still kinda need it for the root folder
+    gitui
+    gnupg
     jq
-    ripgrep
-    whois
-    acpi
+    less
     lm_sensors
-    wirelesstools
+    lshw
+    luaformatter
+    luaformatter
+    luajitPackages.luacheck
+    mmv
+    musikcube
+    neofetch
+    neovim
+    neovim-remote
+    nixpkgs-fmt
+    nnn
     pciutils
+    ripgrep
+    ripgrep
+    trash-cli
+    tree
+    tree-sitter
+    unrar
+    unzip
     usbutils
-    chrome-export
+    wget
+    whois
+    wirelesstools
+    wl-clipboard
+    youtube-dl
 
     # programs-gui
+    # firefox
     contrast
+    qbittorrent
     vscode-fhs
     zathura
-    qbittorrent
-    # firefox
   ];
 }
