@@ -54,11 +54,13 @@ in
   environment = {
     systemPackages = with pkgs; [
       alacritty
-      # gimp
+      gimp
       kid3
-      # steam
-      # steam-run
+      steam
+      steam-run
       gzdoom
+      teams
+      gnome.dconf-editor
     ];
   };
 
@@ -72,6 +74,8 @@ in
 
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Asia/Kolkata";
+
+  services.postgresql.enable = true;
 
   # disable the wifi powersaving it is causes a lot of issus in the newer kernels
   networking = {
