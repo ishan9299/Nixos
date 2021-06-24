@@ -2,6 +2,7 @@
   description = "Home-Manager Configuration";
 
   inputs = {
+    emacs = { url = "github:mjlbach/emacs-overlay/feature/flakes"; };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "master";
@@ -11,9 +12,10 @@
       url = "github:neovim/neovim?dir=contrib";
       inputs.nixpkgs.follows = "master";
     };
+    nur = { url = "github:nix-community/NUR"; };
   };
 
-  outputs = { self, master, home-manager, neovim }@inputs:
+  outputs = { self, emacs, master, home-manager, neovim, nur }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (master) lib;
@@ -27,7 +29,9 @@
 
       overlays =
         system: [
+          inputs.emacs.overlay
           inputs.neovim.overlay
+          inputs.nur.overlay
           (packagesOverlay system)
         ];
     in
@@ -35,11 +39,11 @@
       homeConfigurations = {
         linuxHomeConfig = inputs.home-manager.lib.homeManagerConfiguration {
           configuration = { pkgs, ... }:
-            {
-              xdg.configFile."nix/nix.conf".source = ./configs/nix/nix.conf;
-              nixpkgs.config = import ./configs/nix/config.nix;
-              nixpkgs.overlays = (overlays "x86_64-linux");
-              imports = [
+          {
+            xdg.configFile."nix/nix.conf".source = ./configs/nix/nix.conf;
+            nixpkgs.config = import ./configs/nix/config.nix;
+            nixpkgs.overlays = (overlays "x86_64-linux");
+            imports = [
                 # ./modules/awesome
                 ./modules/bat
                 ./modules/direnv
@@ -64,10 +68,10 @@
               programs.man.enable = false;
               home.stateVersion = "20.09";
             };
-          system = "x86_64-linux";
-          homeDirectory = "/home/me";
-          username = "me";
-        };
+            system = "x86_64-linux";
+            homeDirectory = "/home/me";
+            username = "me";
+          };
 
         nixosHomeConfig = inputs.home-manager.lib.homeManagerConfiguration {
           configuration = { pkgs, ... }:

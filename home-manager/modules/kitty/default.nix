@@ -16,18 +16,18 @@
       bold_font = "VictorMono Nerd Font";
       italic_font = "VictorMono Nerd Font";
       bold_italic_font = "VictorMono Nerd Font";
-      font_size = "19.0";
+      font_size = "13.0";
 
       # tab bar
       tab_bar_edge = "bottom";
-      tab_bar_style = "round";
+      # tab_bar_style = "seperator";
       tab_bar_min_tabs = "2";
       tab_title_template = "{title[:10]}";
       active_tab_font_style = "bold";
       inactive_tab_font_style = "normal";
 
       # colorscheme
-      include = "themes/modus-vivendi.conf";
+      include = "themes/modus-operandi.conf";
 
       # layouts
       enabled_layouts = "tall,splits";

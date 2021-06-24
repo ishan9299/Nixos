@@ -46,7 +46,6 @@
     lm_sensors
     lshw
     luaformatter
-    luaformatter
     luajitPackages.luacheck
     mmv
     musikcube
@@ -56,7 +55,6 @@
     nixpkgs-fmt
     nnn
     pciutils
-    ripgrep
     ripgrep
     trash-cli
     tree
@@ -71,8 +69,11 @@
     youtube-dl
 
     # programs-gui
-    # firefox
     contrast
+    firefox
+    gnome.gnome-terminal
+    emacsPgtkGcc
+    gnvim-unwrapped
     qbittorrent
     vscode-fhs
     zathura
