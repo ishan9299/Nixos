@@ -4,7 +4,8 @@
     # ./gnome
     # ./wm/sway
     # ./wm/awesome
-    ./pantheon
+    # ./pantheon
+    ./plasma
   ];
 
   hardware.pulseaudio = {

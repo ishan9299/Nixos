@@ -7,13 +7,9 @@
 
   outputs =
     { self
+    , stable
     , ...
     }@inputs:
-    let
-      inherit (builtins) attrNames attrValues readDir listToAttrs filter;
-      inherit (unstable) lib;
-      inherit (lib) removeSuffix hasSuffix;
-
     {
       nixosConfigurations = {
         X542URR = stable.lib.nixosSystem {
