@@ -73,7 +73,7 @@
     firefox
     gnome.gnome-terminal
     emacsPgtkGcc
-    gnvim-unwrapped
+    neovide
     qbittorrent
     vscode-fhs
     zathura
