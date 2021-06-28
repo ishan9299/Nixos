@@ -54,13 +54,16 @@ in
   environment = {
     systemPackages = with pkgs; [
       alacritty
+      bottles
       gimp
+      gnome.dconf-editor
+      gzdoom
       kid3
+      lutris
       steam
       steam-run
-      gzdoom
       teams
-      gnome.dconf-editor
+      wine-staging
     ];
   };
 
