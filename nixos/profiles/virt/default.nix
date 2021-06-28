@@ -25,6 +25,9 @@
     "kvmgt"
     "vfio-iommu-type1"
     "vfio-mdev"
+    "vfio_pci"
+    "vfio"
+    "vfio_virqfd"
   ];
 
   boot.kernelParams = [
@@ -32,6 +35,10 @@
     "kvm.ignore_msrs=1"
     "intel_iommu=on"
   ];
+
+  boot.extraModprobeConfig = "
+  options vfio-pci ids=10de:134e
+  ";
 
   users.users.me = {
     extraGroups = [ "kvm" "libvirtd" ];

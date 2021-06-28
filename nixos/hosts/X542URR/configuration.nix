@@ -10,7 +10,7 @@ in
     ./hardware-configuration.nix
     ../../profiles/core
     ../../profiles/graphical
-    ../../profiles/nvidia
+    # ../../profiles/nvidia
     ../../profiles/virt
   ];
 
