@@ -15,6 +15,7 @@
   environment = {
     systemPackages = with pkgs; [
       google-chrome-dev
+      gnome.gnome-disk-utility
       brave
     ];
   };
