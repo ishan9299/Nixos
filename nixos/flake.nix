@@ -3,17 +3,20 @@
 
   inputs = {
     stable = { url = "github:nixos/nixpkgs/nixos-21.05"; };
+    nixpkgs-wayland = { url = "github:colemickens/nixpkgs-wayland"; };
   };
 
   outputs =
     { self
     , stable
+    , nixpkgs-wayland
     , ...
     }@inputs:
     {
       nixosConfigurations = {
         X542URR = stable.lib.nixosSystem {
           system = "x86_64-linux";
+          nixpkgs.overlays = [ inputs.nixpkgs-wayland.overlay ];
           modules = [
             ./hosts/X542URR/configuration.nix
           ];
