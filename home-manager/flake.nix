@@ -56,7 +56,7 @@
                 ./modules/mpv
                 ./modules/packages.nix
                 ./modules/qutebrowser
-                ./modules/sway
+                # ./modules/sway
                 ./modules/tmux
                 ./modules/xresources
               ];
@@ -92,7 +92,7 @@
                 ./modules/mpv
                 ./modules/packages.nix
                 ./modules/qutebrowser
-                ./modules/sway
+                # ./modules/sway
                 ./modules/tmux
                 ./modules/xresources
               ];

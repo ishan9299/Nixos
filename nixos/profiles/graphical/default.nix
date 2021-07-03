@@ -2,7 +2,8 @@
 {
   imports = [
     # ./gnome
-    ./wm/sway
+    # ./wm/sway
+    ./wm/river
     # ./wm/awesome
     # ./pantheon
     # ./plasma
