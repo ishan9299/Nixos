@@ -12,10 +12,11 @@
       url = "github:neovim/neovim?dir=contrib";
       inputs.nixpkgs.follows = "master";
     };
+    nixpkgs-wayland = { url = "github:colemickens/nixpkgs-wayland"; };
     nur = { url = "github:nix-community/NUR"; };
   };
 
-  outputs = { self, emacs, master, home-manager, neovim, nur }@inputs:
+  outputs = { self, emacs, master, home-manager, neovim, nixpkgs-wayland, nur }@inputs:
     let
       inherit (builtins) attrNames attrValues readDir listToAttrs filter;
       inherit (master) lib;
@@ -32,6 +33,7 @@
           inputs.emacs.overlay
           inputs.neovim.overlay
           inputs.nur.overlay
+          inputs.nixpkgs-wayland.overlays
           (packagesOverlay system)
         ];
     in
