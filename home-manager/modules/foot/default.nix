@@ -4,10 +4,10 @@
     server.enable = false;
     settings = {
       main = {
-        font="Recursive Mn Lnr St:size=11";
-        font-bold="Recursive Mn Lnr St:size=11:weight=bold";
-        font-italic="Recursive Mn Lnr St:size=11:slant=italic";
-        font-bold-italic="Recursive Mn Lnr St:size=11:slant=italic:weight=bold";
+        font="VictorMono Nerd Font:size=11";
+        font-bold="VictorMono Nerd Font:size=11:weight=bold";
+        font-italic="VictorMono Nerd Font:size=11:slant=italic";
+        font-bold-italic="VictorMono Nerd Font:size=11:slant=italic:weight=bold";
         pad="0x0 center";
         term="xterm-256color";
         shell="tmux";
