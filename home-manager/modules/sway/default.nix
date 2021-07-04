@@ -17,13 +17,14 @@ in
     enable = true;
     wrapperFeatures.gtk = true;
     extraSessionCommands = ''
-    export SDL_VIDEODRIVER=wayland
-    export QT_QPA_PLATFORM=wayland
-    export QT_QPA_PLATFORMTHEME=qt5ct
-    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-    export _JAVA_AWT_WM_NONREPARENTING=1
-    export STUDIO_JDK=/nix/store/x6whbg1l2bxnlmv5kya7yw5lgc5797xd-openjdk-11.0.9+11/lib/openjdk/bin/java
-    export MOZ_DBUS_REMOTE=1
+      export SDL_VIDEODRIVER=wayland
+      export QT_QPA_PLATFORM=wayland
+      export QT_QPA_PLATFORMTHEME=qt5ct
+      export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+      export _JAVA_AWT_WM_NONREPARENTING=1
+      export STUDIO_JDK=/nix/store/x6whbg1l2bxnlmv5kya7yw5lgc5797xd-openjdk-11.0.9+11/lib/openjdk/bin/java
+      export MOZ_DBUS_REMOTE=1
+      export MOZ_ENABLE_WAYLAND=1
     '';
     xwayland = true;
     config = rec {
@@ -131,7 +132,7 @@ in
 
       output = {
         "*" = {
-          background = "/etc/nixos/wallpapers/1140673.jpg fill";
+          background = "/home/me/Documents/Repositories/mine/nix-configs/wallpapers/912058.jpg fill";
         };
       };
 
@@ -144,76 +145,82 @@ in
         { command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"; }
         { command = "swaymsg workspace 1"; } # make sure to start at workspace 1
       ];
+
+      # bars = [{
+      #   mode = "dock";
+      #   hiddenState = "hide";
+      #   position = "top";
+      #   fonts = { names = [ "VictorMono Nerd Font" ]; size = 11.00; };
+      #   workspaceButtons = true;
+      #   workspaceNumbers = true;
+      #   statusCommand = "i3status-rs ~/.config/i3status-rust/config-top.toml";
+      #   trayOutput = "primary";
+      #   extraConfig = ''
+      #     height 30
+      #   '';
+      #   colors = {
+      #     background = "#2E3440";
+      #     statusline = "#839496";
+      #     separator = "#777777";
+      #     focusedWorkspace = {
+      #       border = "#285577";
+      #       background = "#285577";
+      #       text = "#D8DEE9";
+      #     };
+      #     activeWorkspace = {
+      #       border = "#333333";
+      #       background = "#4C7899";
+      #       text = "#D8DEE9";
+      #     };
+      #     inactiveWorkspace = {
+      #       border = "#2E3440";
+      #       background = "#2E3440";
+      #       text = "#888888";
+      #     };
+      #     urgentWorkspace = {
+      #       border = "#2F343A";
+      #       background = "#900000";
+      #       text = "#D8DEE9";
+      #     };
+      #     bindingMode = {
+      #       border = "#2F343A";
+      #       background = "#900000";
+      #       text = "#D8DEE9";
+      #     };
+      #   };
+      # }];
+
       bars = [{
-        mode = "dock";
-        hiddenState = "hide";
-        position = "top";
-        fonts = { names = [ "Hack Nerd Font" ]; size = 11.00; };
-        workspaceButtons = true;
-        workspaceNumbers = true;
-        statusCommand = "i3status-rs ~/.config/i3status-rust/config-top.toml";
-        trayOutput = "primary";
-        extraConfig = ''
-          height 30
-        '';
-        colors = {
-          background = "#2E3440";
-          statusline = "#839496";
-          separator = "#777777";
-          focusedWorkspace = {
-            border = "#285577";
-            background = "#285577";
-            text = "#D8DEE9";
-          };
-          activeWorkspace = {
-            border = "#333333";
-            background = "#4C7899";
-            text = "#D8DEE9";
-          };
-          inactiveWorkspace = {
-            border = "#2E3440";
-            background = "#2E3440";
-            text = "#888888";
-          };
-          urgentWorkspace = {
-            border = "#2F343A";
-            background = "#900000";
-            text = "#D8DEE9";
-          };
-          bindingMode = {
-            border = "#2F343A";
-            background = "#900000";
-            text = "#D8DEE9";
-          };
-        };
-      }];
+        command = "waybar";
+      }]; # remove the bar
 
     };
     extraConfig = ''
-    mode 'management' {
+      mode 'management' {
 
-      bindsym h resize shrink width 10px
-      bindsym j resize grow width 10px
-      bindsym k resize shrink width 10px
-      bindsym l resize grow width 10px
+        bindsym h resize shrink width 10px
+        bindsym j resize grow width 10px
+        bindsym k resize shrink width 10px
+        bindsym l resize grow width 10px
 
-      bindsym Left resize shrink width 10px
-      bindsym Down resize grow height 10px
-      bindsym Up resize shrink height 10px
-      bindsym Right resize grow width 10px
+        bindsym Left resize shrink width 10px
+        bindsym Down resize grow height 10px
+        bindsym Up resize shrink height 10px
+        bindsym Right resize grow width 10px
 
-      bindsym Ctrl+h mark --add "_swap", focus left, swap container with mark "_swap", focus left, unmark "_swap"
-      bindsym Ctrl+j mark --add "_swap", focus down, swap container with mark "_swap", focus down, unmark "_swap"
-      bindsym Ctrl+k mark --add "_swap", focus up, swap container with mark "_swap", focus up, unmark "_swap"
-      bindsym Ctrl+l mark --add "_swap", focus right, swap container with mark "_swap", focus right, unmark "_swap"
+        bindsym Ctrl+h mark --add "_swap", focus left, swap container with mark "_swap", focus left, unmark "_swap"
+        bindsym Ctrl+j mark --add "_swap", focus down, swap container with mark "_swap", focus down, unmark "_swap"
+        bindsym Ctrl+k mark --add "_swap", focus up, swap container with mark "_swap", focus up, unmark "_swap"
+        bindsym Ctrl+l mark --add "_swap", focus right, swap container with mark "_swap", focus right, unmark "_swap"
 
-      # Return to default mode
-      bindsym Return mode "default"
-      bindsym Escape mode "default"
-    }
+        # Return to default mode
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+      }
     '';
   };
 
+  #### i3status-rust ####
   programs.i3status-rust.enable = true;
   programs.i3status-rust.bars.top = {
     settings = {
@@ -230,20 +237,20 @@ in
       };
     };
     blocks = [
-      {
-        block = "memory";
-        display_type = "memory";
-        format_mem = "{mem_used_percents}";
-        format_swap = "{swap_used_percents}";
-      }
+      # {
+      #   block = "memory";
+      #   display_type = "memory";
+      #   format_mem = "{mem_used}/{mem_total}({mem_used_percents})";
+      #   format_swap = "{swap_used}/{swap_total}({swap_used_percents})";
+      # }
       {
         block = "sound";
         on_click = "pavucontrol";
       }
       {
         block = "music";
-        buttons = ["play" "next"];
-        interface_name_exclude = [".*kdeconnect.*" "mpd"];
+        buttons = [ "play" "next" ];
+        interface_name_exclude = [ ".*kdeconnect.*" "mpd" ];
         hide_when_empty = true;
       }
       {
@@ -264,6 +271,7 @@ in
       }
     ];
   };
+  ########
 
   home.packages = with pkgs; [
     swayidle
@@ -276,11 +284,17 @@ in
     gnome.adwaita-icon-theme
     grim
     slurp
+    nwg-panel
+    nwg-menu
+    nwg-launchers
+    waybar
     imagemagick
     gnome.zenity
     wl-color-picker
     xdg-user-dirs
     wl-clipboard
     font-awesome
+    sway-contrib.grimshot
+    papirus-icon-theme
   ];
 }
