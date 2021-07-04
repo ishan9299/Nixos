@@ -16,8 +16,10 @@
       nixosConfigurations = {
         X542URR = stable.lib.nixosSystem {
           system = "x86_64-linux";
-          nixpkgs.overlays = [ inputs.nixpkgs-wayland.overlay ];
           modules = [
+            {
+              nixpkgs.overlays = [ inputs.nixpkgs-wayland.overlay ];
+            }
             ./hosts/X542URR/configuration.nix
           ];
           specialArgs = { inherit inputs; };
