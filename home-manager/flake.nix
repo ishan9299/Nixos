@@ -33,7 +33,7 @@
           inputs.emacs.overlay
           inputs.neovim.overlay
           inputs.nur.overlay
-          inputs.nixpkgs-wayland.overlays
+          inputs.nixpkgs-wayland.overlay
           (packagesOverlay system)
         ];
     in
@@ -58,7 +58,7 @@
                 ./modules/mpv
                 ./modules/packages.nix
                 ./modules/qutebrowser
-                # ./modules/sway
+                ./modules/sway
                 ./modules/tmux
                 ./modules/xresources
               ];
@@ -66,6 +66,8 @@
               xdg.configFile."alacritty/alacritty.yml".source = ./configs/alacritty/alacritty.yml;
               xdg.configFile."musikcube/hotkeys.json".source = ./configs/musikcube/hotkeys.json;
               xdg.configFile."neofetch/config.conf".source = ./configs/neofetch/config.conf;
+              xdg.configFile."waybar/config".source = ./configs/waybar/config;
+              xdg.configFile."waybar/style.css".source = ./configs/waybar/style.css;
               programs.home-manager.enable = true;
               programs.man.enable = false;
               home.stateVersion = "20.09";
@@ -94,7 +96,7 @@
                 ./modules/mpv
                 ./modules/packages.nix
                 ./modules/qutebrowser
-                # ./modules/sway
+                ./modules/sway
                 ./modules/tmux
                 ./modules/xresources
               ];
@@ -103,6 +105,8 @@
               xdg.configFile."gitui/key_config.ron".source = ./configs/gitui/key_config.ron;
               xdg.configFile."musikcube/hotkeys.json".source = ./configs/musikcube/hotkeys.json;
               xdg.configFile."neofetch/config.conf".source = ./configs/neofetch/config.conf;
+              xdg.configFile."waybar/config".source = ./configs/waybar/config;
+              xdg.configFile."waybar/style.css".source = ./configs/waybar/style.css;
               programs.home-manager.enable = true;
               programs.man.enable = false;
               home.stateVersion = "20.09";
