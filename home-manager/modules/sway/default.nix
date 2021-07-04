@@ -96,9 +96,9 @@ in
         "XF86AudioLowerVolume" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -2";
         "XF86AudioRaiseVolume" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +2";
         "XF86AudioMute" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --toggle-mute";
-        "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
-        "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
-        "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+        "XF86AudioPlay" = "exec playerctl play-pause";
+        "XF86AudioNext" = "exec playerctl next";
+        "XF86AudioPrev" = "exec playerctl previous";
 
         "${modifier}+Shift+minus" = "move scratchpad";
         "${modifier}+minus" = "scratchpad show";
@@ -274,27 +274,28 @@ in
   ########
 
   home.packages = with pkgs; [
-    swayidle
-    glib
-    capitaine-cursors
-    pavucontrol
     bemenu
+    capitaine-cursors
+    font-awesome
+    glib
+    gnome.adwaita-icon-theme
     gnome.nautilus
     gnome.networkmanagerapplet
-    gnome.adwaita-icon-theme
-    grim
-    slurp
-    nwg-panel
-    nwg-menu
-    nwg-launchers
-    waybar
-    imagemagick
     gnome.zenity
+    grim
+    imagemagick
+    nwg-launchers
+    nwg-menu
+    nwg-panel
+    papirus-icon-theme
+    pavucontrol
+    playerctl
+    slurp
+    sway-contrib.grimshot
+    swayidle
+    waybar
+    wl-clipboard
     wl-color-picker
     xdg-user-dirs
-    wl-clipboard
-    font-awesome
-    sway-contrib.grimshot
-    papirus-icon-theme
   ];
 }
