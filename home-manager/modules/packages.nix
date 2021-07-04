@@ -70,7 +70,7 @@
 
     # programs-gui
     contrast
-    firefox-wayland
+    firefox-beta-bin
     gnome.gnome-terminal
     emacsPgtkGcc
     neovide
