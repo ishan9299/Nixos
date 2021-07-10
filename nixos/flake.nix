@@ -13,6 +13,9 @@
     , ...
     }@inputs:
     {
+      # packages.x86_64-linux = {
+      #   packettracer = callPackage ./pkgs/packettracer { };
+      # };
       nixosConfigurations = {
         X542URR = stable.lib.nixosSystem {
           system = "x86_64-linux";

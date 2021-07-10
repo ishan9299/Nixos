@@ -59,6 +59,8 @@ in
       gnome.dconf-editor
       gzdoom
       kid3
+      killall
+      libinput
       lutris
       steam
       steam-run

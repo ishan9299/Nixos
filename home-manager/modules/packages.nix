@@ -37,6 +37,7 @@
     ffmpeg
     file
     git
+    gcc-unwrapped
     git-crypt
     gitAndTools.gitui # I still kinda need it for the root folder
     gitui
@@ -69,10 +70,12 @@
     youtube-dl
 
     # programs-gui
+    bless
     contrast
+    emacsPgtkGcc
     firefox-beta-bin
     gnome.gnome-terminal
-    emacsPgtkGcc
+    lite
     neovide
     qbittorrent
     vscode-fhs

@@ -26,6 +26,15 @@
         nnn = prev.nnn.overrideAttrs (oldAttrs: {
           makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
         });
+        # lite-xl = prev.lite.overrideAttrs (oldAttrs: {
+        #   src = prev.fetchFromGitHub {
+        #     owner = "lite-xl";
+        #     repo = "lite-xl";
+        #     rev = "1a87d0e4fd55ac1eaf937c10f043b890c395dcc8";
+        #     fetchSubmodules = true;
+        #     sha256 = "sha256-65qyhVno25qTZOLQapV1BObWLk/kXqugy0cktayHrvM=";
+        #   };
+        # });
       };
 
       overlays =

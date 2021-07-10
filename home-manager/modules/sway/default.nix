@@ -7,7 +7,7 @@ let
   swayworkspace = pkgs.writeShellScriptBin "swayworkspace" ''
     ${builtins.readFile ./scripts/swayworkspace.sh}
   '';
-  chromeWaylandFlags = "--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-native-gpu-memory-buffers --use-gl=egl";
+  chromeWaylandFlags = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   wl-color-picker = pkgs.writeShellScriptBin "wl-color-picker" ''
     ${builtins.readFile ./scripts/wl-color-picker.sh}
   '';
@@ -111,8 +111,8 @@ in
 
         "${modifier}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
 
-        "Print" = "exec grim -o (swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') (xdg-user-dir PICTURES)/(date +'%Y-%m-%d-%H%M%S_grim.png')";
-        "Shift+Print" = "exec grim -g '(slurp)' (xdg-user-dir PICTURES)/(date +'%Y-%m-%d-%H%M%S_grim.png')";
+        "${modifier}+Print" = "exec grim -o (swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') (xdg-user-dir PICTURES)/(date +'%Y-%m-%d-%H%M%S_grim.png')";
+        "${modifier}+Shift+Print" = "exec grim -g '(slurp)' (xdg-user-dir PICTURES)/(date +'%Y-%m-%d-%H%M%S_grim.png')";
 
         "${modifier}+Return" = "mode 'management'";
         "${modifier}+o" = "mode 'launcher'";
